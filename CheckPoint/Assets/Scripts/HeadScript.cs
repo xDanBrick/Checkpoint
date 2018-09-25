@@ -26,7 +26,7 @@ public class HeadScript : MonoBehaviour {
         }
         else if (collision.gameObject.tag == "Ground")
         {
-            PlayerCharacter.currentSpawnPosition = transform.position;
+            PlatformerCharacter2D.currentSpawnPosition = transform.position;
         }
     }
 }
