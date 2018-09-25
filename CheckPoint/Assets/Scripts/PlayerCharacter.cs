@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class PlatformerCharacter2D : MonoBehaviour
+public class PlayerCharacter : MonoBehaviour
 {
     [SerializeField] private float m_MaxSpeed = 10f;                    // The fastest the player can travel in the x axis.
     [SerializeField] private float m_JumpForce = 400f;                  // Amount of force added when the player jumps.
