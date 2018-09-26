@@ -24,9 +24,10 @@ public class PlayerCharacter : MonoBehaviour
         m_GroundCheck = transform.Find("GroundCheck");
         m_Anim = GetComponent<Animator>();
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
-        currentSpawnPosition = transform.position;
-        initialSpawnPosition = currentSpawnPosition;
+       
         m_PlayerHead = GameObject.Find("TestHead").transform;
+        currentSpawnPosition = m_PlayerHead.transform.position;
+        initialSpawnPosition = currentSpawnPosition;
     }
 
 
