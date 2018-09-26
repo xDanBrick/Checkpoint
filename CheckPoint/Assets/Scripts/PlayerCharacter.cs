@@ -116,7 +116,7 @@ public class PlayerCharacter : MonoBehaviour
         if (m_PlayerHead.parent == transform)
         {
             //Place the head down in from of what ever way the player is facing
-            m_PlayerHead.Translate(transform.localScale.x > 0.0f ? 1.0f : -1.0f, 0.0f, 0.0f);
+            m_PlayerHead.Translate(1.0f, 0.0f, 0.0f);
             m_PlayerHead.SetParent(null);
             m_PlayerHead.GetComponent<Rigidbody2D>().simulated = true;
         }
