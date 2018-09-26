@@ -26,7 +26,7 @@ public class PlayerCharacter : MonoBehaviour
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
        
         m_PlayerHead = GameObject.Find("TestHead").transform;
-        currentSpawnPosition = m_PlayerHead.transform.position;
+        currentSpawnPosition = new Vector3(m_PlayerHead.transform.position.x, m_PlayerHead.transform.position.y + 0.5f, m_PlayerHead.transform.position.z);
         initialSpawnPosition = currentSpawnPosition;
     }
 
@@ -100,6 +100,7 @@ public class PlayerCharacter : MonoBehaviour
             if (transform.Find("TestHead"))
             {
                 //Reset the players position
+                UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
                 transform.position = initialSpawnPosition;
             }
             else

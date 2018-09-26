@@ -10,7 +10,7 @@ public class WeightedPlatformScript : MonoBehaviour {
         {
             if(collision.gameObject.transform.Find("TestHead"))
             {
-                GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+                Destroy(gameObject);
             }
         }
     }

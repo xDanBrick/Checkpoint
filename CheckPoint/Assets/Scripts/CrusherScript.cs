@@ -7,7 +7,7 @@ public class CrusherScript : MonoBehaviour {
     {
         if(collision.gameObject.tag == "Player")
         {
-            transform.parent.Find("Spikes").GetComponent<Rigidbody2D>().gravityScale = 1.0f;
+            transform.parent.Find("Spikes").GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;         
         }
     }
 }
