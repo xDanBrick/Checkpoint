@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     private PlayerCharacter m_Character;
     private bool m_Jump;
+    [SerializeField] private float throwDistance = 300.0f;
 
     private void Awake()
     {
@@ -38,7 +39,7 @@ public class PlayerController : MonoBehaviour
                 head.SetParent(null);
                 Rigidbody2D body = head.GetComponent<Rigidbody2D>();
                 body.simulated = true;
-                body.AddForce(new Vector2(transform.localScale.x > 0.0f ? 600.0f : -600.0f, 200.0f));
+                body.AddForce(new Vector2(transform.localScale.x > 0.0f ? throwDistance : -throwDistance, 200.0f));
             }
         }
     }
