@@ -100,8 +100,8 @@ public class PlayerCharacter : MonoBehaviour
             if (transform.Find("TestHead"))
             {
                 //Reset the players position
-                UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
-                transform.position = initialSpawnPosition;
+                GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+                GameObject.Find("FadeImage").GetComponent<FadeScript>().StartFade(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
             }
             else
             {

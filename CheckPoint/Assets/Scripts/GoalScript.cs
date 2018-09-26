@@ -3,17 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GoalScript : MonoBehaviour {
-
-    [SerializeField] string sceneName = "Level1";
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    [SerializeField] string sceneName = "Level 1";
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -21,7 +11,8 @@ public class GoalScript : MonoBehaviour {
         {
             if(collision.gameObject.transform.Find("TestHead"))
             {
-                UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
+                collision.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+                GameObject.Find("FadeImage").GetComponent<FadeScript>().StartFade(sceneName);
             }
         }
     }
