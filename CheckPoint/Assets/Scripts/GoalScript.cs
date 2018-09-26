@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GoalScript : MonoBehaviour {
 
+    [SerializeField] string sceneName = "Level1";
 	// Use this for initialization
 	void Start () {
 		
@@ -20,7 +21,7 @@ public class GoalScript : MonoBehaviour {
         {
             if(collision.gameObject.transform.Find("TestHead"))
             {
-                Time.timeScale = 0.0f;
+                UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
             }
         }
     }
