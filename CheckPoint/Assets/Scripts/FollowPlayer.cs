@@ -5,6 +5,8 @@ using UnityEngine;
 public class FollowPlayer : MonoBehaviour
 {
     [SerializeField] [Range(0.0f, 10.0f)] float offset = 2.0f;
+    [SerializeField] float minimumX = 0.0f;
+    [SerializeField] float maximumX = 100.0f;
     private Transform player;
     // Use this for initialization
     void Start()
@@ -15,6 +17,15 @@ public class FollowPlayer : MonoBehaviour
     // Update is called once per frame
     private void LateUpdate()
     {
-        transform.position = new Vector3(player.position.x + offset, transform.position.y, -1.0f);
+        float x = player.position.x + offset;
+        if(x < minimumX)
+        {
+            x = minimumX;
+        }
+        else if(x > maximumX)
+        {
+            x = maximumX;
+        }
+        transform.position = new Vector3(x, transform.position.y, -1.0f);
     }
 }
