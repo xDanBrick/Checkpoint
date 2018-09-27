@@ -193,6 +193,26 @@ Prefab:
       propertyPath: throwDistance
       value: 400
       objectReference: {fileID: 0}
+    - target: {fileID: 61577969191056492, guid: ae9cad811434eae4ebd8cab637a68e16,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: -0.06407654
+      objectReference: {fileID: 0}
+    - target: {fileID: 61577969191056492, guid: ae9cad811434eae4ebd8cab637a68e16,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 1.1400526
+      objectReference: {fileID: 0}
+    - target: {fileID: 61577969191056492, guid: ae9cad811434eae4ebd8cab637a68e16,
+        type: 2}
+      propertyPath: m_Offset.x
+      value: 0.26698565
+      objectReference: {fileID: 0}
+    - target: {fileID: 61577969191056492, guid: ae9cad811434eae4ebd8cab637a68e16,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 0.8410287
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ae9cad811434eae4ebd8cab637a68e16, type: 2}
   m_IsPrefabParent: 0

@@ -250,6 +250,11 @@ Prefab:
       propertyPath: m_Size.x
       value: 0.6228399
       objectReference: {fileID: 0}
+    - target: {fileID: 114881930213471536, guid: de4b1ff8c7084ab4db59c4ad375f37e4,
+        type: 2}
+      propertyPath: sceneName
+      value: Level 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: de4b1ff8c7084ab4db59c4ad375f37e4, type: 2}
   m_IsPrefabParent: 0
@@ -348,52 +353,6 @@ Prefab:
     - target: {fileID: 4143332768107990, guid: 97adac666c0d4e24f94e3907628fdae2, type: 2}
       propertyPath: m_RootOrder
       value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4874206307897064, guid: 97adac666c0d4e24f94e3907628fdae2, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4874206307897064, guid: 97adac666c0d4e24f94e3907628fdae2, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 3.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4036528733909098, guid: 97adac666c0d4e24f94e3907628fdae2, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4036528733909098, guid: 97adac666c0d4e24f94e3907628fdae2, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -2.45
-      objectReference: {fileID: 0}
-    - target: {fileID: 4036528733909098, guid: 97adac666c0d4e24f94e3907628fdae2, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4036528733909098, guid: 97adac666c0d4e24f94e3907628fdae2, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4874206307897064, guid: 97adac666c0d4e24f94e3907628fdae2, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4874206307897064, guid: 97adac666c0d4e24f94e3907628fdae2, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1371272123236330, guid: 97adac666c0d4e24f94e3907628fdae2, type: 2}
-      propertyPath: m_TagString
-      value: Crusher
-      objectReference: {fileID: 0}
-    - target: {fileID: 50354939571838136, guid: 97adac666c0d4e24f94e3907628fdae2,
-        type: 2}
-      propertyPath: m_BodyType
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 50354939571838136, guid: 97adac666c0d4e24f94e3907628fdae2,
-        type: 2}
-      propertyPath: m_GravityScale
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 97adac666c0d4e24f94e3907628fdae2, type: 2}
@@ -830,7 +789,8 @@ Prefab:
       propertyPath: m_RootOrder
       value: 10
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 61577969191056492, guid: ae9cad811434eae4ebd8cab637a68e16, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: ae9cad811434eae4ebd8cab637a68e16, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &2100309619 stripped
