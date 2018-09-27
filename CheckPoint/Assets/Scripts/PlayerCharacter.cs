@@ -17,6 +17,7 @@ public class PlayerCharacter : MonoBehaviour
     public static Vector3 currentSpawnPosition;
     private Vector3 initialSpawnPosition;
     private Transform m_PlayerHead;
+    bool inRangeOfHead;
 
     private void Awake()
     {
@@ -51,31 +52,34 @@ public class PlayerCharacter : MonoBehaviour
 
     public void Move(float move, bool jump)
     {
-        // The Speed animator parameter is set to the absolute value of the horizontal input.
-        m_Anim.SetFloat("Speed", Mathf.Abs(move));
-
-        // Move the character
-        m_Rigidbody2D.velocity = new Vector2(move*m_MaxSpeed, m_Rigidbody2D.velocity.y);
-
-        // If the input is moving the player right and the player is facing left...
-        if (move > 0 && !m_FacingRight)
+        if(m_Rigidbody2D.bodyType == RigidbodyType2D.Dynamic)
         {
-            // ... flip the player.
-            Flip();
-        }
+            // The Speed animator parameter is set to the absolute value of the horizontal input.
+            m_Anim.SetFloat("Speed", Mathf.Abs(move));
+
+            // Move the character
+            m_Rigidbody2D.velocity = new Vector2(move * m_MaxSpeed, m_Rigidbody2D.velocity.y);
+
+            // If the input is moving the player right and the player is facing left...
+            if (move > 0 && !m_FacingRight)
+            {
+                // ... flip the player.
+                Flip();
+            }
             // Otherwise if the input is moving the player left and the player is facing right...
-        else if (move < 0 && m_FacingRight)
-        {
-            // ... flip the player.
-            Flip();
-        }
-        // If the player should jump...
-        if (m_Grounded && jump && m_Anim.GetBool("Ground"))
-        {
-            // Add a vertical force to the player.
-            m_Grounded = false;
-            m_Anim.SetBool("Ground", false);
-            m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+            else if (move < 0 && m_FacingRight)
+            {
+                // ... flip the player.
+                Flip();
+            }
+            // If the player should jump...
+            if (m_Grounded && jump && m_Anim.GetBool("Ground"))
+            {
+                // Add a vertical force to the player.
+                m_Grounded = false;
+                m_Anim.SetBool("Ground", false);
+                m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+            }
         }
     }
 
@@ -114,6 +118,27 @@ public class PlayerCharacter : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.transform == m_PlayerHead)
+        {
+            if (!m_PlayerHead.parent == transform)
+            {
+                inRangeOfHead = true;
+            }
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.transform == m_PlayerHead)
+        {
+            if (!m_PlayerHead.parent == transform)
+            {
+                inRangeOfHead = false;
+            }
+        }
+    }
     public void DropHead()
     {
         if (m_PlayerHead.parent == transform)
@@ -122,8 +147,9 @@ public class PlayerCharacter : MonoBehaviour
             m_PlayerHead.Translate(dropDistance, 0.0f, 0.0f);
             m_PlayerHead.SetParent(null);
             m_PlayerHead.GetComponent<Rigidbody2D>().simulated = true;
+            inRangeOfHead = false;
         }
-        else
+        else if(inRangeOfHead)
         {
             m_PlayerHead.GetComponent<Rigidbody2D>().simulated = false;
             m_PlayerHead.transform.SetParent(transform);

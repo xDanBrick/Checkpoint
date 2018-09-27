@@ -14,4 +14,15 @@ public class WeightedPlatformScript : MonoBehaviour {
             }
         }
     }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            if (collision.gameObject.transform.Find("TestHead"))
+            {
+                Destroy(gameObject);
+            }
+        }
+    }
 }
