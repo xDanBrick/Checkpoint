@@ -7,6 +7,7 @@ public class PlayerCharacter : MonoBehaviour
     [SerializeField] private float m_JumpForce = 400f;                  // Amount of force added when the player jumps.
     [SerializeField] private LayerMask m_WhatIsGround;                  // A mask determining what is ground to the character
     [SerializeField] private float dropDistance = 0.5f;
+    [SerializeField] private float throwDistance = 300.0f;
 
     private Transform m_GroundCheck;    // A position marking where to check if the player is grounded.
     const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
@@ -18,6 +19,9 @@ public class PlayerCharacter : MonoBehaviour
     private Vector3 initialSpawnPosition;
     private Transform m_PlayerHead;
     bool inRangeOfHead;
+    private AudioSource jumpSource;
+    private AudioSource bodySquishSource;
+    private AudioSource throwSource;
 
     private void Awake()
     {
@@ -29,6 +33,9 @@ public class PlayerCharacter : MonoBehaviour
         m_PlayerHead = GameObject.Find("TestHead").transform;
         currentSpawnPosition = new Vector3(m_PlayerHead.transform.position.x, m_PlayerHead.transform.position.y + 0.5f, m_PlayerHead.transform.position.z);
         initialSpawnPosition = currentSpawnPosition;
+        jumpSource = GameObject.Find("JumpAudio").GetComponent<AudioSource>();
+        throwSource = GameObject.Find("ThrowAudio").GetComponent<AudioSource>();
+        bodySquishSource = GameObject.Find("BodySquishAudio").GetComponent<AudioSource>();
     }
 
 
@@ -79,6 +86,7 @@ public class PlayerCharacter : MonoBehaviour
                 m_Grounded = false;
                 m_Anim.SetBool("Ground", false);
                 m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+                jumpSource.Play();
             }
         }
     }
@@ -110,11 +118,13 @@ public class PlayerCharacter : MonoBehaviour
             else
             {
                 transform.position = currentSpawnPosition;
+                head.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
                 head.GetComponent<Rigidbody2D>().simulated = false;
                 head.transform.SetParent(transform);
                 head.transform.position = Vector3.zero;
                 head.transform.localPosition = new Vector3(0.0f, 0.3f, 0.0f);
             }
+            bodySquishSource.Play();
         }
     }
 
@@ -146,15 +156,31 @@ public class PlayerCharacter : MonoBehaviour
             //Place the head down in from of what ever way the player is facing
             m_PlayerHead.Translate(dropDistance, 0.0f, 0.0f);
             m_PlayerHead.SetParent(null);
+            m_PlayerHead.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
             m_PlayerHead.GetComponent<Rigidbody2D>().simulated = true;
             inRangeOfHead = false;
         }
         else if(inRangeOfHead)
         {
+            m_PlayerHead.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
             m_PlayerHead.GetComponent<Rigidbody2D>().simulated = false;
             m_PlayerHead.transform.SetParent(transform);
             m_PlayerHead.transform.position = Vector3.zero;
             m_PlayerHead.transform.localPosition = new Vector3(0.0f, 0.3f, 0.0f);
+        }
+    }
+
+    public void ThrowHead()
+    {
+        if (m_PlayerHead.parent == transform)
+        {
+            m_PlayerHead.Translate(1.0f, 0.0f, 0.0f);
+            m_PlayerHead.SetParent(null);
+            Rigidbody2D body = m_PlayerHead.GetComponent<Rigidbody2D>();
+            body.bodyType = RigidbodyType2D.Dynamic;
+            m_PlayerHead.GetComponent<Rigidbody2D>().simulated = true;
+            body.AddForce(new Vector2(transform.localScale.x > 0.0f ? throwDistance : -throwDistance, 200.0f));
+            throwSource.Play();
         }
     }
 }

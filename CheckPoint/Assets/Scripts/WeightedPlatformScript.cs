@@ -4,14 +4,34 @@ using UnityEngine;
 
 public class WeightedPlatformScript : MonoBehaviour {
 
-	private void OnCollisionEnter2D(Collision2D collision)
+    private AudioSource creakSource, breakSource;
+    void Start()
+    {
+        creakSource = GameObject.Find("BridgeCreakAudio").GetComponent<AudioSource>();
+        breakSource = GameObject.Find("BridgeBreakAudio").GetComponent<AudioSource>(); ;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "Player")
         {
-            if(collision.gameObject.transform.Find("TestHead"))
+            if (collision.gameObject.transform.Find("TestHead"))
             {
+                breakSource.Play();
                 Destroy(gameObject);
             }
+            else
+            {
+                creakSource.Play();
+            }
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            creakSource.Stop();
         }
     }
 
@@ -21,6 +41,7 @@ public class WeightedPlatformScript : MonoBehaviour {
         {
             if (collision.gameObject.transform.Find("TestHead"))
             {
+                breakSource.Play();
                 Destroy(gameObject);
             }
         }

@@ -7,7 +7,6 @@ public class PlayerController : MonoBehaviour
 {
     private PlayerCharacter m_Character;
     private bool m_Jump;
-    [SerializeField] private float throwDistance = 300.0f;
 
     private void Awake()
     {
@@ -21,6 +20,7 @@ public class PlayerController : MonoBehaviour
         {
             // Read the jump input in Update so button presses aren't missed.
             m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
+            
         }
 
         //Place the head down
@@ -32,15 +32,7 @@ public class PlayerController : MonoBehaviour
         //Throw head
         if (Input.GetKeyDown(KeyCode.T))
         {
-            Transform head = transform.Find("TestHead");
-            if (head)
-            {
-                head.Translate(1.0f, 0.0f, 0.0f);
-                head.SetParent(null);
-                Rigidbody2D body = head.GetComponent<Rigidbody2D>();
-                body.simulated = true;
-                body.AddForce(new Vector2(transform.localScale.x > 0.0f ? throwDistance : -throwDistance, 200.0f));
-            }
+            m_Character.ThrowHead();
         }
 
         if(Input.GetKeyDown(KeyCode.Escape))
