@@ -33,9 +33,15 @@ public class HeadScript : MonoBehaviour {
         }
         else if (collision.gameObject.tag == "Ground")
         {
-            PlayerCharacter.currentSpawnPosition = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
-            landingSource.Play();
-            GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+            for(int i = 0; i < collision.contacts.Length; ++i)
+            {
+                if(collision.contacts[i].normal.y == 1.0f)
+                {
+                    PlayerCharacter.currentSpawnPosition = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
+                    landingSource.Play();
+                    GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+                }
+            }   
         }
     }
 }

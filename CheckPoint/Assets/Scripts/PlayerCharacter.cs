@@ -7,7 +7,7 @@ public class PlayerCharacter : MonoBehaviour
     [SerializeField] private float m_JumpForce = 400f;                  // Amount of force added when the player jumps.
     [SerializeField] private LayerMask m_WhatIsGround;                  // A mask determining what is ground to the character
     [SerializeField] private float dropDistance = 0.5f;
-    [SerializeField] private float throwDistance = 300.0f;
+    [SerializeField] private float throwDistance = 400.0f;
 
     private Transform m_GroundCheck;    // A position marking where to check if the player is grounded.
     const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
@@ -16,7 +16,6 @@ public class PlayerCharacter : MonoBehaviour
     private Rigidbody2D m_Rigidbody2D;
     private bool m_FacingRight = true;  // For determining which way the player is currently facing.
     public static Vector3 currentSpawnPosition;
-    private Vector3 initialSpawnPosition;
     private Transform m_PlayerHead;
     bool inRangeOfHead;
     private AudioSource jumpSource;
@@ -32,7 +31,6 @@ public class PlayerCharacter : MonoBehaviour
        
         m_PlayerHead = GameObject.Find("TestHead").transform;
         currentSpawnPosition = new Vector3(m_PlayerHead.transform.position.x, m_PlayerHead.transform.position.y + 0.5f, m_PlayerHead.transform.position.z);
-        initialSpawnPosition = currentSpawnPosition;
         jumpSource = GameObject.Find("JumpAudio").GetComponent<AudioSource>();
         throwSource = GameObject.Find("ThrowAudio").GetComponent<AudioSource>();
         bodySquishSource = GameObject.Find("BodySquishAudio").GetComponent<AudioSource>();
@@ -109,11 +107,11 @@ public class PlayerCharacter : MonoBehaviour
         {
             GameObject head = GameObject.Find("TestHead");
             //If the head exists and is not attached to the player
-            if (transform.Find("TestHead"))
+            if (transform.Find("TestHead") || head.GetComponent<Rigidbody2D>().bodyType == RigidbodyType2D.Dynamic)
             {
                 //Reset the players position
                 GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
-                GameObject.Find("FadeImage").GetComponent<FadeScript>().StartFade(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+                GameObject.Find("FadeImage").GetComponent<FadeScript>().StartFade(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name, 3.0f);
             }
             else
             {
@@ -178,8 +176,9 @@ public class PlayerCharacter : MonoBehaviour
             m_PlayerHead.SetParent(null);
             Rigidbody2D body = m_PlayerHead.GetComponent<Rigidbody2D>();
             body.bodyType = RigidbodyType2D.Dynamic;
+            m_PlayerHead.GetComponent<Rigidbody2D>().velocity = new Vector2(0.0f, 0.0f);
             m_PlayerHead.GetComponent<Rigidbody2D>().simulated = true;
-            body.AddForce(new Vector2(transform.localScale.x > 0.0f ? throwDistance : -throwDistance, 200.0f));
+            body.AddRelativeForce(new Vector2(transform.localScale.x > 0.0f ? throwDistance : -throwDistance, 200.0f));
             throwSource.Play();
         }
     }
