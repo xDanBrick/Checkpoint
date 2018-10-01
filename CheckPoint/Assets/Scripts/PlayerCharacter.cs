@@ -10,7 +10,7 @@ public class PlayerCharacter : MonoBehaviour
     [SerializeField] private float throwDistance = 400.0f;
 
     private Transform m_GroundCheck;    // A position marking where to check if the player is grounded.
-    const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
+    const float k_GroundedRadius = 0.2f; // Radius of the overlap circle to determine if grounded
     private bool m_Grounded;            // Whether or not the player is grounded.
     private Animator m_Anim;            // Reference to the player's animator component.
     private Rigidbody2D m_Rigidbody2D;
@@ -41,11 +41,11 @@ public class PlayerCharacter : MonoBehaviour
     {
         m_Grounded = false;
 
-        // The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
-        // This can be done using layers instead but Sample Assets will not overwrite your project settings.
+        //// The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
+        //// This can be done using layers instead but Sample Assets will not overwrite your project settings.
         Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround);
         for (int i = 0; i < colliders.Length; i++)
-        {
+        { 
             if (colliders[i].gameObject != gameObject)
                 m_Grounded = true;
         }
@@ -124,6 +124,35 @@ public class PlayerCharacter : MonoBehaviour
             }
             bodySquishSource.Play();
         }
+        
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        //if (collision.gameObject.layer == 8)
+        //{
+        //    for (int i = 0; i < collision.contacts.Length; ++i)
+        //    {
+        //        if (collision.contacts[i].normal.y == 1.0f)
+        //        {
+        //            m_Grounded = true;
+        //            m_Anim.SetBool("Ground", m_Grounded);
+        //            Debug.Log("Grounded");
+        //            return;
+        //        }
+        //    }
+        //}
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        //if (collision.gameObject.layer == 8)
+        //{
+        //    m_Grounded = false;
+        //    m_Anim.SetBool("Ground", m_Grounded);
+        //    Debug.Log("NotGrounded");
+        //    return;
+        //}
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

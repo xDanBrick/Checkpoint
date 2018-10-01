@@ -40,6 +40,7 @@ public class HeadScript : MonoBehaviour {
                     PlayerCharacter.currentSpawnPosition = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
                     landingSource.Play();
                     GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+                    return;
                 }
             }   
         }
