@@ -27,8 +27,9 @@ public class HeadScript : MonoBehaviour {
                 GetComponent<Rigidbody2D>().simulated = false;
                 transform.SetParent(player);
                 transform.position = Vector3.zero;
-                transform.localPosition = new Vector3(0.0f, 0.3f, 0.0f);
+                transform.localPosition = new Vector3(0.0f, 0.5f, 0.0f);
                 squishSource.Play();
+                GetComponent<Animator>().SetTrigger("HeadHitGround");
             }
         }
         else if (collision.gameObject.tag == "Ground")
@@ -40,6 +41,7 @@ public class HeadScript : MonoBehaviour {
                     PlayerCharacter.currentSpawnPosition = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
                     landingSource.Play();
                     GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+                    GetComponent<Animator>().SetTrigger("HeadHitGround");
                     return;
                 }
             }   

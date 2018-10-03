@@ -169,7 +169,7 @@ TextureImporter:
         width: 220
         height: 179
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -189,33 +189,13 @@ TextureImporter:
         width: 213
         height: 176
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: 8951d38bd3eb44944be7edb8a01dd0bb
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: throw head Sprite Proto 01_2
-      rect:
-        serializedVersion: 2
-        x: 1926
-        y: 3302
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f134cf0461dd54143ba9134633e119b8
       vertices: []
       indices: 
       edges: []
@@ -229,7 +209,7 @@ TextureImporter:
         width: 218
         height: 180
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -249,7 +229,7 @@ TextureImporter:
         width: 198
         height: 171
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -269,7 +249,7 @@ TextureImporter:
         width: 216
         height: 179
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -289,7 +269,7 @@ TextureImporter:
         width: 217
         height: 179
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -301,215 +281,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: throw head Sprite Proto 01_7
-      rect:
-        serializedVersion: 2
-        x: 2560
-        y: 2663
-        width: 14
-        height: 21
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6a726edbfb65f0745ad01255070d5168
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: throw head Sprite Proto 01_8
-      rect:
-        serializedVersion: 2
-        x: 3271
-        y: 2682
-        width: 12
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2c5053e565d98804890a96482bfd2013
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: throw head Sprite Proto 01_9
-      rect:
-        serializedVersion: 2
-        x: 1127
-        y: 2642
-        width: 19
-        height: 27
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3bfc0d872b00d3f4291367cd65e0c7cf
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: throw head Sprite Proto 01_10
-      rect:
-        serializedVersion: 2
-        x: 1847
-        y: 2642
-        width: 19
-        height: 27
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b34de7e0e47a2374797221f4ca1bed49
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: throw head Sprite Proto 01_11
-      rect:
-        serializedVersion: 2
-        x: 3239
-        y: 2667
-        width: 12
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 27830c2a93504a44b81f799b0a37b99c
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: throw head Sprite Proto 01_12
-      rect:
-        serializedVersion: 2
-        x: 383
-        y: 2621
-        width: 31
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 530aefd657da56640bf9af05ba66f205
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: throw head Sprite Proto 01_13
-      rect:
-        serializedVersion: 2
-        x: 412
-        y: 2629
-        width: 19
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8394523cbfd8879488c0462abd9a6c29
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: throw head Sprite Proto 01_14
-      rect:
-        serializedVersion: 2
-        x: 1098
-        y: 2631
-        width: 23
-        height: 27
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dca30c6055e591b499268bf57b378882
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: throw head Sprite Proto 01_15
-      rect:
-        serializedVersion: 2
-        x: 1817
-        y: 2631
-        width: 23
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 67430ddc15cddc142bf8d210455a3149
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: throw head Sprite Proto 01_16
-      rect:
-        serializedVersion: 2
-        x: 2528
-        y: 2650
-        width: 17
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 78db1c17cb1b4904f80dd7bb8595d277
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: throw head Sprite Proto 01_17
       rect:
         serializedVersion: 2
-        x: 2583
+        x: 2525
         y: 2477
-        width: 185
-        height: 190
+        width: 243
+        height: 199
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -524,12 +304,12 @@ TextureImporter:
       name: throw head Sprite Proto 01_18
       rect:
         serializedVersion: 2
-        x: 3302
+        x: 3222
         y: 2477
-        width: 186
-        height: 190
+        width: 266
+        height: 208
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -541,35 +321,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: throw head Sprite Proto 01_19
-      rect:
-        serializedVersion: 2
-        x: 385
-        y: 2601
-        width: 21
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 931484bac6959694e8f314f66bcd5632
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: throw head Sprite Proto 01_20
       rect:
         serializedVersion: 2
-        x: 412
+        x: 385
         y: 2456
-        width: 199
-        height: 187
+        width: 226
+        height: 202
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -581,35 +341,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: throw head Sprite Proto 01_21
-      rect:
-        serializedVersion: 2
-        x: 1094
-        y: 2599
-        width: 25
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bc32fee4c015c944a8504fc9bd246ef6
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: throw head Sprite Proto 01_22
       rect:
         serializedVersion: 2
-        x: 1132
+        x: 1090
         y: 2456
-        width: 198
-        height: 187
+        width: 242
+        height: 217
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -621,81 +361,21 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: throw head Sprite Proto 01_23
-      rect:
-        serializedVersion: 2
-        x: 1813
-        y: 2599
-        width: 25
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eb47c9d10a250544290f4109f20698ac
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: throw head Sprite Proto 01_24
       rect:
         serializedVersion: 2
-        x: 1851
+        x: 1810
         y: 2456
-        width: 200
-        height: 187
+        width: 241
+        height: 223
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: 99f21cfdfbd84304dbb3c5aae0cfcfc5
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: throw head Sprite Proto 01_25
-      rect:
-        serializedVersion: 2
-        x: 2524
-        y: 2601
-        width: 19
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2f4ff63b691cdd946a1bba03af044eb6
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: throw head Sprite Proto 01_26
-      rect:
-        serializedVersion: 2
-        x: 3231
-        y: 2608
-        width: 10
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cd4deec3f5b74c94a890ad38cb61ae3e
       vertices: []
       indices: 
       edges: []
@@ -709,7 +389,7 @@ TextureImporter:
         width: 206
         height: 164
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -729,7 +409,7 @@ TextureImporter:
         width: 207
         height: 164
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -749,7 +429,7 @@ TextureImporter:
         width: 220
         height: 173
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -769,7 +449,7 @@ TextureImporter:
         width: 221
         height: 173
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -785,11 +465,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2705
-        y: 1749
+        y: 1705
         width: 177
-        height: 152
+        height: 196
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -805,11 +485,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 3450
-        y: 1718
-        width: 153
-        height: 168
+        y: 1675
+        width: 155
+        height: 211
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -825,77 +505,17 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 4201
-        y: 1678
+        y: 1628
         width: 119
-        height: 158
+        height: 208
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: a93ab0fcbee768145a92b243e215e3c8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: throw head Sprite Proto 01_34
-      rect:
-        serializedVersion: 2
-        x: 2773
-        y: 1701
-        width: 109
-        height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9bbe5b78a420b49429de7fef7a8b661e
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: throw head Sprite Proto 01_35
-      rect:
-        serializedVersion: 2
-        x: 3503
-        y: 1672
-        width: 99
-        height: 42
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 16184bac1b9881243b04d1b3226103c9
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: throw head Sprite Proto 01_36
-      rect:
-        serializedVersion: 2
-        x: 4218
-        y: 1632
-        width: 102
-        height: 58
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 987be38fa6089744f91b87611fa69700
       vertices: []
       indices: 
       edges: []
@@ -909,7 +529,7 @@ TextureImporter:
         width: 171
         height: 236
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -929,7 +549,7 @@ TextureImporter:
         width: 164
         height: 187
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -949,7 +569,7 @@ TextureImporter:
         width: 238
         height: 84
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -969,7 +589,7 @@ TextureImporter:
         width: 236
         height: 84
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -989,7 +609,7 @@ TextureImporter:
         width: 238
         height: 84
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1009,73 +629,13 @@ TextureImporter:
         width: 210
         height: 84
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: be39f2c2721613b4db5fe525085bac98
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: throw head Sprite Proto 01_43
-      rect:
-        serializedVersion: 2
-        x: 4182
-        y: 988
-        width: 34
-        height: 34
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cfeca955a892a6448aa89b0082e4756c
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: throw head Sprite Proto 01_44
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 307
-        width: 73
-        height: 82
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5486ad8f63d2c164796f708d37ecfe80
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: throw head Sprite Proto 01_45
-      rect:
-        serializedVersion: 2
-        x: 556
-        y: 239
-        width: 40
-        height: 36
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 934118875a7580f44a59b01f24cb8619
       vertices: []
       indices: 
       edges: []

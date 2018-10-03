@@ -24,6 +24,7 @@ public class PlayerCharacter : MonoBehaviour
 
     private float jumpDelay = -1.0f;
     private float throwDelay = -1.0f;
+    private float throwHeadDelay = -1.0f;
 
     private void Awake()
     {
@@ -85,8 +86,14 @@ public class PlayerCharacter : MonoBehaviour
                 throwDelay = -1.0f;
             }
         }
-
-        
+        if (throwHeadDelay >= 0.0f)
+        {
+            throwHeadDelay -= Time.deltaTime;
+            if (throwHeadDelay < 0.0f)
+            {
+                m_PlayerHead.GetComponent<Animator>().SetTrigger("ThrowHead");
+            }
+        }
     }
 
     public void Move(float move, bool jump)
@@ -142,9 +149,8 @@ public class PlayerCharacter : MonoBehaviour
         //If the player collides with death platform
         if (collision.gameObject.tag == "Death")
         {
-            GameObject head = GameObject.Find("TestHead");
             //If the head exists and is not attached to the player
-            if (transform.Find("TestHead") || head.GetComponent<Rigidbody2D>().bodyType == RigidbodyType2D.Dynamic)
+            if (m_PlayerHead.parent == transform || m_PlayerHead.GetComponent<Rigidbody2D>().bodyType == RigidbodyType2D.Dynamic)
             {
                 //Reset the players position
                 GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
@@ -153,43 +159,15 @@ public class PlayerCharacter : MonoBehaviour
             else
             {
                 transform.position = currentSpawnPosition;
-                head.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
-                head.GetComponent<Rigidbody2D>().simulated = false;
-                head.transform.SetParent(transform);
-                head.transform.position = Vector3.zero;
-                head.transform.localPosition = new Vector3(0.0f, 0.45f, 0.0f);
+                m_PlayerHead.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+                m_PlayerHead.GetComponent<Rigidbody2D>().simulated = false;
+                m_PlayerHead.transform.SetParent(transform);
+                m_PlayerHead.transform.position = Vector3.zero;
+                m_PlayerHead.transform.localPosition = new Vector3(0.0f, 0.5f, 0.0f);
             }
             bodySquishSource.Play();
         }
         
-    }
-
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        //if (collision.gameObject.layer == 8)
-        //{
-        //    for (int i = 0; i < collision.contacts.Length; ++i)
-        //    {
-        //        if (collision.contacts[i].normal.y == 1.0f)
-        //        {
-        //            m_Grounded = true;
-        //            m_Anim.SetBool("Ground", m_Grounded);
-        //            Debug.Log("Grounded");
-        //            return;
-        //        }
-        //    }
-        //}
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        //if (collision.gameObject.layer == 8)
-        //{
-        //    m_Grounded = false;
-        //    m_Anim.SetBool("Ground", m_Grounded);
-        //    Debug.Log("NotGrounded");
-        //    return;
-        //}
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -230,7 +208,7 @@ public class PlayerCharacter : MonoBehaviour
             m_PlayerHead.GetComponent<Rigidbody2D>().simulated = false;
             m_PlayerHead.transform.SetParent(transform);
             m_PlayerHead.transform.position = Vector3.zero;
-            m_PlayerHead.transform.localPosition = new Vector3(0.0f, 0.3f, 0.0f);
+            m_PlayerHead.transform.localPosition = new Vector3(0.0f, 0.5f, 0.0f);
         }
     }
 
@@ -240,7 +218,7 @@ public class PlayerCharacter : MonoBehaviour
         {
             throwDelay = 0.85f;
             m_Anim.SetTrigger("ThrowHead");
-            m_PlayerHead.GetComponent<Animator>().SetTrigger("ThrowHead");
+            throwHeadDelay = 1.0f;
         }
     }
 }
