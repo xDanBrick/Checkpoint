@@ -34,8 +34,8 @@ public class PlayerController : MonoBehaviour
         {
             m_Character.ThrowHead();
         }
-
-        if(Input.GetKeyDown(KeyCode.Escape))
+       
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             Application.Quit();
         }

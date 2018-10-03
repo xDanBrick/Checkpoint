@@ -22,6 +22,9 @@ public class PlayerCharacter : MonoBehaviour
     private AudioSource bodySquishSource;
     private AudioSource throwSource;
 
+    private float jumpDelay = -1.0f;
+    private float throwDelay = -1.0f;
+
     private void Awake()
     {
         // Setting up references.
@@ -49,10 +52,41 @@ public class PlayerCharacter : MonoBehaviour
             if (colliders[i].gameObject != gameObject)
                 m_Grounded = true;
         }
-        m_Anim.SetBool("Ground", m_Grounded);
+        
+    }
 
-        // Set the vertical animation
-        m_Anim.SetFloat("vSpeed", m_Rigidbody2D.velocity.y);
+    private void Update()
+    {
+        if (jumpDelay >= 0.0f)
+        {
+            jumpDelay -= Time.deltaTime;
+            if(jumpDelay < 0.0f)
+            {
+                m_Grounded = false;
+                m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+                jumpSource.Play();
+                jumpDelay = -1.0f;
+            }
+        }
+
+        if (throwDelay >= 0.0f)
+        {
+            throwDelay -= Time.deltaTime;
+            if (throwDelay < 0.0f)
+            {
+                m_PlayerHead.Translate(1.0f, 0.0f, 0.0f);
+                m_PlayerHead.SetParent(null);
+                Rigidbody2D body = m_PlayerHead.GetComponent<Rigidbody2D>();
+                body.bodyType = RigidbodyType2D.Dynamic;
+                m_PlayerHead.GetComponent<Rigidbody2D>().velocity = new Vector2(0.0f, 0.0f);
+                m_PlayerHead.GetComponent<Rigidbody2D>().simulated = true;
+                body.AddRelativeForce(new Vector2(transform.localScale.x > 0.0f ? throwDistance : -throwDistance, 200.0f));
+                throwSource.Play();
+                throwDelay = -1.0f;
+            }
+        }
+
+        
     }
 
     public void Move(float move, bool jump)
@@ -60,7 +94,12 @@ public class PlayerCharacter : MonoBehaviour
         if(m_Rigidbody2D.bodyType == RigidbodyType2D.Dynamic)
         {
             // The Speed animator parameter is set to the absolute value of the horizontal input.
-            m_Anim.SetFloat("Speed", Mathf.Abs(move));
+            m_Anim.SetFloat("WalkSpeed", Math.Abs(move));
+
+            if (m_PlayerHead.parent == transform)
+            {
+                m_PlayerHead.GetComponent<Animator>().SetFloat("WalkSpeed", Math.Abs(move));
+            }
 
             // Move the character
             m_Rigidbody2D.velocity = new Vector2(move * m_MaxSpeed, m_Rigidbody2D.velocity.y);
@@ -78,13 +117,11 @@ public class PlayerCharacter : MonoBehaviour
                 Flip();
             }
             // If the player should jump...
-            if (m_Grounded && jump && m_Anim.GetBool("Ground"))
+            if (m_Grounded && jump) // m_Anim.SetTrigger(0);
             {
                 // Add a vertical force to the player.
-                m_Grounded = false;
-                m_Anim.SetBool("Ground", false);
-                m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
-                jumpSource.Play();
+                jumpDelay = 0.5f;
+                m_Anim.SetTrigger("Jump");
             }
         }
     }
@@ -120,7 +157,7 @@ public class PlayerCharacter : MonoBehaviour
                 head.GetComponent<Rigidbody2D>().simulated = false;
                 head.transform.SetParent(transform);
                 head.transform.position = Vector3.zero;
-                head.transform.localPosition = new Vector3(0.0f, 0.3f, 0.0f);
+                head.transform.localPosition = new Vector3(0.0f, 0.45f, 0.0f);
             }
             bodySquishSource.Play();
         }
@@ -201,14 +238,9 @@ public class PlayerCharacter : MonoBehaviour
     {
         if (m_PlayerHead.parent == transform)
         {
-            m_PlayerHead.Translate(1.0f, 0.0f, 0.0f);
-            m_PlayerHead.SetParent(null);
-            Rigidbody2D body = m_PlayerHead.GetComponent<Rigidbody2D>();
-            body.bodyType = RigidbodyType2D.Dynamic;
-            m_PlayerHead.GetComponent<Rigidbody2D>().velocity = new Vector2(0.0f, 0.0f);
-            m_PlayerHead.GetComponent<Rigidbody2D>().simulated = true;
-            body.AddRelativeForce(new Vector2(transform.localScale.x > 0.0f ? throwDistance : -throwDistance, 200.0f));
-            throwSource.Play();
+            throwDelay = 0.85f;
+            m_Anim.SetTrigger("ThrowHead");
+            m_PlayerHead.GetComponent<Animator>().SetTrigger("ThrowHead");
         }
     }
 }
