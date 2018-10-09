@@ -897,6 +897,16 @@ Prefab:
       propertyPath: m_Name
       value: WeeJack
       objectReference: {fileID: 0}
+    - target: {fileID: 61277160594226672, guid: 859c3a848f730544981dc36a6fb1e578,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: 0.019255042
+      objectReference: {fileID: 0}
+    - target: {fileID: 61277160594226672, guid: 859c3a848f730544981dc36a6fb1e578,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 0.83761716
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 859c3a848f730544981dc36a6fb1e578, type: 2}
   m_IsPrefabParent: 0
