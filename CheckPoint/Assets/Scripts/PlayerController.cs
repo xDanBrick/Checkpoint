@@ -24,13 +24,13 @@ public class PlayerController : MonoBehaviour
         }
 
         //Place the head down
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             m_Character.DropHead();
         }
 
         //Throw head
-        if (Input.GetKeyDown(KeyCode.T))
+        if (Input.GetKeyDown(KeyCode.W))
         {
             m_Character.ThrowHead();
         }

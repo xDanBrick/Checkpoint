@@ -134,7 +134,7 @@ public class PlayerCharacter : MonoBehaviour
             if (m_Grounded && jump) // m_Anim.SetTrigger(0);
             {
                 // Add a vertical force to the player.
-                jumpDelay = 0.5f;
+                jumpDelay = 0.25f;
                 m_Anim.SetTrigger("Jump");
             }
         }
