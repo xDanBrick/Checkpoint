@@ -798,6 +798,11 @@ Prefab:
       propertyPath: m_Size.x
       value: 0.53701675
       objectReference: {fileID: 0}
+    - target: {fileID: 114881930213471536, guid: de4b1ff8c7084ab4db59c4ad375f37e4,
+        type: 2}
+      propertyPath: sceneName
+      value: StartScene
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: de4b1ff8c7084ab4db59c4ad375f37e4, type: 2}
   m_IsPrefabParent: 0
