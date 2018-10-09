@@ -6,6 +6,7 @@ public class HeadScript : MonoBehaviour {
 
     private AudioSource squishSource;
     private AudioSource landingSource;
+    private float headRespawn = -1.0f;
     // Use this for initialization
     void Start () {
         squishSource = GameObject.Find("SquishAudio").GetComponent<AudioSource>();
@@ -14,7 +15,19 @@ public class HeadScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if(headRespawn > 0.0f)
+        {
+            headRespawn -= Time.deltaTime;
+            if(headRespawn < 0.0f)
+            {
+                GetComponent<SpriteRenderer>().enabled = true;
+                Transform player = GameObject.FindGameObjectWithTag("Player").transform;
+                transform.SetParent(player);
+                transform.position = Vector3.zero;
+                transform.localPosition = new Vector3(0.0f, 0.5f, 0.0f);
+                
+            }
+        }
 	}
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -24,12 +37,11 @@ public class HeadScript : MonoBehaviour {
             Transform player = GameObject.FindGameObjectWithTag("Player").transform;
             if(transform.parent != player.transform)
             {
+                headRespawn = 2.0f;
                 GetComponent<Rigidbody2D>().simulated = false;
-                transform.SetParent(player);
-                transform.position = Vector3.zero;
-                transform.localPosition = new Vector3(0.0f, 0.5f, 0.0f);
                 squishSource.Play();
                 GetComponent<Animator>().SetTrigger("HeadHitGround");
+                GetComponent<SpriteRenderer>().enabled = false;
             }
         }
         else if (collision.gameObject.tag == "Ground")

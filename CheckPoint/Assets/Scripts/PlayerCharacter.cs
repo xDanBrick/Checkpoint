@@ -25,6 +25,7 @@ public class PlayerCharacter : MonoBehaviour
     private float jumpDelay = -1.0f;
     private float throwDelay = -1.0f;
     private float throwHeadDelay = -1.0f;
+    private float bodyRespawnDelay = -1.0f;
 
     private void Awake()
     {
@@ -86,12 +87,18 @@ public class PlayerCharacter : MonoBehaviour
                 throwDelay = -1.0f;
             }
         }
-        if (throwHeadDelay >= 0.0f)
+        if (bodyRespawnDelay >= 0.0f)
         {
-            throwHeadDelay -= Time.deltaTime;
-            if (throwHeadDelay < 0.0f)
+            bodyRespawnDelay -= Time.deltaTime;
+            if (bodyRespawnDelay < 0.0f)
             {
-                m_PlayerHead.GetComponent<Animator>().SetTrigger("ThrowHead");
+                GetComponent<SpriteRenderer>().enabled = true;
+                transform.position = currentSpawnPosition;
+                m_PlayerHead.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+                m_PlayerHead.GetComponent<Rigidbody2D>().simulated = false;
+                m_PlayerHead.transform.SetParent(transform);
+                m_PlayerHead.transform.position = Vector3.zero;
+                m_PlayerHead.transform.localPosition = new Vector3(0.0f, 0.5f, 0.0f);
             }
         }
     }
@@ -158,12 +165,8 @@ public class PlayerCharacter : MonoBehaviour
             }
             else
             {
-                transform.position = currentSpawnPosition;
-                m_PlayerHead.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
-                m_PlayerHead.GetComponent<Rigidbody2D>().simulated = false;
-                m_PlayerHead.transform.SetParent(transform);
-                m_PlayerHead.transform.position = Vector3.zero;
-                m_PlayerHead.transform.localPosition = new Vector3(0.0f, 0.5f, 0.0f);
+                bodyRespawnDelay = 2.0f;
+                GetComponent<SpriteRenderer>().enabled = false;
             }
             bodySquishSource.Play();
         }
