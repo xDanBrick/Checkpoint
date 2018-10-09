@@ -39,6 +39,11 @@ public class PlayerController : MonoBehaviour
         {
             Application.Quit();
         }
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+            GameObject.Find("FadeImage").GetComponent<FadeScript>().StartFade(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name, 3.0f);
+        }
     }
 
 

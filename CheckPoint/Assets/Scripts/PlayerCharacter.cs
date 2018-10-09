@@ -93,7 +93,6 @@ public class PlayerCharacter : MonoBehaviour
             if (bodyRespawnDelay < 0.0f)
             {
                 GetComponent<SpriteRenderer>().enabled = true;
-                transform.position = currentSpawnPosition;
                 m_PlayerHead.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
                 m_PlayerHead.GetComponent<Rigidbody2D>().simulated = false;
                 m_PlayerHead.transform.SetParent(transform);
@@ -166,6 +165,7 @@ public class PlayerCharacter : MonoBehaviour
             else
             {
                 bodyRespawnDelay = 2.0f;
+                transform.position = currentSpawnPosition;
                 GetComponent<SpriteRenderer>().enabled = false;
             }
             bodySquishSource.Play();

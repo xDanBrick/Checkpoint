@@ -46,9 +46,10 @@ public class HeadScript : MonoBehaviour {
         }
         else if (collision.gameObject.tag == "Ground")
         {
+            
             for(int i = 0; i < collision.contacts.Length; ++i)
             {
-                if(collision.contacts[i].normal.y == 1.0f)
+                if (collision.contacts[i].normal.y > 0.9f && collision.contacts[i].normal.y < 1.1f)
                 {
                     PlayerCharacter.currentSpawnPosition = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
                     landingSource.Play();
