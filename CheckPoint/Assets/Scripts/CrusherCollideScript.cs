@@ -18,5 +18,9 @@ public class CrusherCollideScript : MonoBehaviour {
             crusherSource.Play();
             Debug.Log(crusherSource);
         }
+        if (collision.gameObject.tag == "Death")
+        {
+            Destroy(collision.gameObject);
+        }
     }
 }
