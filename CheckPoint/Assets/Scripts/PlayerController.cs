@@ -24,13 +24,13 @@ public class PlayerController : MonoBehaviour
         }
 
         //Place the head down
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             m_Character.DropHead();
         }
 
         //Throw head
-        if (Input.GetKeyDown(KeyCode.T))
+        if (Input.GetKeyDown(KeyCode.W))
         {
             m_Character.ThrowHead();
         }
@@ -38,6 +38,11 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Application.Quit();
+        }
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+            GameObject.Find("FadeImage").GetComponent<FadeScript>().StartFade(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name, 3.0f);
         }
     }
 
