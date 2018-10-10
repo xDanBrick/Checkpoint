@@ -17,7 +17,7 @@ public class PlayerCharacter : MonoBehaviour
     private bool m_FacingRight = true;  // For determining which way the player is currently facing.
     public static Vector3 currentSpawnPosition;
     private Transform m_PlayerHead;
-    bool inRangeOfHead;
+    bool canPutdownHead = true;
     private AudioSource jumpSource;
     private AudioSource bodySquishSource;
     private AudioSource throwSource;
@@ -97,7 +97,7 @@ public class PlayerCharacter : MonoBehaviour
                 m_PlayerHead.GetComponent<Rigidbody2D>().simulated = false;
                 m_PlayerHead.transform.SetParent(transform);
                 m_PlayerHead.transform.position = Vector3.zero;
-                m_PlayerHead.transform.localPosition = new Vector3(0.0f, 0.5f, 0.0f);
+                m_PlayerHead.transform.localPosition = new Vector3(0.0f, 0.65f, 0.0f);
             }
         }
     }
@@ -175,43 +175,39 @@ public class PlayerCharacter : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.transform == m_PlayerHead)
+        if(collision.gameObject.tag == "Ground")
         {
-            if (!m_PlayerHead.parent == transform)
-            {
-                inRangeOfHead = true;
-            }
+            canPutdownHead = false;
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.transform == m_PlayerHead)
+        if (collision.gameObject.tag == "Ground")
         {
-            if (!m_PlayerHead.parent == transform)
-            {
-                inRangeOfHead = false;
-            }
+            canPutdownHead = true;
         }
     }
     public void DropHead()
     {
         if (m_PlayerHead.parent == transform)
         {
-            //Place the head down in from of what ever way the player is facing
-            m_PlayerHead.Translate(dropDistance, 0.0f, 0.0f);
-            m_PlayerHead.SetParent(null);
-            m_PlayerHead.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
-            m_PlayerHead.GetComponent<Rigidbody2D>().simulated = true;
-            inRangeOfHead = false;
+            if(canPutdownHead)
+            {
+                //Place the head down in from of what ever way the player is facing
+                m_PlayerHead.Translate(dropDistance, 0.0f, 0.0f);
+                m_PlayerHead.SetParent(null);
+                m_PlayerHead.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+                m_PlayerHead.GetComponent<Rigidbody2D>().simulated = true;
+            }
         }
-        else if(inRangeOfHead)
+        else if(Mathf.Abs(transform.position.x - m_PlayerHead.position.x) < 1.3f && Mathf.Abs(transform.position.y - m_PlayerHead.position.y) < 1.3f)
         {
             m_PlayerHead.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
             m_PlayerHead.GetComponent<Rigidbody2D>().simulated = false;
             m_PlayerHead.transform.SetParent(transform);
             m_PlayerHead.transform.position = Vector3.zero;
-            m_PlayerHead.transform.localPosition = new Vector3(0.0f, 0.5f, 0.0f);
+            m_PlayerHead.transform.localPosition = new Vector3(0.0f, 0.65f, 0.0f);
         }
     }
 
@@ -219,9 +215,12 @@ public class PlayerCharacter : MonoBehaviour
     {
         if (m_PlayerHead.parent == transform)
         {
-            throwDelay = 0.85f;
-            m_Anim.SetTrigger("ThrowHead");
-            throwHeadDelay = 1.0f;
+            if (canPutdownHead)
+            {
+                throwDelay = 0.85f;
+                m_Anim.SetTrigger("ThrowHead");
+                throwHeadDelay = 1.0f;
+            }
         }
     }
 }
