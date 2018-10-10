@@ -24,7 +24,7 @@ public class HeadScript : MonoBehaviour {
                 Transform player = GameObject.FindGameObjectWithTag("Player").transform;
                 transform.SetParent(player);
                 transform.position = Vector3.zero;
-                transform.localPosition = new Vector3(0.0f, 0.5f, 0.0f);
+                transform.localPosition = new Vector3(0.0f, 0.65f, 0.0f);
                 
             }
         }

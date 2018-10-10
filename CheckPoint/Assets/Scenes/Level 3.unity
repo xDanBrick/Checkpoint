@@ -765,11 +765,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4296928433684536, guid: de4b1ff8c7084ab4db59c4ad375f37e4, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4296928433684536, guid: de4b1ff8c7084ab4db59c4ad375f37e4, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -3
+      value: -2.5
       objectReference: {fileID: 0}
     - target: {fileID: 4296928433684536, guid: de4b1ff8c7084ab4db59c4ad375f37e4, type: 2}
       propertyPath: m_LocalPosition.z
@@ -798,17 +798,12 @@ Prefab:
     - target: {fileID: 61243536995350962, guid: de4b1ff8c7084ab4db59c4ad375f37e4,
         type: 2}
       propertyPath: m_Offset.x
-      value: -0.23149163
+      value: -0.20837262
       objectReference: {fileID: 0}
     - target: {fileID: 61243536995350962, guid: de4b1ff8c7084ab4db59c4ad375f37e4,
         type: 2}
       propertyPath: m_Size.x
-      value: 0.53701675
-      objectReference: {fileID: 0}
-    - target: {fileID: 114881930213471536, guid: de4b1ff8c7084ab4db59c4ad375f37e4,
-        type: 2}
-      propertyPath: sceneName
-      value: StartScene
+      value: 0.58325475
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: de4b1ff8c7084ab4db59c4ad375f37e4, type: 2}
@@ -1533,7 +1528,7 @@ Prefab:
     - target: {fileID: 61083776821668258, guid: 65bf09df40200984ab848ffa607064a4,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.y
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 61083776821668258, guid: 65bf09df40200984ab848ffa607064a4,
         type: 2}
@@ -1665,7 +1660,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4036528733909098, guid: 97adac666c0d4e24f94e3907628fdae2, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 3.5
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 1371272123236330, guid: 97adac666c0d4e24f94e3907628fdae2, type: 2}
       propertyPath: m_TagString
