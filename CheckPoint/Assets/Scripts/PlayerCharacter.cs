@@ -26,6 +26,7 @@ public class PlayerCharacter : MonoBehaviour
     private float throwDelay = -1.0f;
     private float throwHeadDelay = -1.0f;
     private float bodyRespawnDelay = -1.0f;
+    bool canMovePlayer = true;
 
     private void Awake()
     {
@@ -98,43 +99,47 @@ public class PlayerCharacter : MonoBehaviour
                 m_PlayerHead.transform.SetParent(transform);
                 m_PlayerHead.transform.position = Vector3.zero;
                 m_PlayerHead.transform.localPosition = new Vector3(0.0f, 0.65f, 0.0f);
+                canMovePlayer = true;
             }
         }
     }
 
     public void Move(float move, bool jump)
     {
-        if(m_Rigidbody2D.bodyType == RigidbodyType2D.Dynamic)
+        if (canMovePlayer)
         {
-            // The Speed animator parameter is set to the absolute value of the horizontal input.
-            m_Anim.SetFloat("WalkSpeed", Math.Abs(move));
+            if (m_Rigidbody2D.bodyType == RigidbodyType2D.Dynamic)
+            {
+                // The Speed animator parameter is set to the absolute value of the horizontal input.
+                m_Anim.SetFloat("WalkSpeed", Math.Abs(move));
 
-            if (m_PlayerHead.parent == transform)
-            {
-                m_PlayerHead.GetComponent<Animator>().SetFloat("WalkSpeed", Math.Abs(move));
-            }
+                if (m_PlayerHead.parent == transform)
+                {
+                    m_PlayerHead.GetComponent<Animator>().SetFloat("WalkSpeed", Math.Abs(move));
+                }
 
-            // Move the character
-            m_Rigidbody2D.velocity = new Vector2(move * m_MaxSpeed, m_Rigidbody2D.velocity.y);
+                // Move the character
+                m_Rigidbody2D.velocity = new Vector2(move * m_MaxSpeed, m_Rigidbody2D.velocity.y);
 
-            // If the input is moving the player right and the player is facing left...
-            if (move > 0 && !m_FacingRight)
-            {
-                // ... flip the player.
-                Flip();
-            }
-            // Otherwise if the input is moving the player left and the player is facing right...
-            else if (move < 0 && m_FacingRight)
-            {
-                // ... flip the player.
-                Flip();
-            }
-            // If the player should jump...
-            if (m_Grounded && jump) // m_Anim.SetTrigger(0);
-            {
-                // Add a vertical force to the player.
-                jumpDelay = 0.25f;
-                m_Anim.SetTrigger("Jump");
+                // If the input is moving the player right and the player is facing left...
+                if (move > 0 && !m_FacingRight)
+                {
+                    // ... flip the player.
+                    Flip();
+                }
+                // Otherwise if the input is moving the player left and the player is facing right...
+                else if (move < 0 && m_FacingRight)
+                {
+                    // ... flip the player.
+                    Flip();
+                }
+                // If the player should jump...
+                if (m_Grounded && jump) // m_Anim.SetTrigger(0);
+                {
+                    // Add a vertical force to the player.
+                    jumpDelay = 0.25f;
+                    m_Anim.SetTrigger("Jump");
+                }
             }
         }
     }
@@ -165,6 +170,7 @@ public class PlayerCharacter : MonoBehaviour
             else
             {
                 bodyRespawnDelay = 2.0f;
+                canMovePlayer = false;
                 transform.position = currentSpawnPosition;
                 GetComponent<SpriteRenderer>().enabled = false;
             }
