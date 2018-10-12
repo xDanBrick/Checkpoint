@@ -47,7 +47,7 @@ public class HeadScript : MonoBehaviour {
         else if (collision.gameObject.tag == "Crusher")
         {
             Debug.Log(collision.relativeVelocity.y);
-            if (collision.relativeVelocity.y != 0.0f)
+            if (collision.rigidbody.bodyType == RigidbodyType2D.Dynamic)
             {
                 Transform player = GameObject.FindGameObjectWithTag("Player").transform;
                 if (transform.parent != player.transform)
