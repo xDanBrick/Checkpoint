@@ -15,11 +15,11 @@ public class GoalScript : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player")
         {
             if(collision.gameObject.transform.Find("TestHead"))
             {
-                if(!collision.gameObject.GetComponents<Collider2D>()[1].isTrigger)
+                if(!collision.isTrigger)
                 {
                     collision.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
                     levelCompleteSource.Play();

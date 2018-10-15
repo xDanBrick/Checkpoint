@@ -137,7 +137,10 @@ public class PlayerCharacter : MonoBehaviour
                 if (m_Grounded && jump) // m_Anim.SetTrigger(0);
                 {
                     // Add a vertical force to the player.
-                    jumpDelay = 0.25f;
+                    //jumpDelay = 0.1f;
+                    m_Grounded = false;
+                    m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+                    jumpSource.Play();
                     m_Anim.SetTrigger("Jump");
                 }
             }
@@ -223,7 +226,7 @@ public class PlayerCharacter : MonoBehaviour
         {
             if (canPutdownHead)
             {
-                throwDelay = 0.85f;
+                throwDelay = 0.25f;
                 m_Anim.SetTrigger("ThrowHead");
                 throwHeadDelay = 1.0f;
             }
