@@ -19,9 +19,12 @@ public class GoalScript : MonoBehaviour {
         {
             if(collision.gameObject.transform.Find("TestHead"))
             {
-                collision.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
-                levelCompleteSource.Play();
-                GameObject.Find("FadeImage").GetComponent<FadeScript>().StartFade(sceneName, 1.0f);
+                if(!collision.gameObject.GetComponents<Collider2D>()[1].isTrigger)
+                {
+                    collision.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+                    levelCompleteSource.Play();
+                    GameObject.Find("FadeImage").GetComponent<FadeScript>().StartFade(sceneName, 1.0f);
+                }
             }
         }
     }
