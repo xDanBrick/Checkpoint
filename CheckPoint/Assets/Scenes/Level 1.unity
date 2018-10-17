@@ -1106,21 +1106,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 114881930213471536, guid: de4b1ff8c7084ab4db59c4ad375f37e4,
-        type: 2}
-      propertyPath: sceneName
-      value: Level 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 61243536995350962, guid: de4b1ff8c7084ab4db59c4ad375f37e4,
-        type: 2}
-      propertyPath: m_Offset.x
-      value: 0.24607457
-      objectReference: {fileID: 0}
-    - target: {fileID: 61243536995350962, guid: de4b1ff8c7084ab4db59c4ad375f37e4,
-        type: 2}
-      propertyPath: m_Size.x
-      value: 0.4983699
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: de4b1ff8c7084ab4db59c4ad375f37e4, type: 2}
   m_IsPrefabParent: 0

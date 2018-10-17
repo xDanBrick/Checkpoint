@@ -600,6 +600,10 @@ Prefab:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1850557259410036, guid: 74d86ee08b70e08479096f95b9c49127, type: 2}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 74d86ee08b70e08479096f95b9c49127, type: 2}
   m_IsPrefabParent: 0
@@ -872,12 +876,12 @@ Prefab:
     - target: {fileID: 61243536995350962, guid: de4b1ff8c7084ab4db59c4ad375f37e4,
         type: 2}
       propertyPath: m_Offset.x
-      value: -0.20837262
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 61243536995350962, guid: de4b1ff8c7084ab4db59c4ad375f37e4,
         type: 2}
       propertyPath: m_Size.x
-      value: 0.58325475
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 114881930213471536, guid: de4b1ff8c7084ab4db59c4ad375f37e4,
         type: 2}
