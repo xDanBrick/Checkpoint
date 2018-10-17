@@ -16,7 +16,11 @@ public class StartScreenScript : MonoBehaviour {
             GameObject.Find("FadeImage").GetComponent<FadeScript>().StartFade("Level 1", 3.0f);
             GameObject audio = GameObject.Find("ThemeMusic");
             DontDestroyOnLoad(audio);
-            audio.GetComponent<AudioSource>().PlayDelayed(3.0f);
+            audio.GetComponent<AudioSource>().PlayDelayed(0.0f);
         }
-	}
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+    }
 }
