@@ -782,6 +782,11 @@ Prefab:
       propertyPath: maximumX
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 114539532785972126, guid: 6cbca26081c2c454bacc0ec761314a6d,
+        type: 2}
+      propertyPath: offset
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6cbca26081c2c454bacc0ec761314a6d, type: 2}
   m_IsPrefabParent: 0

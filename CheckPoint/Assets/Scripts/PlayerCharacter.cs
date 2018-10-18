@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class PlayerCharacter : MonoBehaviour
 {
+    const string headName = "TestHead";
+
     [SerializeField] private float m_MaxSpeed = 10f;                    // The fastest the player can travel in the x axis.
     [SerializeField] private float m_JumpForce = 400f;                  // Amount of force added when the player jumps.
     [SerializeField] private LayerMask m_WhatIsGround;                  // A mask determining what is ground to the character
@@ -22,9 +24,7 @@ public class PlayerCharacter : MonoBehaviour
     private AudioSource bodySquishSource;
     private AudioSource throwSource;
 
-    private float jumpDelay = -1.0f;
     private float throwDelay = -1.0f;
-    private float throwHeadDelay = -1.0f;
     private float bodyRespawnDelay = -1.0f;
     bool canMovePlayer = true;
 
@@ -35,7 +35,7 @@ public class PlayerCharacter : MonoBehaviour
         m_Anim = GetComponent<Animator>();
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
        
-        m_PlayerHead = GameObject.Find("TestHead").transform;
+        m_PlayerHead = GameObject.Find(headName).transform;
         currentSpawnPosition = new Vector3(m_PlayerHead.transform.position.x, m_PlayerHead.transform.position.y + 0.5f, m_PlayerHead.transform.position.z);
         jumpSource = GameObject.Find("JumpAudio").GetComponent<AudioSource>();
         throwSource = GameObject.Find("ThrowAudio").GetComponent<AudioSource>();
@@ -60,18 +60,6 @@ public class PlayerCharacter : MonoBehaviour
 
     private void Update()
     {
-        if (jumpDelay >= 0.0f)
-        {
-            jumpDelay -= Time.deltaTime;
-            if(jumpDelay < 0.0f)
-            {
-                m_Grounded = false;
-                m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
-                jumpSource.Play();
-                jumpDelay = -1.0f;
-            }
-        }
-
         if (throwDelay >= 0.0f)
         {
             throwDelay -= Time.deltaTime;
@@ -86,6 +74,8 @@ public class PlayerCharacter : MonoBehaviour
                 body.AddRelativeForce(new Vector2(transform.localScale.x > 0.0f ? throwDistance : -throwDistance, 200.0f));
                 throwSource.Play();
                 throwDelay = -1.0f;
+                //BoxCollider2D collider = GetComponent<BoxCollider2D>();
+                //collider.size = new Vector2(0.4f, 0.8f);
             }
         }
         if (bodyRespawnDelay >= 0.0f)
@@ -94,7 +84,7 @@ public class PlayerCharacter : MonoBehaviour
             if (bodyRespawnDelay < 0.0f)
             {
                 GetComponent<SpriteRenderer>().enabled = true;
-                m_PlayerHead.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+                m_PlayerHead.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
                 m_PlayerHead.GetComponent<Rigidbody2D>().simulated = false;
                 m_PlayerHead.transform.SetParent(transform);
                 m_PlayerHead.transform.position = Vector3.zero;
@@ -137,7 +127,6 @@ public class PlayerCharacter : MonoBehaviour
                 if (m_Grounded && jump) // m_Anim.SetTrigger(0);
                 {
                     // Add a vertical force to the player.
-                    //jumpDelay = 0.1f;
                     m_Grounded = false;
                     m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
                     jumpSource.Play();
@@ -179,7 +168,6 @@ public class PlayerCharacter : MonoBehaviour
             }
             bodySquishSource.Play();
         }
-        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -228,7 +216,6 @@ public class PlayerCharacter : MonoBehaviour
             {
                 throwDelay = 0.25f;
                 m_Anim.SetTrigger("ThrowHead");
-                throwHeadDelay = 1.0f;
             }
         }
     }
