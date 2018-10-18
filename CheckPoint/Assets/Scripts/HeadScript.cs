@@ -24,7 +24,7 @@ public class HeadScript : MonoBehaviour {
                 Transform player = GameObject.FindGameObjectWithTag("Player").transform;
                 transform.SetParent(player);
                 transform.position = Vector3.zero;
-                transform.localPosition = new Vector3(0.0f, 0.5f, 0.0f);
+                transform.localPosition = new Vector3(0.0f, 0.65f, 0.0f);
                 
             }
         }
@@ -32,10 +32,10 @@ public class HeadScript : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Crusher" || collision.gameObject.tag == "Death")
+        if (collision.gameObject.tag == "Death")
         {
             Transform player = GameObject.FindGameObjectWithTag("Player").transform;
-            if(transform.parent != player.transform)
+            if (transform.parent != player.transform)
             {
                 headRespawn = 2.0f;
                 GetComponent<Rigidbody2D>().simulated = false;
@@ -44,10 +44,40 @@ public class HeadScript : MonoBehaviour {
                 GetComponent<SpriteRenderer>().enabled = false;
             }
         }
+        else if (collision.gameObject.tag == "Crusher")
+        {
+            Debug.Log(collision.relativeVelocity.y);
+            if (collision.rigidbody.bodyType == RigidbodyType2D.Dynamic)
+            {
+                Transform player = GameObject.FindGameObjectWithTag("Player").transform;
+                if (transform.parent != player.transform)
+                {
+                    headRespawn = 2.0f;
+                    GetComponent<Rigidbody2D>().simulated = false;
+                    squishSource.Play();
+                    GetComponent<Animator>().SetTrigger("HeadHitGround");
+                    GetComponent<SpriteRenderer>().enabled = false;
+                }
+            }
+            else
+            {
+                for (int i = 0; i < collision.contacts.Length; ++i)
+                {
+                    if (collision.contacts[i].normal.y > 0.9f && collision.contacts[i].normal.y < 1.1f)
+                    {
+                        PlayerCharacter.currentSpawnPosition = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
+                        landingSource.Play();
+                        GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+                        GetComponent<Animator>().SetTrigger("HeadHitGround");
+                        return;
+                    }
+                }
+            }
+        }
         else if (collision.gameObject.tag == "Ground")
         {
-            
-            for(int i = 0; i < collision.contacts.Length; ++i)
+
+            for (int i = 0; i < collision.contacts.Length; ++i)
             {
                 if (collision.contacts[i].normal.y > 0.9f && collision.contacts[i].normal.y < 1.1f)
                 {
@@ -57,7 +87,7 @@ public class HeadScript : MonoBehaviour {
                     GetComponent<Animator>().SetTrigger("HeadHitGround");
                     return;
                 }
-            }   
+            }
         }
     }
 }

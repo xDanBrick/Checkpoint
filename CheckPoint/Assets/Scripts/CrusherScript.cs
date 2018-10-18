@@ -12,7 +12,7 @@ public class CrusherScript : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if(collision.gameObject.tag == "Player" || collision.gameObject.name == "TestHead")
         {
             buttonSource.Play();
             transform.parent.Find("Spikes").GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
