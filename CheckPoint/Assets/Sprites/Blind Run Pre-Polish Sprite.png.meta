@@ -1,7 +1,20 @@
 fileFormatVersion: 2
 guid: 8d1c9ed31e298d544a3bd1e5dfcade38
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Blind Run Pre-Polish Sprite_0
+    21300002: Blind Run Pre-Polish Sprite_1
+    21300004: Blind Run Pre-Polish Sprite_2
+    21300006: Blind Run Pre-Polish Sprite_3
+    21300008: Blind Run Pre-Polish Sprite_4
+    21300010: Blind Run Pre-Polish Sprite_5
+    21300012: Blind Run Pre-Polish Sprite_6
+    21300014: Blind Run Pre-Polish Sprite_7
+    21300016: Blind Run Pre-Polish Sprite_8
+    21300018: Blind Run Pre-Polish Sprite_9
+    21300020: Blind Run Pre-Polish Sprite_10
+    21300022: Blind Run Pre-Polish Sprite_11
+    21300024: Blind Run Pre-Polish Sprite_12
   externalObjects: {}
   serializedVersion: 5
   mipmaps:
@@ -38,14 +51,14 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 400
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 1
+  spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -67,9 +80,313 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Blind Run Pre-Polish Sprite_0
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 6322
+        width: 226
+        height: 364
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7c99d79827da934d9a5f63358a8cbe4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blind Run Pre-Polish Sprite_1
+      rect:
+        serializedVersion: 2
+        x: 2130
+        y: 6315
+        width: 223
+        height: 389
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57e393b33845be94c99fc26984026762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blind Run Pre-Polish Sprite_2
+      rect:
+        serializedVersion: 2
+        x: 586
+        y: 5317
+        width: 216
+        height: 399
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1be961c60db6dd046b46c87bb6500542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blind Run Pre-Polish Sprite_3
+      rect:
+        serializedVersion: 2
+        x: 2145
+        y: 5320
+        width: 197
+        height: 376
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7f372e513ab4f846ac11b445c1ee3a6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blind Run Pre-Polish Sprite_4
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 4322
+        width: 195
+        height: 355
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 309e217f5bb49404c9ba0cff2c9030b3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blind Run Pre-Polish Sprite_5
+      rect:
+        serializedVersion: 2
+        x: 2152
+        y: 4322
+        width: 188
+        height: 345
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d06fcb5a65f7c444d87cbceb1e19b1fe
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blind Run Pre-Polish Sprite_6
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 3321
+        width: 181
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89bd0eb372d3ed34ea6e70dc6a936d7f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blind Run Pre-Polish Sprite_7
+      rect:
+        serializedVersion: 2
+        x: 2165
+        y: 3307
+        width: 178
+        height: 362
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2c1a4543b825a14198961a5b7d3d84f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blind Run Pre-Polish Sprite_8
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 2312
+        width: 188
+        height: 349
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9e6e186f08184e4aa26881593a6a9f0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blind Run Pre-Polish Sprite_9
+      rect:
+        serializedVersion: 2
+        x: 2155
+        y: 2309
+        width: 185
+        height: 362
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c84e4dff54b8f94fa5bd59721f17f58
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blind Run Pre-Polish Sprite_10
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 1314
+        width: 180
+        height: 365
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb04bce3b1b93be4eb4e4db219e51278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blind Run Pre-Polish Sprite_11
+      rect:
+        serializedVersion: 2
+        x: 2138
+        y: 1311
+        width: 209
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87617bf8cc073ad4c92f4858f2816219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blind Run Pre-Polish Sprite_12
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 309
+        width: 203
+        height: 380
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16abfd1629f5437429c50af29bcbada2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

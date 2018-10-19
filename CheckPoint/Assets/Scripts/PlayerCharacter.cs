@@ -36,6 +36,7 @@ public class PlayerCharacter : MonoBehaviour
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
        
         m_PlayerHead = GameObject.Find(headName).transform;
+        m_Anim.SetBool("HasHead", m_PlayerHead.parent == transform);
         currentSpawnPosition = new Vector3(m_PlayerHead.transform.position.x, m_PlayerHead.transform.position.y + 0.5f, m_PlayerHead.transform.position.z);
         jumpSource = GameObject.Find("JumpAudio").GetComponent<AudioSource>();
         throwSource = GameObject.Find("ThrowAudio").GetComponent<AudioSource>();
@@ -74,6 +75,7 @@ public class PlayerCharacter : MonoBehaviour
                 body.AddRelativeForce(new Vector2(transform.localScale.x > 0.0f ? throwDistance : -throwDistance, 200.0f));
                 throwSource.Play();
                 throwDelay = -1.0f;
+                m_Anim.SetBool("HasHead", false);
                 //BoxCollider2D collider = GetComponent<BoxCollider2D>();
                 //collider.size = new Vector2(0.4f, 0.8f);
             }
@@ -90,6 +92,7 @@ public class PlayerCharacter : MonoBehaviour
                 m_PlayerHead.transform.position = Vector3.zero;
                 m_PlayerHead.transform.localPosition = new Vector3(0.0f, 0.65f, 0.0f);
                 canMovePlayer = true;
+                m_Anim.SetBool("HasHead", true);
             }
         }
     }
@@ -196,6 +199,7 @@ public class PlayerCharacter : MonoBehaviour
                 m_PlayerHead.SetParent(null);
                 m_PlayerHead.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
                 m_PlayerHead.GetComponent<Rigidbody2D>().simulated = true;
+                m_Anim.SetBool("HasHead", false);
             }
         }
         else if(Mathf.Abs(transform.position.x - m_PlayerHead.position.x) < 1.3f && Mathf.Abs(transform.position.y - m_PlayerHead.position.y) < 1.3f)
@@ -205,6 +209,7 @@ public class PlayerCharacter : MonoBehaviour
             m_PlayerHead.transform.SetParent(transform);
             m_PlayerHead.transform.position = Vector3.zero;
             m_PlayerHead.transform.localPosition = new Vector3(0.0f, 0.65f, 0.0f);
+            m_Anim.SetBool("HasHead", true);
         }
     }
 
