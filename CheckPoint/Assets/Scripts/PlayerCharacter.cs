@@ -4,7 +4,7 @@ using UnityEngine;
 public class PlayerCharacter : MonoBehaviour
 {
     const string headName = "TestHead";
-    public static float headOffset = 0.75f;
+    public static float headOffset = 0.725f;
 
     [SerializeField] private float m_MaxSpeed = 10f;                    // The fastest the player can travel in the x axis.
     [SerializeField] private float m_JumpForce = 400f;                  // Amount of force added when the player jumps.
@@ -57,7 +57,7 @@ public class PlayerCharacter : MonoBehaviour
             if (colliders[i].gameObject != gameObject)
             {
                 m_Grounded = true;
-                m_Anim.SetTrigger("EndJump");
+                
                 return;
             }
                 
@@ -140,9 +140,11 @@ public class PlayerCharacter : MonoBehaviour
                     m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
                     jumpSource.Play();
                     m_Anim.SetTrigger("Jump");
-                    if(m_PlayerHead.parent == transform)
+                    m_Anim.SetBool("IsJumping", true);
+                    if (m_PlayerHead.parent == transform)
                     {
                         m_PlayerHead.GetComponent<Animator>().SetTrigger("Jump");
+                        m_PlayerHead.GetComponent<Animator>().SetBool("IsJumping", true);
                     }
                 }
             }
@@ -182,6 +184,14 @@ public class PlayerCharacter : MonoBehaviour
             }
             bodySquishSource.Play();
         }
+        if(collision.gameObject.tag == "Ground")
+        {
+            m_Anim.SetBool("IsJumping", false);
+            if (m_PlayerHead.parent == transform)
+            {
+                m_PlayerHead.GetComponent<Animator>().SetBool("IsJumping", false);
+            }
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -220,6 +230,7 @@ public class PlayerCharacter : MonoBehaviour
             m_PlayerHead.transform.SetParent(transform);
             m_PlayerHead.transform.position = Vector3.zero;
             m_PlayerHead.transform.localPosition = new Vector3(0.0f, headOffset, 0.0f);
+            m_PlayerHead.transform.localScale = new Vector3(1.0f, m_PlayerHead.transform.localScale.y, m_PlayerHead.transform.localScale.z);
             m_Anim.SetBool("HasHead", true);
         }
     }

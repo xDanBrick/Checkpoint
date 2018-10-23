@@ -25,7 +25,8 @@ public class HeadScript : MonoBehaviour {
                 transform.SetParent(player);
                 transform.position = Vector3.zero;
                 transform.localPosition = new Vector3(0.0f, PlayerCharacter.headOffset, 0.0f);
-                
+                transform.localScale = new Vector3(1.0f, transform.localScale.y, transform.localScale.z);
+                player.GetComponent<Animator>().SetBool("HasHead", true);
             }
         }
 	}
