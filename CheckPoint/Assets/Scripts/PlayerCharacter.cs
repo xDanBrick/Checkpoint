@@ -4,6 +4,7 @@ using UnityEngine;
 public class PlayerCharacter : MonoBehaviour
 {
     const string headName = "TestHead";
+    public static float headOffset = 0.75f;
 
     [SerializeField] private float m_MaxSpeed = 10f;                    // The fastest the player can travel in the x axis.
     [SerializeField] private float m_JumpForce = 400f;                  // Amount of force added when the player jumps.
@@ -54,7 +55,12 @@ public class PlayerCharacter : MonoBehaviour
         for (int i = 0; i < colliders.Length; i++)
         { 
             if (colliders[i].gameObject != gameObject)
+            {
                 m_Grounded = true;
+                m_Anim.SetTrigger("EndJump");
+                return;
+            }
+                
         }
         
     }
@@ -90,9 +96,9 @@ public class PlayerCharacter : MonoBehaviour
                 m_PlayerHead.GetComponent<Rigidbody2D>().simulated = false;
                 m_PlayerHead.transform.SetParent(transform);
                 m_PlayerHead.transform.position = Vector3.zero;
-                m_PlayerHead.transform.localPosition = new Vector3(0.0f, 0.65f, 0.0f);
+                m_PlayerHead.transform.localPosition = new Vector3(0.0f, headOffset, 0.0f);
                 canMovePlayer = true;
-                m_Anim.SetBool("HasHead", true);
+                
             }
         }
     }
@@ -134,6 +140,10 @@ public class PlayerCharacter : MonoBehaviour
                     m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
                     jumpSource.Play();
                     m_Anim.SetTrigger("Jump");
+                    if(m_PlayerHead.parent == transform)
+                    {
+                        m_PlayerHead.GetComponent<Animator>().SetTrigger("Jump");
+                    }
                 }
             }
         }
@@ -164,6 +174,7 @@ public class PlayerCharacter : MonoBehaviour
             }
             else
             {
+                m_Anim.SetBool("HasHead", true);
                 bodyRespawnDelay = 2.0f;
                 canMovePlayer = false;
                 transform.position = currentSpawnPosition;
@@ -208,7 +219,7 @@ public class PlayerCharacter : MonoBehaviour
             m_PlayerHead.GetComponent<Rigidbody2D>().simulated = false;
             m_PlayerHead.transform.SetParent(transform);
             m_PlayerHead.transform.position = Vector3.zero;
-            m_PlayerHead.transform.localPosition = new Vector3(0.0f, 0.65f, 0.0f);
+            m_PlayerHead.transform.localPosition = new Vector3(0.0f, headOffset, 0.0f);
             m_Anim.SetBool("HasHead", true);
         }
     }
@@ -221,6 +232,7 @@ public class PlayerCharacter : MonoBehaviour
             {
                 throwDelay = 0.25f;
                 m_Anim.SetTrigger("ThrowHead");
+                m_PlayerHead.GetComponent<Animator>().SetTrigger("ThrowHead");
             }
         }
     }
