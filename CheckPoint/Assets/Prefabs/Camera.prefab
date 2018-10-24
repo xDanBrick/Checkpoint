@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04c7c61ec7bca45439fcc70606da664e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: 2
+  offset: 0
   minimumX: 0
   maximumX: 100
 --- !u!124 &124676905014642872

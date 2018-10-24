@@ -26,6 +26,10 @@ public class FollowPlayer : MonoBehaviour
         {
             x = maximumX;
         }
+        //if(transform.position.x < player.position.x + offset && transform.position.x < maximumX)
+        //{
+        //    transform.position = new Vector3(transform.position.x + 0.1f, transform.position.y, -1.0f);
+        //}
         transform.position = new Vector3(x, transform.position.y, -1.0f);
     }
 }

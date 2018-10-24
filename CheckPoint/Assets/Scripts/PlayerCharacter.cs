@@ -82,6 +82,8 @@ public class PlayerCharacter : MonoBehaviour
                 throwSource.Play();
                 throwDelay = -1.0f;
                 m_Anim.SetBool("HasHead", false);
+                m_PlayerHead.GetComponent<Animator>().SetFloat("WalkSpeed", 0.0f);
+                m_PlayerHead.GetComponent<Animator>().SetBool("IsJumping", false);
                 //BoxCollider2D collider = GetComponent<BoxCollider2D>();
                 //collider.size = new Vector2(0.4f, 0.8f);
             }
@@ -97,6 +99,7 @@ public class PlayerCharacter : MonoBehaviour
                 m_PlayerHead.transform.SetParent(transform);
                 m_PlayerHead.transform.position = Vector3.zero;
                 m_PlayerHead.transform.localPosition = new Vector3(0.0f, headOffset, 0.0f);
+                m_PlayerHead.transform.localScale = new Vector3(1.0f, m_PlayerHead.transform.localScale.y, m_PlayerHead.transform.localScale.z);
                 canMovePlayer = true;
                 
             }
@@ -184,13 +187,10 @@ public class PlayerCharacter : MonoBehaviour
             }
             bodySquishSource.Play();
         }
-        if(collision.gameObject.tag == "Ground")
+        if(collision.gameObject.tag == "Ground" || collision.gameObject.tag == "Crusher")
         {
             m_Anim.SetBool("IsJumping", false);
-            if (m_PlayerHead.parent == transform)
-            {
-                m_PlayerHead.GetComponent<Animator>().SetBool("IsJumping", false);
-            }
+            m_PlayerHead.GetComponent<Animator>().SetBool("IsJumping", false);
         }
     }
 
@@ -221,6 +221,8 @@ public class PlayerCharacter : MonoBehaviour
                 m_PlayerHead.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
                 m_PlayerHead.GetComponent<Rigidbody2D>().simulated = true;
                 m_Anim.SetBool("HasHead", false);
+                m_PlayerHead.GetComponent<Animator>().SetFloat("WalkSpeed", 0.0f);
+                m_PlayerHead.GetComponent<Animator>().SetBool("IsJumping", false);
             }
         }
         else if(Mathf.Abs(transform.position.x - m_PlayerHead.position.x) < 1.3f && Mathf.Abs(transform.position.y - m_PlayerHead.position.y) < 1.3f)
