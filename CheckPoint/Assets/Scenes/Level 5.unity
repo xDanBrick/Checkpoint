@@ -2584,6 +2584,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 37
       objectReference: {fileID: 0}
+    - target: {fileID: 1773811549192522, guid: ae9cad811434eae4ebd8cab637a68e16, type: 2}
+      propertyPath: m_TagString
+      value: Head
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ae9cad811434eae4ebd8cab637a68e16, type: 2}
   m_IsPrefabParent: 0
@@ -3139,7 +3143,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4470506095458146, guid: 8ca4dcca75a318b4cba53e215ce5e5ac, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 2
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 4470506095458146, guid: 8ca4dcca75a318b4cba53e215ce5e5ac, type: 2}
       propertyPath: m_LocalPosition.y
@@ -3172,17 +3176,17 @@ Prefab:
     - target: {fileID: 212131471252101146, guid: 8ca4dcca75a318b4cba53e215ce5e5ac,
         type: 2}
       propertyPath: m_Size.x
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 61289221636213852, guid: 8ca4dcca75a318b4cba53e215ce5e5ac,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 61289221636213852, guid: 8ca4dcca75a318b4cba53e215ce5e5ac,
         type: 2}
       propertyPath: m_Size.x
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1429735972876110, guid: 8ca4dcca75a318b4cba53e215ce5e5ac, type: 2}
       propertyPath: m_Name
@@ -3562,7 +3566,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4307290298684644, guid: 65bf09df40200984ab848ffa607064a4, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 5
+      value: 5.5
       objectReference: {fileID: 0}
     - target: {fileID: 4307290298684644, guid: 65bf09df40200984ab848ffa607064a4, type: 2}
       propertyPath: m_LocalPosition.y
@@ -3599,7 +3603,7 @@ Prefab:
     - target: {fileID: 212448118473173402, guid: 65bf09df40200984ab848ffa607064a4,
         type: 2}
       propertyPath: m_Size.x
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 65bf09df40200984ab848ffa607064a4, type: 2}

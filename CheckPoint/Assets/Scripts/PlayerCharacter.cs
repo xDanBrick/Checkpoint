@@ -187,7 +187,7 @@ public class PlayerCharacter : MonoBehaviour
             }
             bodySquishSource.Play();
         }
-        if(collision.gameObject.tag == "Ground" || collision.gameObject.tag == "Crusher")
+        if(collision.gameObject.tag == "Ground" || collision.gameObject.tag == "Crusher" || collision.gameObject.tag == "Head")
         {
             m_Anim.SetBool("IsJumping", false);
             m_PlayerHead.GetComponent<Animator>().SetBool("IsJumping", false);
