@@ -7,6 +7,9 @@ public class WeightedPlatformScript : MonoBehaviour {
     private AudioSource creakSource, breakSource;
     private bool headColliding = false;
     private bool bodyColliding = false;
+    private float respawnTimer = -1.0f;
+    [SerializeField] float respawnDelay = 3.0f;
+
     void Start()
     {
         creakSource = GameObject.Find("BridgeCreakAudio").GetComponent<AudioSource>();
@@ -16,8 +19,10 @@ public class WeightedPlatformScript : MonoBehaviour {
     private void BreakPlatform()
     {
         breakSource.Play();
-        Destroy(gameObject);
+        GetComponent<SpriteRenderer>().enabled = false;
+        GetComponent<Rigidbody2D>().simulated = false;
         GameObject.Find("TestHead").GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+        respawnTimer = respawnDelay;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -68,6 +73,19 @@ public class WeightedPlatformScript : MonoBehaviour {
             if(collision.gameObject.GetComponent<Rigidbody2D>().bodyType != RigidbodyType2D.Static)
             {
                 headColliding = false;
+            }
+        }
+    }
+
+    private void Update()
+    {
+        if (respawnTimer > 0.0f)
+        {
+            respawnTimer -= Time.deltaTime;
+            if (respawnTimer <= 0.0f)
+            {
+                GetComponent<SpriteRenderer>().enabled = true;
+                GetComponent<Rigidbody2D>().simulated = true;
             }
         }
     }

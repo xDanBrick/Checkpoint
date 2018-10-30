@@ -28,6 +28,7 @@ public class PlayerCharacter : MonoBehaviour
     private float throwDelay = -1.0f;
     private float bodyRespawnDelay = -1.0f;
     bool canMovePlayer = true;
+    bool headInAir = false;
 
     private void Awake()
     {
@@ -165,13 +166,32 @@ public class PlayerCharacter : MonoBehaviour
         transform.localScale = theScale;
     }
 
+    public void OnHeadStateChange(bool destroy)
+    {
+        if(headInAir)
+        {
+            if (destroy)
+            {
+                //Reset the players position
+                GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+                GameObject.Find("FadeImage").GetComponent<FadeScript>().StartFade(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name, 3.0f);
+            }
+            else
+            {
+                bodyRespawnDelay = 2.0f;
+                transform.position = currentSpawnPosition;
+            }
+            headInAir = false;
+        }
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //If the player collides with death platform
         if (collision.gameObject.tag == "Death")
         {
             //If the head exists and is not attached to the player
-            if (m_PlayerHead.parent == transform || m_PlayerHead.GetComponent<Rigidbody2D>().bodyType == RigidbodyType2D.Dynamic)
+            if (m_PlayerHead.parent == transform)
             {
                 //Reset the players position
                 GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
@@ -180,9 +200,17 @@ public class PlayerCharacter : MonoBehaviour
             else
             {
                 m_Anim.SetBool("HasHead", true);
-                bodyRespawnDelay = 2.0f;
+                //If the head is still in the air
+                if (m_PlayerHead.GetComponent<Rigidbody2D>().bodyType == RigidbodyType2D.Dynamic)
+                {
+                    headInAir = true;
+                }
+                else
+                {
+                    bodyRespawnDelay = 2.0f;
+                    transform.position = currentSpawnPosition;
+                }
                 canMovePlayer = false;
-                transform.position = currentSpawnPosition;
                 GetComponent<SpriteRenderer>().enabled = false;
             }
             bodySquishSource.Play();
