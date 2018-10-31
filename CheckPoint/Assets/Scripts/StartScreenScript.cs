@@ -13,7 +13,7 @@ public class StartScreenScript : MonoBehaviour {
 	void Update () {
 		if(Input.GetKeyDown(KeyCode.Return))
         {
-            GameObject.Find("FadeImage").GetComponent<FadeScript>().StartFade("Level 1", 3.0f);
+            GameObject.Find("FadeImage").GetComponent<FadeScript>().StartFade("EX Level 1", 3.0f);
             GameObject audio = GameObject.Find("ThemeMusic");
             DontDestroyOnLoad(audio);
             audio.GetComponent<AudioSource>().PlayDelayed(0.0f);

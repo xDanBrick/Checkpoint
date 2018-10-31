@@ -518,6 +518,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114539532785972126, guid: 6cbca26081c2c454bacc0ec761314a6d,
+        type: 2}
+      propertyPath: maximumX
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114539532785972126, guid: 6cbca26081c2c454bacc0ec761314a6d,
+        type: 2}
+      propertyPath: minimumX
+      value: -0.11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6cbca26081c2c454bacc0ec761314a6d, type: 2}
   m_IsPrefabParent: 0
@@ -718,7 +728,7 @@ Prefab:
     - target: {fileID: 114881930213471536, guid: de4b1ff8c7084ab4db59c4ad375f37e4,
         type: 2}
       propertyPath: sceneName
-      value: EX Level 1
+      value: StartScene
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: de4b1ff8c7084ab4db59c4ad375f37e4, type: 2}
