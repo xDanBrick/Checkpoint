@@ -357,6 +357,12 @@ Prefab:
       propertyPath: m_Name
       value: E Tomb Stone Tile Checkpoint (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 114242558101843454, guid: 7f10b8a295e712f42b75b5b895d0c382,
+        type: 2}
+      propertyPath: hintText
+      value: '"When your body dies, \n it will return where your Head lies" \n - Gumby,
+        2:18'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7f10b8a295e712f42b75b5b895d0c382, type: 2}
   m_IsPrefabParent: 0
@@ -710,7 +716,7 @@ Prefab:
     - target: {fileID: 114881930213471536, guid: de4b1ff8c7084ab4db59c4ad375f37e4,
         type: 2}
       propertyPath: sceneName
-      value: StartScene
+      value: EX Level 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: de4b1ff8c7084ab4db59c4ad375f37e4, type: 2}
@@ -753,6 +759,12 @@ Prefab:
     - target: {fileID: 4433531177081272, guid: 7f10b8a295e712f42b75b5b895d0c382, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114242558101843454, guid: 7f10b8a295e712f42b75b5b895d0c382,
+        type: 2}
+      propertyPath: hintText
+      value: 'Here Lies S. Mario, his last words were: \n "Sometimes you just need
+        to take a leap of faith"'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7f10b8a295e712f42b75b5b895d0c382, type: 2}
@@ -1018,6 +1030,11 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224241496998308918, guid: cbe49d00bf681564ab198b613a30b4b7,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 298
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cbe49d00bf681564ab198b613a30b4b7, type: 2}
