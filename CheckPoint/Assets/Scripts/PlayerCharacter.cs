@@ -29,7 +29,7 @@ public class PlayerCharacter : MonoBehaviour
     private float bodyRespawnDelay = -1.0f;
     bool canMovePlayer = true;
     bool headInAir = false;
-
+    public bool headRespawing = false;
     private void Awake()
     {
         // Setting up references.
@@ -241,7 +241,7 @@ public class PlayerCharacter : MonoBehaviour
     {
         if (m_PlayerHead.parent == transform)
         {
-            if(canPutdownHead)
+            if(canPutdownHead && !headRespawing)
             {
                 //Place the head down in from of what ever way the player is facing
                 m_PlayerHead.Translate(dropDistance, 0.0f, 0.0f);
@@ -269,7 +269,7 @@ public class PlayerCharacter : MonoBehaviour
     {
         if (m_PlayerHead.parent == transform)
         {
-            if (canPutdownHead)
+            if (canPutdownHead && !headRespawing)
             {
                 throwDelay = 0.25f;
                 m_Anim.SetTrigger("ThrowHead");
