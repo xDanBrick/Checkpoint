@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212972208746054868}
   - component: {fileID: 50247524767646376}
   - component: {fileID: 61220633292561156}
+  - component: {fileID: 114242558101843454}
   m_Layer: 0
   m_Name: E Tomb Stone Tile Checkpoint
   m_TagString: Untagged
@@ -87,6 +88,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &114242558101843454
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1704473343184210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aed908e4ed04004baf46d40e3ba403c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hintText: Hint
 --- !u!212 &212972208746054868
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -16,7 +16,7 @@ public class HintOnCollide : MonoBehaviour {
     {
         if (collision.tag == "Player")
         {
-            GameObject.Find("Hint Text").GetComponent<Text>().text = hintText;
+            GameObject.Find("Hint Text").GetComponent<Text>().text = hintText.Replace("\\n", "\n");
         }
     }
 
