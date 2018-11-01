@@ -211,7 +211,7 @@ public class PlayerCharacter : MonoBehaviour
                     GameObject ghost = GameObject.Find("Ghost");
                     ghost.GetComponent<SpriteRenderer>().enabled = true;
                     ghost.transform.position = transform.position;
-                    ghost.GetComponent<GhostScript>().playerIsDead = true;
+                    ghost.GetComponent<GhostScript>().PlayerIsDead();
                     GameObject.FindGameObjectWithTag("MainCamera").GetComponent<FollowPlayer>().setTransformFollow(FollowPlayer.TransformFollow.Ghost);
                     GetComponent<SpriteRenderer>().enabled = false;
                 }

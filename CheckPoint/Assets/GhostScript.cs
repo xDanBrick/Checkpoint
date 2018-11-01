@@ -12,11 +12,19 @@ public class GhostScript : MonoBehaviour {
         player = GameObject.Find("TestHead").transform;
 	}
 	
+    public void PlayerIsDead()
+    {
+        playerIsDead = true;
+        transform.Rotate(new Vector3(0.0f, 0.0f, Vector3.Angle(player.position, transform.position) * Mathf.Rad2Deg));
+    }
+
 	// Update is called once per frame
 	void Update () {
 		if(playerIsDead)
         {
             transform.position = Vector3.MoveTowards(transform.position, player.position, Time.deltaTime * moveSpeed);
+            //Debug.Log();
+           
             if(transform.position == player.position)
             {
                 playerIsDead = false;
