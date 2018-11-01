@@ -213,7 +213,8 @@ public class PlayerCharacter : MonoBehaviour
                     ghost.transform.position = transform.position;
                     ghost.GetComponent<GhostScript>().PlayerIsDead();
                     GameObject.FindGameObjectWithTag("MainCamera").GetComponent<FollowPlayer>().setTransformFollow(FollowPlayer.TransformFollow.Ghost);
-                    GetComponent<SpriteRenderer>().enabled = false;
+                    //GetComponent<SpriteRenderer>().enabled = false;
+                    m_Anim.SetTrigger("Death");
                 }
                 canMovePlayer = false;
                 
@@ -233,7 +234,7 @@ public class PlayerCharacter : MonoBehaviour
         m_PlayerHead.Translate(new Vector3(0.0f, 1.0f, 0.0f));
         m_PlayerHead.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
         m_PlayerHead.GetComponent<Rigidbody2D>().AddForce(new Vector2(0.0f, 250.0f));
-        bodyRespawnDelay = 2.0f;
+        bodyRespawnDelay = 1.5f;
         GetComponent<SpriteRenderer>().enabled = true;
 
         transform.position = currentSpawnPosition;
