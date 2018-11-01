@@ -208,15 +208,14 @@ public class PlayerCharacter : MonoBehaviour
                 }
                 else
                 {
-                    bodyRespawnDelay = 2.0f;
-                    transform.position = currentSpawnPosition;
-                    m_PlayerHead.Translate(new Vector3(0.0f, 1.0f, 0.0f));
-                    m_PlayerHead.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
-                    m_PlayerHead.GetComponent<Rigidbody2D>().AddForce(new Vector2(0.0f, 250.0f));
+                    GameObject ghost = GameObject.Find("Ghost");
+                    ghost.GetComponent<SpriteRenderer>().enabled = true;
+                    ghost.transform.position = transform.position;
+                    ghost.GetComponent<GhostScript>().playerIsDead = true;
+                    GameObject.FindGameObjectWithTag("MainCamera").GetComponent<FollowPlayer>().setTransformFollow(FollowPlayer.TransformFollow.Ghost);
+                    GetComponent<SpriteRenderer>().enabled = false;
                 }
                 canMovePlayer = false;
-                ////GetComponent<SpriteRenderer>().enabled = false;
-                m_Anim.SetTrigger("Respawn");
                 
             }
             bodySquishSource.Play();
@@ -226,6 +225,18 @@ public class PlayerCharacter : MonoBehaviour
             m_Anim.SetBool("IsJumping", false);
             m_PlayerHead.GetComponent<Animator>().SetBool("IsJumping", false);
         }
+    }
+
+    public void RespawnBody()
+    {
+        m_Anim.SetTrigger("Respawn");
+        m_PlayerHead.Translate(new Vector3(0.0f, 1.0f, 0.0f));
+        m_PlayerHead.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+        m_PlayerHead.GetComponent<Rigidbody2D>().AddForce(new Vector2(0.0f, 250.0f));
+        bodyRespawnDelay = 2.0f;
+        GetComponent<SpriteRenderer>().enabled = true;
+
+        transform.position = currentSpawnPosition;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
