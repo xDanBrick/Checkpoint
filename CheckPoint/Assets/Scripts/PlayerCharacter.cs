@@ -178,8 +178,13 @@ public class PlayerCharacter : MonoBehaviour
             }
             else
             {
-                bodyRespawnDelay = 2.0f;
-                transform.position = currentSpawnPosition;
+                GameObject ghost = GameObject.Find("Ghost");
+                ghost.GetComponent<SpriteRenderer>().enabled = true;
+                ghost.transform.position = transform.position;
+                ghost.GetComponent<GhostScript>().PlayerIsDead();
+                GameObject.FindGameObjectWithTag("MainCamera").GetComponent<FollowPlayer>().setTransformFollow(FollowPlayer.TransformFollow.Ghost);
+               //RespawnBody();
+                
             }
             headInAir = false;
         }
@@ -214,8 +219,8 @@ public class PlayerCharacter : MonoBehaviour
                     ghost.GetComponent<GhostScript>().PlayerIsDead();
                     GameObject.FindGameObjectWithTag("MainCamera").GetComponent<FollowPlayer>().setTransformFollow(FollowPlayer.TransformFollow.Ghost);
                     //GetComponent<SpriteRenderer>().enabled = false;
-                    m_Anim.SetTrigger("Death");
                 }
+                m_Anim.SetTrigger("Death");
                 canMovePlayer = false;
                 
             }
