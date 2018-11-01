@@ -23,7 +23,6 @@ public class HeadScript : MonoBehaviour {
             headRespawn -= Time.deltaTime;
             if(headRespawn < 0.0f)
             {
-                GetComponent<SpriteRenderer>().enabled = true;
                 playerTransform.GetComponent<PlayerCharacter>().headRespawing = false;
             }
         }
@@ -36,7 +35,7 @@ public class HeadScript : MonoBehaviour {
         GetComponent<Rigidbody2D>().simulated = false;
         squishSource.Play();
         GetComponent<Animator>().SetTrigger("HeadHitGround");
-        GetComponent<SpriteRenderer>().enabled = false;
+        GetComponent<Animator>().SetTrigger("Respawn");
 
         playerTransform.GetComponent<PlayerCharacter>().OnHeadStateChange(true);
         transform.SetParent(playerTransform);
