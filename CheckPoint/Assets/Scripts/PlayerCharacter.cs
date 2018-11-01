@@ -94,7 +94,7 @@ public class PlayerCharacter : MonoBehaviour
             bodyRespawnDelay -= Time.deltaTime;
             if (bodyRespawnDelay < 0.0f)
             {
-                GetComponent<SpriteRenderer>().enabled = true;
+                //GetComponent<SpriteRenderer>().enabled = true;
                 m_PlayerHead.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
                 m_PlayerHead.GetComponent<Rigidbody2D>().simulated = false;
                 m_PlayerHead.transform.SetParent(transform);
@@ -199,6 +199,7 @@ public class PlayerCharacter : MonoBehaviour
             }
             else
             {
+                
                 m_Anim.SetBool("HasHead", true);
                 //If the head is still in the air
                 if (m_PlayerHead.GetComponent<Rigidbody2D>().bodyType == RigidbodyType2D.Dynamic)
@@ -209,9 +210,14 @@ public class PlayerCharacter : MonoBehaviour
                 {
                     bodyRespawnDelay = 2.0f;
                     transform.position = currentSpawnPosition;
+                    m_PlayerHead.Translate(new Vector3(0.0f, 1.0f, 0.0f));
+                    m_PlayerHead.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+                    m_PlayerHead.GetComponent<Rigidbody2D>().AddForce(new Vector2(0.0f, 250.0f));
                 }
                 canMovePlayer = false;
-                GetComponent<SpriteRenderer>().enabled = false;
+                ////GetComponent<SpriteRenderer>().enabled = false;
+                m_Anim.SetTrigger("Respawn");
+                
             }
             bodySquishSource.Play();
         }
