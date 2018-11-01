@@ -24,6 +24,10 @@ public class HeadScript : MonoBehaviour {
             if(headRespawn < 0.0f)
             {
                 playerTransform.GetComponent<PlayerCharacter>().headRespawing = false;
+                transform.SetParent(playerTransform);
+                transform.position = Vector3.zero;
+                transform.localPosition = new Vector3(0.0f, PlayerCharacter.headOffset, 0.0f);
+                transform.localScale = new Vector3(1.0f, transform.localScale.y, transform.localScale.z);
             }
         }
 	}
@@ -35,13 +39,10 @@ public class HeadScript : MonoBehaviour {
         GetComponent<Rigidbody2D>().simulated = false;
         squishSource.Play();
         GetComponent<Animator>().SetTrigger("HeadHitGround");
-        GetComponent<Animator>().SetTrigger("Respawn");
+        GetComponent<Animator>().SetTrigger("Death");
 
         playerTransform.GetComponent<PlayerCharacter>().OnHeadStateChange(true);
-        transform.SetParent(playerTransform);
-        transform.position = Vector3.zero;
-        transform.localPosition = new Vector3(0.0f, PlayerCharacter.headOffset, 0.0f);
-        transform.localScale = new Vector3(1.0f, transform.localScale.y, transform.localScale.z);
+        
         playerTransform.GetComponent<Animator>().SetBool("HasHead", true);
     }
 
