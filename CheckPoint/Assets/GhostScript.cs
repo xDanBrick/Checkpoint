@@ -15,7 +15,13 @@ public class GhostScript : MonoBehaviour {
     public void PlayerIsDead()
     {
         playerIsDead = true;
-        transform.Rotate(new Vector3(0.0f, 0.0f, Vector3.Angle(player.position, transform.position) * Mathf.Rad2Deg));
+        // get the angle
+        Vector3 norTar = (player.position - transform.position).normalized;
+        float angle = Mathf.Atan2(norTar.y, norTar.x) * Mathf.Rad2Deg;
+        // rotate to angle
+        Quaternion rotation = new Quaternion();
+        rotation.eulerAngles = new Vector3(0, 0, angle - 90);
+        transform.rotation = rotation;
     }
 
 	// Update is called once per frame
@@ -24,8 +30,7 @@ public class GhostScript : MonoBehaviour {
         {
             transform.position = Vector3.MoveTowards(transform.position, player.position, Time.deltaTime * moveSpeed);
             //Debug.Log();
-           
-            if(transform.position == player.position)
+            if (transform.position == player.position)
             {
                 playerIsDead = false;
                 GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCharacter>().RespawnBody();
