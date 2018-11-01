@@ -179,7 +179,7 @@ MonoBehaviour:
   m_WhatIsGround:
     serializedVersion: 2
     m_Bits: 4294967240
-  dropDistance: 0.5
+  dropDistance: 1
   throwDistance: 300
   headRespawing: 0
 --- !u!114 &114926313567240950
