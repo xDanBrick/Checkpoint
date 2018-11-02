@@ -37,12 +37,8 @@ public class PlayerController : MonoBehaviour
        
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Application.Quit();
-        }
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
-            GameObject.Find("FadeImage").GetComponent<FadeScript>().StartFade(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name, 3.0f);
+            GameObject.Find("PauseMenu").transform.GetChild(0).gameObject.SetActive(true);
+            Time.timeScale = 0.0f;
         }
     }
 
