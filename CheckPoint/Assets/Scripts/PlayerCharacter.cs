@@ -182,9 +182,7 @@ public class PlayerCharacter : MonoBehaviour
                 ghost.GetComponent<SpriteRenderer>().enabled = true;
                 ghost.transform.position = transform.position;
                 ghost.GetComponent<GhostScript>().PlayerIsDead();
-                GameObject.FindGameObjectWithTag("MainCamera").GetComponent<FollowPlayer>().setTransformFollow(FollowPlayer.TransformFollow.Ghost);
-               //RespawnBody();
-                
+                GameObject.FindGameObjectWithTag("MainCamera").GetComponent<FollowPlayer>().setTransformFollow(FollowPlayer.TransformFollow.Ghost); 
             }
             headInAir = false;
         }
