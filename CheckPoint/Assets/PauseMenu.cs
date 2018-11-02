@@ -16,15 +16,20 @@ public class PauseMenu : MonoBehaviour {
 	void Update () {
 		if(Input.GetKeyDown(KeyCode.DownArrow) && buttonIndex < 2)
         {
-            ++buttonIndex;
+            
             RectTransform trans = indicator.GetComponent<RectTransform>();
             trans.localPosition = new Vector3(trans.localPosition.x, trans.localPosition.y - 30, trans.localPosition.z);
+            transform.Find("Text " + buttonIndex.ToString()).GetComponent<Text>().color = Color.black;
+            ++buttonIndex;
+            transform.Find("Text " + buttonIndex.ToString()).GetComponent<Text>().color = Color.red;
         }
         else if (Input.GetKeyDown(KeyCode.UpArrow) && buttonIndex > 0)
         {
             RectTransform trans = indicator.GetComponent<RectTransform>();
             trans.localPosition = new Vector3(trans.localPosition.x, trans.localPosition.y + 30, trans.localPosition.z);
+            transform.Find("Text " + buttonIndex.ToString()).GetComponent<Text>().color = Color.black;
             --buttonIndex;
+            transform.Find("Text " + buttonIndex.ToString()).GetComponent<Text>().color = Color.red;
         }
 
         if(Input.GetKeyDown(KeyCode.Return))
