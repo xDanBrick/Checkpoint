@@ -17,6 +17,7 @@ public class HintOnCollide : MonoBehaviour {
         if (collision.tag == "Player")
         {
             GameObject.Find("Hint Text").GetComponent<Text>().text = hintText.Replace("\\n", "\n");
+            GameObject.Find("HintPanel").GetComponent<Image>().enabled = true;
         }
     }
 
@@ -25,6 +26,7 @@ public class HintOnCollide : MonoBehaviour {
         if (collision.tag == "Player")
         {
             GameObject.Find("Hint Text").GetComponent<Text>().text = "";
+            GameObject.Find("HintPanel").GetComponent<Image>().enabled = false;
         }
     }
 }
