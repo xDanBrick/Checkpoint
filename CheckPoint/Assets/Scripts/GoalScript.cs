@@ -20,6 +20,7 @@ public class GoalScript : MonoBehaviour {
             {
                 if (!collision.isTrigger)
                 {
+                    PlayerPrefs.SetInt("Level " + (LevelStats.currentLevel + 1).ToString() + " Complete", 1);
                     collision.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
                     levelCompleteSource.Play();
                     GameObject.Find("FadeImage").GetComponent<FadeScript>().StartFade(sceneName, 1.0f);
