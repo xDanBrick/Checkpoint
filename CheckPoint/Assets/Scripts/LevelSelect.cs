@@ -78,25 +78,15 @@ public class LevelSelect : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            LevelStats.currentLevel = buttonIndex;
-            UnityEngine.SceneManagement.SceneManager.LoadScene("LevelIntro");
-            //if (buttonIndex == 0)
-            //{
-            //    gameObject.SetActive(false);
-            //    Time.timeScale = 1.0f;
-            //}
-            //else if (buttonIndex == 1)
-            //{
-            //    gameObject.SetActive(false);
-            //    Time.timeScale = 1.0f;
-            //    GameObject.Find("FadeImage").GetComponent<FadeScript>().StartFade(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name, 3.0f);
-            //}
-            //else if (buttonIndex == 2)
-            //{
-            //    gameObject.SetActive(false);
-            //    Time.timeScale = 1.0f;
-            //    UnityEngine.SceneManagement.SceneManager.LoadScene("StartScene");
-            //}
+            if(mainMenu)
+            {
+                UnityEngine.SceneManagement.SceneManager.LoadScene("StartScene");
+            }
+            else
+            {
+                LevelStats.currentLevel = buttonIndex;
+                UnityEngine.SceneManagement.SceneManager.LoadScene("LevelIntro");
+            }
         }
     }
 }
