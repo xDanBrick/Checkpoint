@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 class LevelStats
 {
-    public static string[] levelIntros = new string[5] {
+    const int LevelCount = 5;
+    public static string[] levelIntros = new string[LevelCount] {
         "Get your Head in the Game",
         "Spiky Climb",
         "Precarious Pass",
@@ -13,7 +14,7 @@ class LevelStats
         ""
     };
 
-    public static float[] levelTimes = new float[5]
+    public static float[] levelTimes = new float[LevelCount]
     {
         20.0f,
         20.0f,
