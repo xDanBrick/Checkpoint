@@ -72,7 +72,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerIsDead: 0
-  moveSpeed: 3
+  moveSpeed: 4
 --- !u!212 &212677222391132588
 SpriteRenderer:
   m_ObjectHideFlags: 1

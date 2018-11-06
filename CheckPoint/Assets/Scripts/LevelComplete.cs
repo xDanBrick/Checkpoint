@@ -24,6 +24,7 @@ public class LevelComplete : MonoBehaviour {
         {
             transform.Find("Star 3").GetComponent<Image>().sprite = completeSprite;
         }
+        transform.Find("Level Complete Number").GetComponent<Text>().text = (LevelStats.currentLevel + 1).ToString();
     }
 
     // Update is called once per frame

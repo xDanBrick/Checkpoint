@@ -235,6 +235,7 @@ public class PlayerCharacter : MonoBehaviour
         if(collision.gameObject.tag == "Collectable")
         {
             hasCollectable = true;
+            Destroy(collision.gameObject);
         }
     }
 
