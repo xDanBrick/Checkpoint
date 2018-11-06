@@ -12,6 +12,15 @@ class LevelStats
         "",
         ""
     };
+
+    public static float[] levelTimes = new float[5]
+    {
+        20.0f,
+        20.0f,
+        20.0f,
+        20.0f,
+        20.0f,
+    };
     public static int currentLevel = 0;
 }
 

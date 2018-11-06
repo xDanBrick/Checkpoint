@@ -8,6 +8,7 @@ TagManager:
   - Ground
   - Crusher
   - Head
+  - Collectable
   layers:
   - Default
   - TransparentFX

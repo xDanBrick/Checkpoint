@@ -20,6 +20,14 @@ public class GoalScript : MonoBehaviour {
             {
                 if (!collision.isTrigger)
                 {
+                    if (GameObject.Find("Timer").GetComponent<Timer>().timer < LevelStats.levelTimes[LevelStats.currentLevel])
+                    {
+                        PlayerPrefs.SetInt("Level " + (LevelStats.currentLevel + 1).ToString() + " Time", 1);
+                    }
+                    if (PlayerCharacter.hasCollectable)
+                    {
+                        PlayerPrefs.SetInt("Level " + (LevelStats.currentLevel + 1).ToString() + " Collectable", 1);
+                    }
                     PlayerPrefs.SetInt("Level " + (LevelStats.currentLevel + 1).ToString() + " Complete", 1);
                     collision.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
                     levelCompleteSource.Play();

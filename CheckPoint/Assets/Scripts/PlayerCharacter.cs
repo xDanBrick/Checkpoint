@@ -30,6 +30,8 @@ public class PlayerCharacter : MonoBehaviour
     bool canMovePlayer = true;
     bool headInAir = false;
     public bool headRespawing = false;
+    public static bool hasCollectable = false;
+
     private void Awake()
     {
         // Setting up references.
@@ -43,6 +45,7 @@ public class PlayerCharacter : MonoBehaviour
         jumpSource = GameObject.Find("JumpAudio").GetComponent<AudioSource>();
         throwSource = GameObject.Find("ThrowAudio").GetComponent<AudioSource>();
         bodySquishSource = GameObject.Find("BodySquishAudio").GetComponent<AudioSource>();
+        hasCollectable = false;
     }
 
 
@@ -228,6 +231,10 @@ public class PlayerCharacter : MonoBehaviour
         {
             m_Anim.SetBool("IsJumping", false);
             m_PlayerHead.GetComponent<Animator>().SetBool("IsJumping", false);
+        }
+        if(collision.gameObject.tag == "Collectable")
+        {
+            hasCollectable = true;
         }
     }
 
