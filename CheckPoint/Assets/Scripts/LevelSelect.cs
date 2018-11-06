@@ -6,9 +6,9 @@ using UnityEngine.UI;
 class LevelStats
 {
     public static string[] levelIntros = new string[5] {
-        "The Night Begins",
-        "The Night Is the best",
-        "",
+        "Get your Head in the Game",
+        "Spiky Climb",
+        "Precarious Pass",
         "",
         ""
     };
