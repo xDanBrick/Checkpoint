@@ -232,11 +232,7 @@ public class PlayerCharacter : MonoBehaviour
             m_Anim.SetBool("IsJumping", false);
             m_PlayerHead.GetComponent<Animator>().SetBool("IsJumping", false);
         }
-        if(collision.gameObject.tag == "Collectable")
-        {
-            hasCollectable = true;
-            Destroy(collision.gameObject);
-        }
+        
     }
 
     public void RespawnBody()
@@ -256,6 +252,11 @@ public class PlayerCharacter : MonoBehaviour
         if(collision.gameObject.tag == "Ground")
         {
             canPutdownHead = false;
+        }
+        if (collision.gameObject.tag == "Collectable")
+        {
+            hasCollectable = true;
+            Destroy(collision.gameObject);
         }
     }
 

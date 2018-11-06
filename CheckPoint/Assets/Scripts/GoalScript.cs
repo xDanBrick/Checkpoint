@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GoalScript : MonoBehaviour {
-    [SerializeField] string sceneName = "Level 1";
-
     private AudioSource levelCompleteSource;
 
     void Start()
