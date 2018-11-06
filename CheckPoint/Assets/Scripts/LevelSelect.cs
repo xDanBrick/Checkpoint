@@ -84,7 +84,7 @@ public class LevelSelect : MonoBehaviour {
             }
             else
             {
-                LevelStats.currentLevel = buttonIndex;
+                LevelStats.currentLevel = 0;
                 UnityEngine.SceneManagement.SceneManager.LoadScene("LevelIntro");
             }
         }

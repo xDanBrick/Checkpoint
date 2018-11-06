@@ -39,7 +39,8 @@ public class StartScreen : MonoBehaviour {
             
             if (buttonIndex == 0)
             {
-                UnityEngine.SceneManagement.SceneManager.LoadScene("Level 1");
+                LevelStats.currentLevel = 0;
+                UnityEngine.SceneManagement.SceneManager.LoadScene("LevelIntro");
             }
             else if (buttonIndex == 1)
             {
