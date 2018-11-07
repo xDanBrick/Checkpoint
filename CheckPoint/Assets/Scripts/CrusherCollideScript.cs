@@ -5,9 +5,11 @@ using UnityEngine;
 public class CrusherCollideScript : MonoBehaviour {
 
     private AudioSource crusherSource;
+    private AudioSource spikeSource;
     // Use this for initialization
     void Start () {
         crusherSource = GameObject.Find("CrusherFallAudio").GetComponent<AudioSource>();
+        spikeSource = GameObject.Find("SpikeCrushAudio").GetComponent<AudioSource>(); ;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -21,6 +23,7 @@ public class CrusherCollideScript : MonoBehaviour {
         }
         if (collision.gameObject.tag == "Death")
         {
+            spikeSource.Play();
             Destroy(collision.gameObject);
         }
     }

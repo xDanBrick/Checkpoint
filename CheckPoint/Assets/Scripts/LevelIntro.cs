@@ -8,7 +8,12 @@ public class LevelIntro : MonoBehaviour {
     // Use this for initialization
 	void Start () {
         GetComponent<Text>().text = "Level " + (LevelStats.currentLevel + 1).ToString() + " - " + LevelStats.levelIntros[LevelStats.currentLevel];
-	}
+        GameObject music = GameObject.Find("MenuMusic");
+        if(music)
+        {
+            Destroy(music);
+        }
+    }
 
     // Update is called once per frame
     void Update()
