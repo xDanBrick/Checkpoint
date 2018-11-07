@@ -42,7 +42,7 @@ public class HeadScript : MonoBehaviour {
         squishSource.Play();
         GetComponent<Animator>().SetTrigger("HeadHitGround");
         GetComponent<Animator>().SetTrigger("Death");
-        playerTransform.GetComponent<PlayerCharacter>().OnHeadStateChange(true);
+        playerTransform.GetComponent<PlayerCharacter>().HeadDestroyed();
         playerTransform.GetComponent<Animator>().SetBool("HasHead", true);
     }
 
@@ -52,7 +52,8 @@ public class HeadScript : MonoBehaviour {
         landingSource.Play();
         GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
         GetComponent<Animator>().SetTrigger("HeadHitGround");
-        playerTransform.GetComponent<PlayerCharacter>().OnHeadStateChange(false);
+        GetComponent<Animator>().SetTrigger("HeadSleep");
+        playerTransform.GetComponent<PlayerCharacter>().HeadLanded();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

@@ -31,6 +31,7 @@ public class PlayerCharacter : MonoBehaviour
     bool headInAir = false;
     public bool headRespawing = false;
     public static bool hasCollectable = false;
+    private bool bodyIsDead = false;
 
     private void Awake()
     {
@@ -48,6 +49,28 @@ public class PlayerCharacter : MonoBehaviour
         hasCollectable = false;
     }
 
+
+    public void HeadLanded()
+    {
+        headInAir = false;
+        if (bodyIsDead)
+        {
+            GameObject ghost = GameObject.Find("Ghost");
+            ghost.GetComponent<SpriteRenderer>().enabled = true;
+            ghost.transform.position = transform.position;
+            ghost.GetComponent<GhostScript>().PlayerIsDead();
+            GameObject.FindGameObjectWithTag("MainCamera").GetComponent<FollowPlayer>().setTransformFollow(FollowPlayer.TransformFollow.Ghost);
+        }
+    }
+
+    public void HeadDestroyed()
+    {
+        if(bodyIsDead)
+        {
+            GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+            GameObject.Find("FadeImage").GetComponent<FadeScript>().StartFade(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name, 3.0f);
+        }
+    }
 
     private void FixedUpdate()
     {
@@ -88,6 +111,7 @@ public class PlayerCharacter : MonoBehaviour
                 m_Anim.SetBool("HasHead", false);
                 m_PlayerHead.GetComponent<Animator>().SetFloat("WalkSpeed", 0.0f);
                 m_PlayerHead.GetComponent<Animator>().SetBool("IsJumping", false);
+                headInAir = true;
                 //BoxCollider2D collider = GetComponent<BoxCollider2D>();
                 //collider.size = new Vector2(0.4f, 0.8f);
             }
@@ -169,28 +193,6 @@ public class PlayerCharacter : MonoBehaviour
         transform.localScale = theScale;
     }
 
-    public void OnHeadStateChange(bool destroy)
-    {
-        if(headInAir)
-        {
-            if (destroy)
-            {
-                //Reset the players position
-                GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
-                GameObject.Find("FadeImage").GetComponent<FadeScript>().StartFade(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name, 3.0f);
-            }
-            else
-            {
-                GameObject ghost = GameObject.Find("Ghost");
-                ghost.GetComponent<SpriteRenderer>().enabled = true;
-                ghost.transform.position = transform.position;
-                ghost.GetComponent<GhostScript>().PlayerIsDead();
-                GameObject.FindGameObjectWithTag("MainCamera").GetComponent<FollowPlayer>().setTransformFollow(FollowPlayer.TransformFollow.Ghost); 
-            }
-            headInAir = false;
-        }
-    }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //If the player collides with death platform
@@ -208,22 +210,17 @@ public class PlayerCharacter : MonoBehaviour
                 
                 m_Anim.SetBool("HasHead", true);
                 //If the head is still in the air
-                if (m_PlayerHead.GetComponent<Rigidbody2D>().bodyType == RigidbodyType2D.Dynamic)
-                {
-                    headInAir = true;
-                }
-                else
+                if (m_PlayerHead.GetComponent<Rigidbody2D>().bodyType != RigidbodyType2D.Dynamic)
                 {
                     GameObject ghost = GameObject.Find("Ghost");
                     ghost.GetComponent<SpriteRenderer>().enabled = true;
                     ghost.transform.position = transform.position;
                     ghost.GetComponent<GhostScript>().PlayerIsDead();
                     GameObject.FindGameObjectWithTag("MainCamera").GetComponent<FollowPlayer>().setTransformFollow(FollowPlayer.TransformFollow.Ghost);
-                    //GetComponent<SpriteRenderer>().enabled = false;
                 }
                 m_Anim.SetTrigger("Death");
                 canMovePlayer = false;
-                
+                bodyIsDead = true;
             }
             bodySquishSource.Play();
         }
@@ -243,8 +240,9 @@ public class PlayerCharacter : MonoBehaviour
         m_PlayerHead.GetComponent<Rigidbody2D>().AddForce(new Vector2(0.0f, 250.0f));
         bodyRespawnDelay = 1.5f;
         GetComponent<SpriteRenderer>().enabled = true;
-
+        m_PlayerHead.GetComponent<Animator>().SetTrigger("HeadWakeUp");
         transform.position = currentSpawnPosition;
+        bodyIsDead = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -258,6 +256,10 @@ public class PlayerCharacter : MonoBehaviour
             hasCollectable = true;
             Destroy(collision.gameObject);
         }
+        if(collision.gameObject.name == "TestHead" && !headInAir && m_PlayerHead.parent != transform && !bodyIsDead)
+        {
+            m_PlayerHead.GetComponent<Animator>().SetTrigger("HeadWakeUp");
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -266,6 +268,11 @@ public class PlayerCharacter : MonoBehaviour
         {
             canPutdownHead = true;
         }
+
+        if (collision.gameObject.name == "TestHead" && !headInAir && m_PlayerHead.parent != transform && !bodyIsDead)
+        {
+            m_PlayerHead.GetComponent<Animator>().SetTrigger("HeadSleep");
+        }
     }
     public void DropHead()
     {
@@ -273,7 +280,7 @@ public class PlayerCharacter : MonoBehaviour
         {
             if(canPutdownHead && !headRespawing)
             {
-                //Place the head down in from of what ever way the player is facing
+                headInAir = true;                //Place the head down in from of what ever way the player is facing
                 m_PlayerHead.Translate(dropDistance, 0.0f, 0.0f);
                 m_PlayerHead.SetParent(null);
                 m_PlayerHead.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
