@@ -10,7 +10,7 @@ class LevelStats
         "Get your Head in the Game",
         "Spiky Climb",
         "Precarious Pass",
-        "",
+        "Crushing Cliffs",
         ""
     };
 
