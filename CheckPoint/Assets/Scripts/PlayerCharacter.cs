@@ -27,6 +27,7 @@ public class PlayerCharacter : MonoBehaviour
     private AudioSource landSource;
     private AudioSource footstepsSource;
     private AudioSource bodySpawningSource;
+    private AudioSource gettingCollectableSource;
 
     private float throwDelay = -1.0f;
     private float bodyRespawnDelay = -1.0f;
@@ -53,6 +54,7 @@ public class PlayerCharacter : MonoBehaviour
         footstepsSource = GameObject.Find("FootstepsAudio").GetComponent<AudioSource>();
         bodySpawningSource = GameObject.Find("BodyRespawnAudio").GetComponent<AudioSource>();
         landSource = GameObject.Find("PlayerLandingAudio").GetComponent<AudioSource>();
+        gettingCollectableSource = GameObject.Find("CollectableAudio").GetComponent<AudioSource>();
         hasCollectable = false;
     }
 
@@ -152,7 +154,7 @@ public class PlayerCharacter : MonoBehaviour
 
                 if(move != 0.0f)
                 {
-                    if (footstepsSource.isPlaying)
+                    if (!footstepsSource.isPlaying)
                     {
                         footstepsSource.Play();
                     }
@@ -274,6 +276,7 @@ public class PlayerCharacter : MonoBehaviour
         }
         if (collision.gameObject.tag == "Collectable")
         {
+            gettingCollectableSource.Play();
             hasCollectable = true;
             Destroy(collision.gameObject);
         }

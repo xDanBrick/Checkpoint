@@ -14,7 +14,7 @@ public class HeadScript : MonoBehaviour {
     void Start () {
         squishSource = GameObject.Find("SquishAudio").GetComponent<AudioSource>();
         landingSource = GameObject.Find("LandingAudio").GetComponent<AudioSource>();
-        headRespawningSource = GameObject.Find("HeadSpawingAudio").GetComponent<AudioSource>();
+        headRespawningSource = GameObject.Find("HeadSpawningAudio").GetComponent<AudioSource>();
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
     }
 	
