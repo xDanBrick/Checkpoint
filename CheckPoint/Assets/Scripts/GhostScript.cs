@@ -15,6 +15,8 @@ public class GhostScript : MonoBehaviour {
     public void PlayerIsDead()
     {
         playerIsDead = true;
+        transform.localScale = new Vector3(player.position.x > transform.position.x ? 1.0f : -1.0f, transform.localScale.y, transform.localScale.z);
+
         // get the angle
         //Vector3 norTar = (player.position - transform.position).normalized;
         //float angle = Mathf.Atan2(norTar.y, norTar.x) * Mathf.Rad2Deg;
