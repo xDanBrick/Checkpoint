@@ -7,9 +7,14 @@ public class PauseMenu : MonoBehaviour {
 
     private Transform indicator;
     private int buttonIndex = 0;
-	// Use this for initialization
-	void Start () {
+    private AudioSource menuBeepSource;
+    private AudioSource menuConfirmSource;
+
+    // Use this for initialization
+    void Start () {
         indicator = transform.Find("Indicator");
+        menuConfirmSource = GameObject.Find("MenuConfirmAudio").GetComponent<AudioSource>();
+        menuBeepSource = GameObject.Find("MenuBeepAudio").GetComponent<AudioSource>();
     }
 	
 	// Update is called once per frame
@@ -22,6 +27,7 @@ public class PauseMenu : MonoBehaviour {
             transform.Find("Text " + buttonIndex.ToString()).GetComponent<Text>().color = Color.black;
             ++buttonIndex;
             transform.Find("Text " + buttonIndex.ToString()).GetComponent<Text>().color = Color.red;
+            menuBeepSource.Play();
         }
         else if (Input.GetKeyDown(KeyCode.UpArrow) && buttonIndex > 0)
         {
@@ -30,11 +36,13 @@ public class PauseMenu : MonoBehaviour {
             transform.Find("Text " + buttonIndex.ToString()).GetComponent<Text>().color = Color.black;
             --buttonIndex;
             transform.Find("Text " + buttonIndex.ToString()).GetComponent<Text>().color = Color.red;
+            menuBeepSource.Play();
         }
 
         if(Input.GetKeyDown(KeyCode.Return))
         {
-            if(buttonIndex == 0)
+            menuConfirmSource.Play();
+            if (buttonIndex == 0)
             {
                 gameObject.SetActive(false);
                 Time.timeScale = 1.0f;

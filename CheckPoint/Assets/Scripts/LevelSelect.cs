@@ -30,10 +30,15 @@ public class LevelSelect : MonoBehaviour {
     Transform indicator;
     int buttonIndex = 0;
     bool mainMenu = false;
-	// Use this for initialization
-	void Start () {
-        indicator = transform.Find("Indicator");
+    // Use this for initialization
 
+    private AudioSource menuBeepSource;
+    private AudioSource menuConfirmSource;
+
+    void Start () {
+        indicator = transform.Find("Indicator");
+        menuConfirmSource = GameObject.Find("MenuConfirmAudio").GetComponent<AudioSource>();
+        menuBeepSource = GameObject.Find("MenuBeepAudio").GetComponent<AudioSource>();
     }
 	
 	// Update is called once per frame

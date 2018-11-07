@@ -5,11 +5,12 @@ using UnityEngine;
 public class GateOpen : MonoBehaviour {
 
     float gateOpeningDirection = 0.0f;
-   
+    private AudioSource gateOpenSource;
+
     // Use this for initialization
-	void Start () {
-		
-	}
+    void Start () {
+        gateOpenSource = GameObject.Find("GateOpenAudio").GetComponent<AudioSource>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -32,6 +33,7 @@ public class GateOpen : MonoBehaviour {
         {
             Transform gateTransform = transform.GetChild(0);
             //If Gate is up and 
+            gateOpenSource.Play();
             if (collision.gameObject.transform.Find("TestHead"))
             {
                 if (gateTransform.localScale.y >= 0.01f)

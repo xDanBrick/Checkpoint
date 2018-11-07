@@ -6,6 +6,7 @@ public class HeadScript : MonoBehaviour {
 
     private AudioSource squishSource;
     private AudioSource landingSource;
+    private AudioSource headRespawningSource;
     private float headRespawn = -1.0f;
 
     private Transform playerTransform;
@@ -13,6 +14,7 @@ public class HeadScript : MonoBehaviour {
     void Start () {
         squishSource = GameObject.Find("SquishAudio").GetComponent<AudioSource>();
         landingSource = GameObject.Find("LandingAudio").GetComponent<AudioSource>();
+        headRespawningSource = GameObject.Find("HeadSpawingAudio").GetComponent<AudioSource>();
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
     }
 	
@@ -29,6 +31,7 @@ public class HeadScript : MonoBehaviour {
                 transform.position = Vector3.zero;
                 transform.localPosition = new Vector3(0.0f, PlayerCharacter.headOffset, 0.0f);
                 transform.localScale = new Vector3(1.0f, transform.localScale.y, transform.localScale.z);
+                headRespawningSource.Play();
             }
         }
 	}

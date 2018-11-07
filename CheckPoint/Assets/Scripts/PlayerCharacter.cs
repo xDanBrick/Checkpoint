@@ -24,6 +24,9 @@ public class PlayerCharacter : MonoBehaviour
     private AudioSource jumpSource;
     private AudioSource bodySquishSource;
     private AudioSource throwSource;
+    private AudioSource landSource;
+    private AudioSource footstepsSource;
+    private AudioSource bodySpawningSource;
 
     private float throwDelay = -1.0f;
     private float bodyRespawnDelay = -1.0f;
@@ -46,6 +49,10 @@ public class PlayerCharacter : MonoBehaviour
         jumpSource = GameObject.Find("JumpAudio").GetComponent<AudioSource>();
         throwSource = GameObject.Find("ThrowAudio").GetComponent<AudioSource>();
         bodySquishSource = GameObject.Find("BodySquishAudio").GetComponent<AudioSource>();
+        landSource = GameObject.Find("ThrowAudio").GetComponent<AudioSource>();
+        footstepsSource = GameObject.Find("FootstepsAudio").GetComponent<AudioSource>();
+        bodySpawningSource = GameObject.Find("BodyRespawnAudio").GetComponent<AudioSource>();
+        landSource = GameObject.Find("PlayerLandingAudio").GetComponent<AudioSource>();
         hasCollectable = false;
     }
 
@@ -143,6 +150,18 @@ public class PlayerCharacter : MonoBehaviour
                 // The Speed animator parameter is set to the absolute value of the horizontal input.
                 m_Anim.SetFloat("WalkSpeed", Math.Abs(move));
 
+                if(move != 0.0f)
+                {
+                    if (footstepsSource.isPlaying)
+                    {
+                        footstepsSource.Play();
+                    }
+                }
+                else
+                {
+                    footstepsSource.Stop();
+                }
+
                 if (m_PlayerHead.parent == transform)
                 {
                     m_PlayerHead.GetComponent<Animator>().SetFloat("WalkSpeed", Math.Abs(move));
@@ -228,6 +247,7 @@ public class PlayerCharacter : MonoBehaviour
         {
             m_Anim.SetBool("IsJumping", false);
             m_PlayerHead.GetComponent<Animator>().SetBool("IsJumping", false);
+            landSource.Play();
         }
         
     }
@@ -243,6 +263,7 @@ public class PlayerCharacter : MonoBehaviour
         m_PlayerHead.GetComponent<Animator>().SetTrigger("HeadWakeUp");
         transform.position = currentSpawnPosition;
         bodyIsDead = false;
+        bodySpawningSource.Play();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
