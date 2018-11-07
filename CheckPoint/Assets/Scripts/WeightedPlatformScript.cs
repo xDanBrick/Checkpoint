@@ -8,21 +8,26 @@ public class WeightedPlatformScript : MonoBehaviour {
     private bool headColliding = false;
     private bool bodyColliding = false;
     private float respawnTimer = -1.0f;
+    private float fadeDirection = 0.0f;
     [SerializeField] float respawnDelay = 3.0f;
+    private SpriteRenderer spriteRenderer;
+    private const float fadeIncrement = 3.0f;
 
     void Start()
     {
         creakSource = GameObject.Find("BridgeCreakAudio").GetComponent<AudioSource>();
         breakSource = GameObject.Find("BridgeBreakAudio").GetComponent<AudioSource>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void BreakPlatform()
     {
         breakSource.Play();
-        GetComponent<SpriteRenderer>().enabled = false;
+        //GetComponent<SpriteRenderer>().enabled = false;
         GetComponent<Rigidbody2D>().simulated = false;
         GameObject.Find("TestHead").GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
         respawnTimer = respawnDelay;
+        fadeDirection = -fadeIncrement;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -84,8 +89,18 @@ public class WeightedPlatformScript : MonoBehaviour {
             respawnTimer -= Time.deltaTime;
             if (respawnTimer <= 0.0f)
             {
-                GetComponent<SpriteRenderer>().enabled = true;
+                fadeDirection = fadeIncrement;
+                //GetComponent<SpriteRenderer>().enabled = true;
                 GetComponent<Rigidbody2D>().simulated = true;
+            }
+        }
+
+        if(fadeDirection != 0.0f)
+        {
+            spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, spriteRenderer.color.a + fadeDirection * Time.deltaTime);
+            if((fadeDirection > 0.0f && spriteRenderer.color.a >= 1.0f) || (fadeDirection < 0.0f && spriteRenderer.color.a <= 0.0f))
+            {
+                fadeDirection = 0.0f;
             }
         }
     }
