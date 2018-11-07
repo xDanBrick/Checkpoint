@@ -52,6 +52,7 @@ public class LevelSelect : MonoBehaviour {
                 GameObject.Find("Level " + (buttonIndex + 1).ToString() + " Text").GetComponent<Text>().color = Color.black;
                 ++buttonIndex;
                 GameObject.Find("Level " + (buttonIndex + 1).ToString() + " Text").GetComponent<Text>().color = Color.red;
+                menuBeepSource.Play();
             }
             else if(!mainMenu)
             {
@@ -60,7 +61,9 @@ public class LevelSelect : MonoBehaviour {
                 RectTransform trans = indicator.GetComponent<RectTransform>();
                 trans.localPosition = new Vector3(-200.0f, -345.0f, trans.localPosition.z);
                 GameObject.Find("Menu Text").GetComponent<Text>().color = Color.red;
+                menuBeepSource.Play();
             }
+
         }
         else if (Input.GetKeyDown(KeyCode.UpArrow) && buttonIndex > 0)
         {
@@ -80,6 +83,7 @@ public class LevelSelect : MonoBehaviour {
                 --buttonIndex;
                 GameObject.Find("Level " + (buttonIndex + 1).ToString() + " Text").GetComponent<Text>().color = Color.red;
             }
+            menuBeepSource.Play();
         }
 
         if (Input.GetKeyDown(KeyCode.Return))
@@ -93,6 +97,7 @@ public class LevelSelect : MonoBehaviour {
                 LevelStats.currentLevel = buttonIndex;
                 UnityEngine.SceneManagement.SceneManager.LoadScene("LevelIntro");
             }
+            menuConfirmSource.Play();
         }
     }
 }

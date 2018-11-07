@@ -8,8 +8,12 @@ public class StartScreen : MonoBehaviour {
     private int buttonIndex = 0;
     private Transform indicator;
     // Use this for initialization
+    private AudioSource menuBeepSource;
+    private AudioSource menuConfirmSource;
     void Start () {
         indicator = transform.Find("Indicator");
+        menuConfirmSource = GameObject.Find("MenuConfirmAudio").GetComponent<AudioSource>();
+        menuBeepSource = GameObject.Find("MenuBeepAudio").GetComponent<AudioSource>();
     }
 	
 	// Update is called once per frame
@@ -23,6 +27,7 @@ public class StartScreen : MonoBehaviour {
                 GameObject.Find("Text " + (buttonIndex + 1).ToString()).GetComponent<Text>().color = Color.white;
                 ++buttonIndex;
                 GameObject.Find("Text " + (buttonIndex + 1).ToString()).GetComponent<Text>().color = Color.red;
+                menuBeepSource.Play();
             }
         }
         else if (Input.GetKeyDown(KeyCode.UpArrow) && buttonIndex > 0)
@@ -32,11 +37,12 @@ public class StartScreen : MonoBehaviour {
                 GameObject.Find("Text " + (buttonIndex + 1).ToString()).GetComponent<Text>().color = Color.white;
                 --buttonIndex;
                 GameObject.Find("Text " + (buttonIndex + 1).ToString()).GetComponent<Text>().color = Color.red;
+            menuBeepSource.Play();
         }
 
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            
+            menuConfirmSource.Play();
             if (buttonIndex == 0)
             {
                 LevelStats.currentLevel = 0;
@@ -50,6 +56,7 @@ public class StartScreen : MonoBehaviour {
             {
                 Application.Quit();
             }
+            
         }
     }
 }
