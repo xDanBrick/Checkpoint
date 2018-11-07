@@ -18,8 +18,8 @@ public class GateOpen : MonoBehaviour {
         {
             Transform gateTransform = transform.GetChild(0);
             gateTransform.Translate(0.0f, inc, 0.0f);
-            gateTransform.localScale = new Vector3(gateTransform.localScale.x, gateTransform.localScale.y - (inc * 0.5f), gateTransform.localScale.z);
-            if ((gateTransform.localScale.y < 0.1f && gateOpeningDirection == 1.0f) || (gateTransform.localScale.y >= 1.0f && gateOpeningDirection == -1.0f))
+            gateTransform.localScale = new Vector3(gateTransform.localScale.x, gateTransform.localScale.y - (inc), gateTransform.localScale.z);
+            if ((gateTransform.localScale.y < 0.01f && gateOpeningDirection == 1.0f) || (gateTransform.localScale.y >= 1.0f && gateOpeningDirection == -1.0f))
             {
                 gateOpeningDirection = 0.0f;
             }
@@ -34,7 +34,7 @@ public class GateOpen : MonoBehaviour {
             //If Gate is up and 
             if (collision.gameObject.transform.Find("TestHead"))
             {
-                if (gateTransform.localScale.y >= 0.1f)
+                if (gateTransform.localScale.y >= 0.01f)
                 {
                     gateOpeningDirection = 1.0f;
                 }
