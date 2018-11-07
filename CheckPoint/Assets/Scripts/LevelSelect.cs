@@ -11,7 +11,7 @@ class LevelStats
         "Spiky Climb",
         "Precarious Pass",
         "Crushing Cliffs",
-        ""
+        "Final Test"
     };
 
     public static float[] levelTimes = new float[LevelCount]
