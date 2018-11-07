@@ -281,12 +281,17 @@ Prefab:
     - target: {fileID: 61289221636213852, guid: 8ca4dcca75a318b4cba53e215ce5e5ac,
         type: 2}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 61289221636213852, guid: 8ca4dcca75a318b4cba53e215ce5e5ac,
         type: 2}
       propertyPath: m_AutoTiling
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 61289221636213852, guid: 8ca4dcca75a318b4cba53e215ce5e5ac,
+        type: 2}
+      propertyPath: m_SpriteTilingProperty.adaptiveTiling
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8ca4dcca75a318b4cba53e215ce5e5ac, type: 2}
