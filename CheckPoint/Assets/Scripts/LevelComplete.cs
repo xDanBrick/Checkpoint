@@ -32,8 +32,15 @@ public class LevelComplete : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            ++LevelStats.currentLevel;
-            UnityEngine.SceneManagement.SceneManager.LoadScene("LevelIntro");
+            if (LevelStats.currentLevel < 4)
+            {
+                ++LevelStats.currentLevel;
+                UnityEngine.SceneManagement.SceneManager.LoadScene("LevelIntro");
+            }
+            else
+            {
+                UnityEngine.SceneManagement.SceneManager.LoadScene("StartScene");
+            }
         }
     }
 }
