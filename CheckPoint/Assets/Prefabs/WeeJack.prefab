@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 114719190935670606}
   - component: {fileID: 61852691301091784}
   - component: {fileID: 61583466394141624}
+  - component: {fileID: 58920278522234204}
   m_Layer: 0
   m_Name: WeeJack
   m_TagString: Player
@@ -149,6 +150,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!58 &58920278522234204
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1725213462290424}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.017, y: -0.18}
+  serializedVersion: 2
+  m_Radius: 0.14
 --- !u!61 &61340895172026022
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -186,7 +202,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.177977, y: 0.085418195}
+  m_Offset: {x: 0.2, y: 0.05}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -197,7 +213,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.76315254, y: 0.6166912}
+  m_Size: {x: 0.6, y: 0.7}
   m_EdgeRadius: 0
 --- !u!61 &61852691301091784
 BoxCollider2D:
@@ -207,11 +223,11 @@ BoxCollider2D:
   m_GameObject: {fileID: 1725213462290424}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 50b216b5b7585e644bc079f29f1807d4, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.022840142, y: 0.041319504}
+  m_Offset: {x: -0.001, y: 0.17}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -222,7 +238,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.4000494, y: 0.79348826}
+  m_Size: {x: 0.3, y: 0.45}
   m_EdgeRadius: 0
 --- !u!95 &95457440972904178
 Animator:
@@ -271,7 +287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d08f91df3bd212f429df17f53ce2f364, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MaxSpeed: 2.5
+  m_MaxSpeed: 3
   m_JumpForce: 550
   m_WhatIsGround:
     serializedVersion: 2
