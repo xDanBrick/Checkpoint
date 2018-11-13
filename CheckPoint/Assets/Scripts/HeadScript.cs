@@ -4,20 +4,42 @@ using UnityEngine;
 
 public class HeadScript : MonoBehaviour {
 
+    private const float headWakeupDistance = 3.0f;
+
     private AudioSource squishSource;
     private AudioSource landingSource;
     private AudioSource headRespawningSource;
+    private Rigidbody2D headBody;
     private float headRespawn = -1.0f;
+    private bool inRangeOfPlayer = false;
 
     private Transform playerTransform;
+
+    private void ChangeHeadState()
+    {
+        if (transform.parent != playerTransform && headBody.bodyType == RigidbodyType2D.Static)
+        {
+            float distance = Vector2.Distance(transform.position, playerTransform.position);
+            GetComponent<Animator>().SetBool("HeadSleeping", distance < headWakeupDistance ? false : true);
+        }
+    }
+
+
     // Use this for initialization
     void Start () {
         squishSource = GameObject.Find("SquishAudio").GetComponent<AudioSource>();
         landingSource = GameObject.Find("LandingAudio").GetComponent<AudioSource>();
         headRespawningSource = GameObject.Find("HeadSpawningAudio").GetComponent<AudioSource>();
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        headBody = GetComponent<Rigidbody2D>();
+        ChangeHeadState();
     }
 	
+    public void PlayerAndHeadCombined()
+    {
+        GetComponent<Animator>().SetBool("HeadSleeping", false);
+    }
+
 	// Update is called once per frame
 	void Update () {
 		if(headRespawn > 0.0f)
@@ -34,7 +56,10 @@ public class HeadScript : MonoBehaviour {
                 headRespawningSource.Play();
             }
         }
-	}
+
+        //If the is on the ground
+        ChangeHeadState();
+    }
 
     private void DestroyHead()
     {
@@ -55,7 +80,7 @@ public class HeadScript : MonoBehaviour {
         landingSource.Play();
         GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
         GetComponent<Animator>().SetTrigger("HeadHitGround");
-        GetComponent<Animator>().SetTrigger("HeadSleep");
+        //
         playerTransform.GetComponent<PlayerCharacter>().HeadLanded();
     }
 

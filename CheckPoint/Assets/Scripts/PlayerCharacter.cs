@@ -260,9 +260,9 @@ public class PlayerCharacter : MonoBehaviour
         m_PlayerHead.Translate(new Vector3(0.0f, 1.0f, 0.0f));
         m_PlayerHead.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
         m_PlayerHead.GetComponent<Rigidbody2D>().AddForce(new Vector2(0.0f, 250.0f));
+        m_PlayerHead.GetComponent<HeadScript>().PlayerAndHeadCombined();
         bodyRespawnDelay = 1.5f;
         GetComponent<SpriteRenderer>().enabled = true;
-        m_PlayerHead.GetComponent<Animator>().SetTrigger("HeadWakeUp");
         transform.position = currentSpawnPosition;
         bodyIsDead = false;
         bodySpawningSource.Play();
@@ -282,7 +282,7 @@ public class PlayerCharacter : MonoBehaviour
         }
         if(collision.gameObject.name == "TestHead" && !headInAir && m_PlayerHead.parent != transform && !bodyIsDead)
         {
-            m_PlayerHead.GetComponent<Animator>().SetTrigger("HeadWakeUp");
+            //m_PlayerHead.GetComponent<Animator>().SetTrigger("HeadWakeUp");
         }
     }
 
@@ -295,7 +295,7 @@ public class PlayerCharacter : MonoBehaviour
 
         if (collision.gameObject.name == "TestHead" && !headInAir && m_PlayerHead.parent != transform && !bodyIsDead)
         {
-            m_PlayerHead.GetComponent<Animator>().SetTrigger("HeadSleep");
+            //m_PlayerHead.GetComponent<Animator>().SetTrigger("HeadSleep");
         }
     }
     public void DropHead()
