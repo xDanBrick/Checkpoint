@@ -248,6 +248,20 @@ Prefab:
       propertyPath: m_RootOrder
       value: 23
       objectReference: {fileID: 0}
+    - target: {fileID: 1247076150267300, guid: 395683ac775640047b29fbc92a6e7a48, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 82416669653700504, guid: 395683ac775640047b29fbc92a6e7a48,
+        type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 82142389184810780, guid: 395683ac775640047b29fbc92a6e7a48,
+        type: 2}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 395683ac775640047b29fbc92a6e7a48, type: 2}
   m_IsPrefabParent: 0
@@ -3699,7 +3713,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4599686470478134, guid: ae9cad811434eae4ebd8cab637a68e16, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -3.35
+      value: -3.507
       objectReference: {fileID: 0}
     - target: {fileID: 4599686470478134, guid: ae9cad811434eae4ebd8cab637a68e16, type: 2}
       propertyPath: m_LocalPosition.z
@@ -3728,6 +3742,16 @@ Prefab:
     - target: {fileID: 1773811549192522, guid: ae9cad811434eae4ebd8cab637a68e16, type: 2}
       propertyPath: m_TagString
       value: Head
+      objectReference: {fileID: 0}
+    - target: {fileID: 61852691301091784, guid: ae9cad811434eae4ebd8cab637a68e16,
+        type: 2}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 61852691301091784, guid: ae9cad811434eae4ebd8cab637a68e16,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 0.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ae9cad811434eae4ebd8cab637a68e16, type: 2}
@@ -3879,6 +3903,11 @@ Prefab:
         type: 2}
       propertyPath: hintText
       value: '"Congratulations! Thanks for Playing!"'
+      objectReference: {fileID: 0}
+    - target: {fileID: 61220633292561156, guid: 7f10b8a295e712f42b75b5b895d0c382,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7f10b8a295e712f42b75b5b895d0c382, type: 2}
