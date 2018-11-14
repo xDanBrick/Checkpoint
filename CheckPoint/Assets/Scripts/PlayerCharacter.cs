@@ -338,7 +338,7 @@ public class PlayerCharacter : MonoBehaviour
             {
                 throwDelay = 0.25f;
                 m_Anim.SetTrigger("ThrowHead");
-                m_PlayerHead.GetComponent<Animator>().SetTrigger("ThrowHead");
+                m_PlayerHead.GetComponent<Animator>().SetBool("ThrowHead", true);
             }
         }
     }

@@ -63,12 +63,12 @@ public class HeadScript : MonoBehaviour {
 
     private void DestroyHead()
     {
-        headRespawn = 1.3f;
+        headRespawn = 1.0f;
         playerTransform.GetComponent<PlayerCharacter>().headRespawing = true;
         
         GetComponent<Rigidbody2D>().simulated = false;
         squishSource.Play();
-        GetComponent<Animator>().SetTrigger("HeadHitGround");
+        GetComponent<Animator>().SetBool("ThrowHead", false);
         GetComponent<Animator>().SetTrigger("Death");
         playerTransform.GetComponent<PlayerCharacter>().HeadDestroyed();
         playerTransform.GetComponent<Animator>().SetBool("HasHead", true);
@@ -79,7 +79,7 @@ public class HeadScript : MonoBehaviour {
         PlayerCharacter.currentSpawnPosition = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
         landingSource.Play();
         GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
-        GetComponent<Animator>().SetTrigger("HeadHitGround");
+        GetComponent<Animator>().SetBool("ThrowHead", false);
         //
         playerTransform.GetComponent<PlayerCharacter>().HeadLanded();
     }
