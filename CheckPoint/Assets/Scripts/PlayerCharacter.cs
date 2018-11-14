@@ -112,8 +112,8 @@ public class PlayerCharacter : MonoBehaviour
                 m_PlayerHead.SetParent(null);
                 Rigidbody2D body = m_PlayerHead.GetComponent<Rigidbody2D>();
                 body.bodyType = RigidbodyType2D.Dynamic;
-                m_PlayerHead.GetComponent<Rigidbody2D>().velocity = new Vector2(0.0f, 0.0f);
-                m_PlayerHead.GetComponent<Rigidbody2D>().simulated = true;
+                body.velocity = new Vector2(0.0f, 0.0f);
+                body.simulated = true;
                 body.AddRelativeForce(new Vector2(transform.localScale.x > 0.0f ? throwDistance : -throwDistance, 200.0f));
                 throwSource.Play();
                 throwDelay = -1.0f;

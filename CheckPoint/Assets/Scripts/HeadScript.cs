@@ -63,7 +63,7 @@ public class HeadScript : MonoBehaviour {
 
     private void DestroyHead()
     {
-        headRespawn = 1.417f;
+        headRespawn = 1.3f;
         playerTransform.GetComponent<PlayerCharacter>().headRespawing = true;
         
         GetComponent<Rigidbody2D>().simulated = false;
