@@ -249,7 +249,10 @@ public class PlayerCharacter : MonoBehaviour
         {
             m_Anim.SetBool("IsJumping", false);
             m_PlayerHead.GetComponent<Animator>().SetBool("IsJumping", false);
-            landSource.Play();
+            if(collision.relativeVelocity.y > 1.0f)
+            {
+                landSource.Play();
+            }
         }
         
     }
