@@ -220,7 +220,7 @@ public class PlayerCharacter : MonoBehaviour
         if (collision.gameObject.tag == "Death")
         {
             //If the head exists and is not attached to the player
-            if (m_PlayerHead.parent == transform)
+            if (m_PlayerHead.parent == transform || m_PlayerHead.GetComponent<HeadScript>().HeadIsRespawning())
             {
                 //Reset the players position
                 GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;

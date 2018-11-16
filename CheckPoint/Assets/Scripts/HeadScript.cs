@@ -40,6 +40,11 @@ public class HeadScript : MonoBehaviour {
         GetComponent<Animator>().SetBool("HeadSleeping", false);
     }
 
+    public bool HeadIsRespawning()
+    {
+        return headRespawn > 0.0f;
+    }
+
 	// Update is called once per frame
 	void Update () {
 		if(headRespawn > 0.0f)
