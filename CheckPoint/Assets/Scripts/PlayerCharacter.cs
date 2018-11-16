@@ -260,7 +260,7 @@ public class PlayerCharacter : MonoBehaviour
     public void RespawnBody()
     {
         m_Anim.SetTrigger("Respawn");
-        if (Physics2D.Raycast(currentSpawnPosition, Vector2.down, 50, LayerMask.GetMask("Spikes")))
+        if (Physics2D.Raycast(currentSpawnPosition, Vector2.down, 4.0f, LayerMask.GetMask("Spikes")))
         {
             m_PlayerHead.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
             m_PlayerHead.GetComponent<Rigidbody2D>().simulated = false;
