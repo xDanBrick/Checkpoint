@@ -265,7 +265,7 @@ public class PlayerCharacter : MonoBehaviour
         m_PlayerHead.GetComponent<Rigidbody2D>().AddForce(new Vector2(0.0f, 250.0f));
         m_PlayerHead.GetComponent<HeadScript>().PlayerAndHeadCombined();
         //m_Rigidbody2D.AddForce(new Vector2(0.0f, 500.0f));
-        bodyRespawnDelay = 1.5f;
+        bodyRespawnDelay = 1.0f;
         GetComponent<SpriteRenderer>().enabled = true;
         transform.position = currentSpawnPosition;
         bodyIsDead = false;
