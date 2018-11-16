@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212812889173236660}
   - component: {fileID: 50048034956868004}
   - component: {fileID: 61065487873898938}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Spikes
   m_TagString: Death
   m_Icon: {fileID: 0}
