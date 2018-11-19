@@ -103,6 +103,7 @@ public class PlayerCharacter : MonoBehaviour
 
     private void Update()
     {
+        Debug.DrawLine(new Vector3(transform.position.x, transform.position.y + 1.0f, transform.position.z), new Vector3(transform.position.x + (transform.localScale.x > 1.0f ? 2.0f : -2.0f), transform.position.y + 1.0f, transform.position.z));
         if (throwDelay >= 0.0f)
         {
             throwDelay -= Time.deltaTime;
@@ -130,11 +131,11 @@ public class PlayerCharacter : MonoBehaviour
             bodyRespawnDelay -= Time.deltaTime;
             if (bodyRespawnDelay < 0.0f)
             {
-                //GetComponent<SpriteRenderer>().enabled = true;
                 m_PlayerHead.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
                 m_PlayerHead.GetComponent<Rigidbody2D>().simulated = false;
                 m_PlayerHead.transform.SetParent(transform);
                 m_PlayerHead.transform.position = Vector3.zero;
+                
                 m_PlayerHead.transform.localPosition = new Vector3(0.0f, headOffset, 0.0f);
                 m_PlayerHead.transform.localScale = new Vector3(1.0f, m_PlayerHead.transform.localScale.y, m_PlayerHead.transform.localScale.z);
                 canMovePlayer = true;
@@ -220,7 +221,7 @@ public class PlayerCharacter : MonoBehaviour
         if (collision.gameObject.tag == "Death")
         {
             //If the head exists and is not attached to the player
-            if (m_PlayerHead.parent == transform)
+            if (m_PlayerHead.parent == transform || m_PlayerHead.GetComponent<HeadScript>().HeadIsRespawning())
             {
                 //Reset the players position
                 GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
@@ -260,16 +261,30 @@ public class PlayerCharacter : MonoBehaviour
     public void RespawnBody()
     {
         m_Anim.SetTrigger("Respawn");
-        m_PlayerHead.Translate(new Vector3(0.0f, 1.0f, 0.0f));
-        m_PlayerHead.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
-        m_PlayerHead.GetComponent<Rigidbody2D>().AddForce(new Vector2(0.0f, 250.0f));
-        m_PlayerHead.GetComponent<HeadScript>().PlayerAndHeadCombined();
-        //m_Rigidbody2D.AddForce(new Vector2(0.0f, 500.0f));
-        bodyRespawnDelay = 1.5f;
-        GetComponent<SpriteRenderer>().enabled = true;
+        if (Physics2D.Raycast(currentSpawnPosition, Vector2.down, 4.0f, LayerMask.GetMask("Spikes")))
+        {
+            m_PlayerHead.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+            m_PlayerHead.GetComponent<Rigidbody2D>().simulated = false;
+            m_PlayerHead.transform.SetParent(transform);
+            m_PlayerHead.transform.position = Vector3.zero;
+
+            m_PlayerHead.transform.localPosition = new Vector3(0.0f, headOffset, 0.0f);
+            m_PlayerHead.transform.localScale = new Vector3(1.0f, m_PlayerHead.transform.localScale.y, m_PlayerHead.transform.localScale.z);
+        }
+        else
+        {
+            bodyRespawnDelay = 1.0f;
+            m_PlayerHead.Translate(new Vector3(0.0f, 1.0f, 0.0f));
+            m_PlayerHead.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+            m_PlayerHead.GetComponent<Rigidbody2D>().AddForce(new Vector2(0.0f, 250.0f));
+            m_PlayerHead.GetComponent<HeadScript>().PlayerAndHeadCombined();
+        }
         transform.position = currentSpawnPosition;
         bodyIsDead = false;
         bodySpawningSource.Play();
+        //m_PlayerHead.transform.SetParent(transform);
+        //m_PlayerHead.transform.position = Vector3.zero;
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -308,14 +323,22 @@ public class PlayerCharacter : MonoBehaviour
         {
             if(canPutdownHead && !headRespawing)
             {
-                headInAir = true;                //Place the head down in from of what ever way the player is facing
-                m_PlayerHead.Translate(dropDistance, 0.0f, 0.0f);
-                m_PlayerHead.SetParent(null);
-                m_PlayerHead.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
-                m_PlayerHead.GetComponent<Rigidbody2D>().simulated = true;
-                m_Anim.SetBool("HasHead", false);
-                m_PlayerHead.GetComponent<Animator>().SetFloat("WalkSpeed", 0.0f);
-                m_PlayerHead.GetComponent<Animator>().SetBool("IsJumping", false);
+                if (!Physics2D.Raycast(new Vector3(transform.position.x, transform.position.y + 1.0f, transform.position.z), transform.localScale.x > 1.0f ? Vector2.right : Vector2.left, 2.0f, LayerMask.GetMask("Ground")))
+                {
+                    //
+                    headInAir = true;                //Place the head down in from of what ever way the player is facing
+                    m_PlayerHead.Translate(dropDistance, 0.0f, 0.0f);
+                    m_PlayerHead.SetParent(null);
+                    m_PlayerHead.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+                    m_PlayerHead.GetComponent<Rigidbody2D>().simulated = true;
+                    m_Anim.SetBool("HasHead", false);
+                    m_PlayerHead.GetComponent<Animator>().SetFloat("WalkSpeed", 0.0f);
+                    m_PlayerHead.GetComponent<Animator>().SetBool("IsJumping", false);
+                }
+                else
+                {
+                    Debug.Log("Cant put down head");
+                }
             }
         }
         else if(Mathf.Abs(transform.position.x - m_PlayerHead.position.x) < 1.3f && Mathf.Abs(transform.position.y - m_PlayerHead.position.y) < 1.3f)
@@ -336,9 +359,12 @@ public class PlayerCharacter : MonoBehaviour
         {
             if (canPutdownHead && !headRespawing)
             {
-                throwDelay = 0.25f;
-                m_Anim.SetTrigger("ThrowHead");
-                m_PlayerHead.GetComponent<Animator>().SetBool("ThrowHead", true);
+                if (!Physics2D.Raycast(new Vector3(transform.position.x, transform.position.y + 1.0f, transform.position.z), transform.localScale.x > 1.0f ? Vector2.right : Vector2.left, 2.0f, LayerMask.GetMask("Ground")))
+                {
+                    throwDelay = 0.25f;
+                    m_Anim.SetTrigger("ThrowHead");
+                    m_PlayerHead.GetComponent<Animator>().SetBool("ThrowHead", true);
+                }
             }
         }
     }
