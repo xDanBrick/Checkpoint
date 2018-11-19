@@ -85,8 +85,8 @@ public class HeadScript : MonoBehaviour {
         landingSource.Play();
         GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
         GetComponent<Animator>().SetBool("ThrowHead", false);
-        //
         playerTransform.GetComponent<PlayerCharacter>().HeadLanded();
+        Debug.Log("Hed Collided");
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
