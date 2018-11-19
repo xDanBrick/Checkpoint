@@ -71,7 +71,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1443014874881278}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 18.5, y: -2.5, z: 1.6232463}
+  m_LocalPosition: {x: 40.5, y: 1.4, z: 1.6232463}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children:
   - {fileID: 4626960189753070}
@@ -86,7 +86,7 @@ Transform:
   m_GameObject: {fileID: 1051838553043348}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.75, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4626960189753070}
   m_RootOrder: 0
@@ -217,7 +217,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dade89392b218e94da15b293fe097709, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: EX Level 4
 --- !u!212 &212620760355834506
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -253,7 +252,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5526da21480b64043b8fd8e3ac212c39, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fe86c7f9c69c80a488b47ab516c7ab48, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

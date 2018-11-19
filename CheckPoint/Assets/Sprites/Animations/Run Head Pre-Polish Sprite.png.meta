@@ -58,7 +58,7 @@ TextureImporter:
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 400
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 1
+  spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -131,10 +131,10 @@ TextureImporter:
       name: Run Head Pre-Polish Sprite_0
       rect:
         serializedVersion: 2
-        x: 408
+        x: 410
         y: 6398
-        width: 472
-        height: 451
+        width: 468
+        height: 452
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,7 +142,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d12ec5ea490c0b647ae9e6c98bb6946b
+      spriteID: e1042e345f89d1941abd1d2e74c82317
       vertices: []
       indices: 
       edges: []
@@ -152,9 +152,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1955
-        y: 6397
+        y: 6398
         width: 520
-        height: 454
+        height: 452
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,7 +162,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fa301a53e414af244b62a40de46d7984
+      spriteID: 7cea39804d24ac74d83f74496a49a332
       vertices: []
       indices: 
       edges: []
@@ -171,10 +171,10 @@ TextureImporter:
       name: Run Head Pre-Polish Sprite_2
       rect:
         serializedVersion: 2
-        x: 368
-        y: 5382
-        width: 498
-        height: 456
+        x: 369
+        y: 5383
+        width: 496
+        height: 455
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,7 +182,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 56d27e3e8149fc347b850794b7c65fa8
+      spriteID: 310cf79a8083f1644b32322da0120330
       vertices: []
       indices: 
       edges: []
@@ -191,10 +191,10 @@ TextureImporter:
       name: Run Head Pre-Polish Sprite_3
       rect:
         serializedVersion: 2
-        x: 1940
-        y: 5386
-        width: 499
-        height: 474
+        x: 1942
+        y: 5387
+        width: 495
+        height: 471
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -202,7 +202,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 72a2f4b4c2af1784da570eabb49d3c52
+      spriteID: 406345f22b1dc934db20634a9c6cbc53
       vertices: []
       indices: 
       edges: []
@@ -211,29 +211,9 @@ TextureImporter:
       name: Run Head Pre-Polish Sprite_4
       rect:
         serializedVersion: 2
-        x: 395
-        y: 4407
-        width: 509
-        height: 462
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6d80c4821e0ad764fb450743032b3ab5
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Run Head Pre-Polish Sprite_5
-      rect:
-        serializedVersion: 2
-        x: 1940
-        y: 4402
-        width: 502
+        x: 397
+        y: 4409
+        width: 505
         height: 458
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -242,7 +222,27 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 64145fad328355f478f1d0a1fcf1c19d
+      spriteID: 393252f70c1ceef40b8e16a943779a91
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run Head Pre-Polish Sprite_5
+      rect:
+        serializedVersion: 2
+        x: 1942
+        y: 4402
+        width: 499
+        height: 458
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b474d83b45c7b84082fbd0321b7dd51
       vertices: []
       indices: 
       edges: []
@@ -251,10 +251,10 @@ TextureImporter:
       name: Run Head Pre-Polish Sprite_6
       rect:
         serializedVersion: 2
-        x: 409
+        x: 410
         y: 3391
-        width: 471
-        height: 415
+        width: 468
+        height: 413
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -262,7 +262,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e9a0a614288cce0419ae84702f36b678
+      spriteID: 0cb90eb3a4b41764ca152fca1d28dbd8
       vertices: []
       indices: 
       edges: []
@@ -271,10 +271,10 @@ TextureImporter:
       name: Run Head Pre-Polish Sprite_7
       rect:
         serializedVersion: 2
-        x: 1964
-        y: 3375
-        width: 471
-        height: 439
+        x: 1965
+        y: 3377
+        width: 469
+        height: 437
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -282,7 +282,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 86ccfb2e03fa3364ab7737a23b835503
+      spriteID: ed03678aa8f1e684c8fbcdaf87a6cda3
       vertices: []
       indices: 
       edges: []
@@ -291,10 +291,10 @@ TextureImporter:
       name: Run Head Pre-Polish Sprite_8
       rect:
         serializedVersion: 2
-        x: 382
+        x: 383
         y: 2365
-        width: 495
-        height: 467
+        width: 492
+        height: 465
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -302,7 +302,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4c791438ccac8be4c9e324ab9d91809b
+      spriteID: f63ab5ec9f651964c8388ec5fde5cf8f
       vertices: []
       indices: 
       edges: []
@@ -311,10 +311,10 @@ TextureImporter:
       name: Run Head Pre-Polish Sprite_9
       rect:
         serializedVersion: 2
-        x: 1936
-        y: 2378
-        width: 475
-        height: 443
+        x: 1938
+        y: 2379
+        width: 472
+        height: 441
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -322,7 +322,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 34c45b943efb29841beaf2c59c7ea2ae
+      spriteID: c788ef451ad29164daa6782db3f2ce57
       vertices: []
       indices: 
       edges: []
@@ -331,10 +331,10 @@ TextureImporter:
       name: Run Head Pre-Polish Sprite_10
       rect:
         serializedVersion: 2
-        x: 405
-        y: 1393
-        width: 470
-        height: 440
+        x: 407
+        y: 1395
+        width: 468
+        height: 437
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -342,7 +342,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 93a261e6b79d00741aad6b80eb86722f
+      spriteID: 4a8aeba6df7f90949a90d4737243cf1d
       vertices: []
       indices: 
       edges: []
@@ -351,10 +351,10 @@ TextureImporter:
       name: Run Head Pre-Polish Sprite_11
       rect:
         serializedVersion: 2
-        x: 1977
-        y: 1376
-        width: 470
-        height: 442
+        x: 1979
+        y: 1377
+        width: 468
+        height: 441
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -362,7 +362,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 387a3fe78be523649809fb85ec9927c7
+      spriteID: fb2a59cc55b54624fba0d9a78bf29035
       vertices: []
       indices: 
       edges: []
@@ -371,10 +371,10 @@ TextureImporter:
       name: Run Head Pre-Polish Sprite_12
       rect:
         serializedVersion: 2
-        x: 405
-        y: 405
-        width: 538
-        height: 442
+        x: 407
+        y: 407
+        width: 536
+        height: 441
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -382,7 +382,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d7c5493ae67cbda448a1ec1320ab7660
+      spriteID: 7ec3a689c81d07143b69cadf155ea6ad
       vertices: []
       indices: 
       edges: []

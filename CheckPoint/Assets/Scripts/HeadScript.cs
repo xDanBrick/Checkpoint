@@ -86,7 +86,26 @@ public class HeadScript : MonoBehaviour {
         GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
         GetComponent<Animator>().SetBool("ThrowHead", false);
         playerTransform.GetComponent<PlayerCharacter>().HeadLanded();
-        Debug.Log("Hed Collided");
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if(GetComponent<Rigidbody2D>().bodyType != RigidbodyType2D.Static)
+        {
+            if (collision.gameObject.tag == "Ground")
+            {
+                for (int i = 0; i < collision.contacts.Length; ++i)
+                {
+                    Debug.Log(collision.contacts[i].normal.y);
+                    //If the head collides with the top of the platform
+                    if (collision.contacts[i].normal.y > 0.9f && collision.contacts[i].normal.y < 1.1f)
+                    {
+                        setHeadSpawnPosition();
+                        return;
+                    }
+                }
+            }
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -129,6 +148,7 @@ public class HeadScript : MonoBehaviour {
         {
             for (int i = 0; i < collision.contacts.Length; ++i)
             {
+                Debug.Log(collision.contacts[i].normal.y);
                 //If the head collides with the top of the platform
                 if (collision.contacts[i].normal.y > 0.9f && collision.contacts[i].normal.y < 1.1f)
                 {
