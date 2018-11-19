@@ -36,6 +36,7 @@ public class PlayerCharacter : MonoBehaviour
     public bool headRespawing = false;
     public static bool hasCollectable = false;
     private bool bodyIsDead = false;
+    private bool isJumping = false;
 
     private void Awake()
     {
@@ -186,10 +187,11 @@ public class PlayerCharacter : MonoBehaviour
                     Flip();
                 }
                 // If the player should jump...
-                if (m_Grounded && jump) // m_Anim.SetTrigger(0);
+                if (m_Grounded && jump && !isJumping) // m_Anim.SetTrigger(0);
                 {
                     // Add a vertical force to the player.
                     m_Grounded = false;
+                    isJumping = true;
                     m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
                     jumpSource.Play();
                     m_Anim.SetTrigger("Jump");
@@ -248,6 +250,7 @@ public class PlayerCharacter : MonoBehaviour
         }
         if(collision.gameObject.tag == "Ground" || collision.gameObject.tag == "Crusher" || collision.gameObject.tag == "Head")
         {
+            isJumping = false;
             m_Anim.SetBool("IsJumping", false);
             m_PlayerHead.GetComponent<Animator>().SetBool("IsJumping", false);
             if(collision.relativeVelocity.y > 1.0f)
