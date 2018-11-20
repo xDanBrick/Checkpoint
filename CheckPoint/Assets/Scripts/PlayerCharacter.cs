@@ -192,6 +192,7 @@ public class PlayerCharacter : MonoBehaviour
                     // Add a vertical force to the player.
                     m_Grounded = false;
                     isJumping = true;
+                    m_Rigidbody2D.velocity = new Vector2(m_Rigidbody2D.velocity.x, 0.0f);
                     m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
                     jumpSource.Play();
                     m_Anim.SetTrigger("Jump");
@@ -257,8 +258,29 @@ public class PlayerCharacter : MonoBehaviour
             {
                 landSource.Play();
             }
+            if (collision.gameObject.tag == "Head" && bodyRespawnDelay < 0.0f)
+            {
+                for (int i = 0; i < collision.contacts.Length; ++i)
+                {
+                    if(collision.contacts[i].normal.y == -1.0f)
+                    {
+                        PickupHead();
+                    }
+                }
+            }
         }
         
+    }
+
+    private void PickupHead()
+    {
+        m_PlayerHead.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+        m_PlayerHead.GetComponent<Rigidbody2D>().simulated = false;
+        m_PlayerHead.transform.SetParent(transform);
+        m_PlayerHead.transform.position = Vector3.zero;
+        m_PlayerHead.transform.localPosition = new Vector3(0.0f, headOffset, 0.0f);
+        m_PlayerHead.transform.localScale = new Vector3(1.0f, m_PlayerHead.transform.localScale.y, m_PlayerHead.transform.localScale.z);
+        m_Anim.SetBool("HasHead", true);
     }
 
     public void RespawnBody()
@@ -346,13 +368,7 @@ public class PlayerCharacter : MonoBehaviour
         }
         else if(Mathf.Abs(transform.position.x - m_PlayerHead.position.x) < 1.3f && Mathf.Abs(transform.position.y - m_PlayerHead.position.y) < 1.3f)
         {
-            m_PlayerHead.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
-            m_PlayerHead.GetComponent<Rigidbody2D>().simulated = false;
-            m_PlayerHead.transform.SetParent(transform);
-            m_PlayerHead.transform.position = Vector3.zero;
-            m_PlayerHead.transform.localPosition = new Vector3(0.0f, headOffset, 0.0f);
-            m_PlayerHead.transform.localScale = new Vector3(1.0f, m_PlayerHead.transform.localScale.y, m_PlayerHead.transform.localScale.z);
-            m_Anim.SetBool("HasHead", true);
+            PickupHead();
         }
     }
 
