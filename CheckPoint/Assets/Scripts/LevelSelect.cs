@@ -20,7 +20,7 @@ class LevelStats
         40.0f,
         45.0f,
         50.0f,
-        80.0f,
+        90.0f,
     };
     public static int currentLevel = 0;
     public static float levelTime = 0.0f;

@@ -24,7 +24,8 @@ public class LevelComplete : MonoBehaviour {
             transform.Find("Star 3").GetComponent<Image>().color = Color.white;
         }
         transform.Find("Level Complete Number").GetComponent<Text>().text = (LevelStats.currentLevel + 1).ToString();
-        transform.Find("TimeText").GetComponent<Text>().text = "Your time is " + LevelStats.levelTime.ToString("f1");
+        transform.Find("TargetTime").GetComponent<Text>().text = "Target Time: " + (LevelStats.levelTimes[LevelStats.currentLevel]).ToString("f1");
+        transform.Find("TimeText").GetComponent<Text>().text = "Your time is: " + LevelStats.levelTime.ToString("f1");
     }
 
     // Update is called once per frame

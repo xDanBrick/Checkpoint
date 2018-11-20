@@ -17,6 +17,6 @@ public class Timer : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         timer += Time.deltaTime;
-        timerText.text = timer.ToString("f1");
+        timerText.text = "Time: " + timer.ToString("f1");
     }
 }
