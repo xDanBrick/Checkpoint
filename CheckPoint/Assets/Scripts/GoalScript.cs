@@ -18,7 +18,9 @@ public class GoalScript : MonoBehaviour {
             {
                 if (!collision.isTrigger)
                 {
-                    if (GameObject.Find("Timer").GetComponent<Timer>().timer < LevelStats.levelTimes[LevelStats.currentLevel])
+                    LevelStats.levelTime = GameObject.Find("Timer").GetComponent<Timer>().timer;
+                    GameObject.Find("Timer").GetComponent<Timer>().enabled = false;
+                    if (LevelStats.levelTime < LevelStats.levelTimes[LevelStats.currentLevel])
                     {
                         PlayerPrefs.SetInt("Level " + (LevelStats.currentLevel + 1).ToString() + " Time", 1);
                     }

@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class LevelComplete : MonoBehaviour {
 
-    [SerializeField] Sprite completeSprite;
     // Use this for initialization
     void Start () {
         string levelName = "Level " + (LevelStats.currentLevel + 1).ToString();
@@ -14,17 +13,18 @@ public class LevelComplete : MonoBehaviour {
         int collectable = PlayerPrefs.GetInt(levelName + " Collectable");
         if (complete != 0)
         {
-            transform.Find("Star 1").GetComponent<Image>().sprite = completeSprite;
+            transform.Find("Star 1").GetComponent<Image>().color = Color.white;
         }
         if (time != 0)
         {
-            transform.Find("Star 2").GetComponent<Image>().sprite = completeSprite;
+            transform.Find("Star 2").GetComponent<Image>().color = Color.white;
         }
         if (collectable != 0)
         {
-            transform.Find("Star 3").GetComponent<Image>().sprite = completeSprite;
+            transform.Find("Star 3").GetComponent<Image>().color = Color.white;
         }
         transform.Find("Level Complete Number").GetComponent<Text>().text = (LevelStats.currentLevel + 1).ToString();
+        transform.Find("TimeText").GetComponent<Text>().text = "Your time is " + LevelStats.levelTime.ToString("f1");
     }
 
     // Update is called once per frame

@@ -23,6 +23,7 @@ class LevelStats
         80.0f,
     };
     public static int currentLevel = 0;
+    public static float levelTime = 0.0f;
 }
 
 public class LevelSelect : MonoBehaviour {
