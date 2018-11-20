@@ -72,6 +72,7 @@ public class HeadScript : MonoBehaviour {
         playerTransform.GetComponent<PlayerCharacter>().headRespawing = true;
         
         GetComponent<Rigidbody2D>().simulated = false;
+        GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         squishSource.Play();
         GetComponent<Animator>().SetBool("ThrowHead", false);
         GetComponent<Animator>().SetTrigger("Death");
