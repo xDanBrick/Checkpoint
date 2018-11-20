@@ -16,11 +16,11 @@ class LevelStats
 
     public static float[] levelTimes = new float[LevelCount]
     {
-        20.0f,
-        20.0f,
-        20.0f,
-        20.0f,
-        20.0f,
+        30.0f,
+        40.0f,
+        45.0f,
+        50.0f,
+        80.0f,
     };
     public static int currentLevel = 0;
 }
