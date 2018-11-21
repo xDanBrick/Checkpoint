@@ -326,10 +326,6 @@ public class PlayerCharacter : MonoBehaviour
             hasCollectable = true;
             Destroy(collision.gameObject);
         }
-        if(collision.gameObject.name == "TestHead" && !headInAir && m_PlayerHead.parent != transform && !bodyIsDead)
-        {
-            //m_PlayerHead.GetComponent<Animator>().SetTrigger("HeadWakeUp");
-        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -337,11 +333,6 @@ public class PlayerCharacter : MonoBehaviour
         if (collision.gameObject.tag == "Ground")
         {
             canPutdownHead = true;
-        }
-
-        if (collision.gameObject.name == "TestHead" && !headInAir && m_PlayerHead.parent != transform && !bodyIsDead)
-        {
-            //m_PlayerHead.GetComponent<Animator>().SetTrigger("HeadSleep");
         }
     }
     public void DropHead()
