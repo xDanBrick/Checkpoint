@@ -196,7 +196,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967240
   dropDistance: 1
-  throwDistance: 300
+  throwDistance: 400
   headRespawing: 0
 --- !u!114 &114926313567240950
 MonoBehaviour:
