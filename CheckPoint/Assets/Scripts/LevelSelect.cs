@@ -44,7 +44,7 @@ public class LevelSelect : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if ((Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S)))
         {
             if(buttonIndex < 4)
             {
@@ -66,7 +66,7 @@ public class LevelSelect : MonoBehaviour {
             }
 
         }
-        else if (Input.GetKeyDown(KeyCode.UpArrow) && buttonIndex > 0)
+        else if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && buttonIndex > 0)
         {
             if (mainMenu)
             {

@@ -20,7 +20,7 @@ public class StartScreen : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if ((Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S)))
         {
             if (buttonIndex < 2)
             {
@@ -32,7 +32,7 @@ public class StartScreen : MonoBehaviour {
                 menuBeepSource.Play();
             }
         }
-        else if (Input.GetKeyDown(KeyCode.UpArrow) && buttonIndex > 0)
+        else if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && buttonIndex > 0)
         {
             RectTransform trans = indicator.GetComponent<RectTransform>();
                 trans.localPosition = new Vector3(trans.localPosition.x, trans.localPosition.y + 90, trans.localPosition.z);

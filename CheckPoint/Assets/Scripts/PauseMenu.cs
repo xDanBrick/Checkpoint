@@ -19,7 +19,7 @@ public class PauseMenu : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetKeyDown(KeyCode.DownArrow) && buttonIndex < 2)
+		if((Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S)) && buttonIndex < 2)
         {
             
             RectTransform trans = indicator.GetComponent<RectTransform>();
@@ -29,7 +29,7 @@ public class PauseMenu : MonoBehaviour {
             transform.Find("Text " + buttonIndex.ToString()).GetComponent<Text>().color = Color.red;
             menuBeepSource.Play();
         }
-        else if (Input.GetKeyDown(KeyCode.UpArrow) && buttonIndex > 0)
+        else if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && buttonIndex > 0)
         {
             RectTransform trans = indicator.GetComponent<RectTransform>();
             trans.localPosition = new Vector3(trans.localPosition.x, trans.localPosition.y + 30, trans.localPosition.z);
