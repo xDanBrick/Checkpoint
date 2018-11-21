@@ -223,9 +223,11 @@ public class PlayerCharacter : MonoBehaviour
         //If the player collides with death platform
         if (collision.gameObject.tag == "Death")
         {
+            m_Anim.SetTrigger("Death");
             //If the head exists and is not attached to the player
             if (m_PlayerHead.parent == transform || m_PlayerHead.GetComponent<HeadScript>().HeadIsRespawning())
             {
+                m_PlayerHead.GetComponent<SpriteRenderer>().enabled = false;
                 //Reset the players position
                 GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
                 GameObject.Find("FadeImage").GetComponent<FadeScript>().StartFade(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name, 3.0f);
@@ -243,7 +245,7 @@ public class PlayerCharacter : MonoBehaviour
                     ghost.GetComponent<GhostScript>().PlayerIsDead();
                     GameObject.FindGameObjectWithTag("MainCamera").GetComponent<FollowPlayer>().setTransformFollow(FollowPlayer.TransformFollow.Ghost);
                 }
-                m_Anim.SetTrigger("Death");
+                
                 canMovePlayer = false;
                 bodyIsDead = true;
             }
