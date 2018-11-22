@@ -250,6 +250,7 @@ public class PlayerCharacter : MonoBehaviour
                 bodyIsDead = true;
             }
             bodySquishSource.Play();
+            footstepsSource.Stop();
         }
         if(collision.gameObject.tag == "Ground" || collision.gameObject.tag == "Crusher" || collision.gameObject.tag == "Head")
         {
