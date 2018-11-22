@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using UnityStandardAssets.CrossPlatformInput;
 
 [RequireComponent(typeof (PlayerCharacter))]
 public class PlayerController : MonoBehaviour
@@ -19,7 +18,7 @@ public class PlayerController : MonoBehaviour
         if (!m_Jump)
         {
             // Read the jump input in Update so button presses aren't missed.
-            m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
+            m_Jump = Input.GetKey(KeyCode.Space);
             
         }
 
@@ -46,7 +45,15 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         // Read the inputs.
-        float h = CrossPlatformInputManager.GetAxis("Horizontal");
+        float h = 0.0f;
+        if(Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+        {
+            h = 1.0f;
+        }
+        else if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+        {
+            h = -1.0f;
+        }
         // Pass all parameters to the character control script.
         m_Character.Move(h, m_Jump);
         m_Jump = false;
