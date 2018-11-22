@@ -104,7 +104,7 @@ public class PlayerCharacter : MonoBehaviour
 
     private void Update()
     {
-        Debug.DrawLine(new Vector3(transform.position.x, transform.position.y + 1.0f, transform.position.z), new Vector3(transform.position.x + (transform.localScale.x > 1.0f ? 2.0f : -2.0f), transform.position.y + 1.0f, transform.position.z));
+        //Debug.DrawLine(new Vector3(transform.position.x, transform.position.y + 1.0f, transform.position.z), new Vector3(transform.position.x + (transform.localScale.x > 1.0f ? 2.0f : -2.0f), transform.position.y + 1.0f, transform.position.z));
         if (throwDelay >= 0.0f)
         {
             throwDelay -= Time.deltaTime;
@@ -136,11 +136,11 @@ public class PlayerCharacter : MonoBehaviour
                 m_PlayerHead.GetComponent<Rigidbody2D>().simulated = false;
                 m_PlayerHead.transform.SetParent(transform);
                 m_PlayerHead.transform.position = Vector3.zero;
-                
+
                 m_PlayerHead.transform.localPosition = new Vector3(0.0f, headOffset, 0.0f);
                 m_PlayerHead.transform.localScale = new Vector3(1.0f, m_PlayerHead.transform.localScale.y, m_PlayerHead.transform.localScale.z);
                 canMovePlayer = true;
-                
+
             }
         }
     }
@@ -260,7 +260,7 @@ public class PlayerCharacter : MonoBehaviour
             {
                 landSource.Play();
             }
-            if (collision.gameObject.tag == "Head" && bodyRespawnDelay < 0.0f)
+            if (collision.gameObject.tag == "Head" && collision.rigidbody.velocity.y < 0.0f)
             {
                 for (int i = 0; i < collision.contacts.Length; ++i)
                 {
@@ -283,13 +283,15 @@ public class PlayerCharacter : MonoBehaviour
         m_PlayerHead.transform.localPosition = new Vector3(0.0f, headOffset, 0.0f);
         m_PlayerHead.transform.localScale = new Vector3(1.0f, m_PlayerHead.transform.localScale.y, m_PlayerHead.transform.localScale.z);
         m_Anim.SetBool("HasHead", true);
+        canMovePlayer = true;
     }
 
     public void RespawnBody()
     {
-        m_Anim.SetTrigger("Respawn");
         if (Physics2D.Raycast(currentSpawnPosition, Vector2.down, 4.0f, LayerMask.GetMask("Spikes")))
         {
+            m_Anim.SetFloat("WalkSpeed", 0.0f);
+            m_Anim.SetTrigger("Cancel");
             m_PlayerHead.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
             m_PlayerHead.GetComponent<Rigidbody2D>().simulated = false;
             m_PlayerHead.transform.SetParent(transform);
@@ -300,7 +302,9 @@ public class PlayerCharacter : MonoBehaviour
         }
         else
         {
+            m_Anim.SetTrigger("Respawn");
             bodyRespawnDelay = 1.0f;
+            m_Rigidbody2D.velocity = new Vector2(0.0f, 0.0f);
             m_PlayerHead.Translate(new Vector3(0.0f, 1.0f, 0.0f));
             m_PlayerHead.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
             m_PlayerHead.GetComponent<Rigidbody2D>().AddForce(new Vector2(0.0f, 250.0f));
@@ -309,9 +313,6 @@ public class PlayerCharacter : MonoBehaviour
         transform.position = currentSpawnPosition;
         bodyIsDead = false;
         bodySpawningSource.Play();
-        //m_PlayerHead.transform.SetParent(transform);
-        //m_PlayerHead.transform.position = Vector3.zero;
-        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -352,10 +353,6 @@ public class PlayerCharacter : MonoBehaviour
                     m_Anim.SetBool("HasHead", false);
                     m_PlayerHead.GetComponent<Animator>().SetFloat("WalkSpeed", 0.0f);
                     m_PlayerHead.GetComponent<Animator>().SetBool("IsJumping", false);
-                }
-                else
-                {
-                    Debug.Log("Cant put down head");
                 }
             }
         }

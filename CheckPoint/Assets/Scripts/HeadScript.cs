@@ -149,7 +149,6 @@ public class HeadScript : MonoBehaviour {
         {
             for (int i = 0; i < collision.contacts.Length; ++i)
             {
-                Debug.Log(collision.contacts[i].normal.y);
                 //If the head collides with the top of the platform
                 if (collision.contacts[i].normal.y > 0.9f && collision.contacts[i].normal.y < 1.1f)
                 {
