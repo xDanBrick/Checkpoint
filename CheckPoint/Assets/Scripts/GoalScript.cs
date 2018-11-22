@@ -5,6 +5,7 @@ using UnityEngine;
 public class GoalScript : MonoBehaviour {
     private AudioSource levelCompleteSource;
 
+    private bool levelComplete = false;
     void Start()
     {
         levelCompleteSource = GameObject.Find("LevelCompleteAudio").GetComponent<AudioSource>();
@@ -16,7 +17,7 @@ public class GoalScript : MonoBehaviour {
         {
             if (collision.gameObject.transform.Find("TestHead"))
             {
-                if (!collision.isTrigger)
+                if (!collision.isTrigger && !levelComplete)
                 {
                     LevelStats.levelTime = GameObject.Find("Timer").GetComponent<Timer>().timer;
                     GameObject.Find("Timer").GetComponent<Timer>().enabled = false;
@@ -32,6 +33,7 @@ public class GoalScript : MonoBehaviour {
                     collision.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
                     levelCompleteSource.Play();
                     GameObject.Find("FadeImage").GetComponent<FadeScript>().StartFade("LevelOutro", 1.0f);
+                    levelComplete = true;
                 }
             }
         }
