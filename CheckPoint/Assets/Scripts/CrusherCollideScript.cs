@@ -18,7 +18,6 @@ public class CrusherCollideScript : MonoBehaviour {
         if (collision.gameObject.tag == "Ground")
         {
             crusherSource.Play();
-            Debug.Log(crusherSource);
             GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
         }
         if (collision.gameObject.tag == "Death")

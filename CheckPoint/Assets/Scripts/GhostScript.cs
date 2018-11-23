@@ -21,13 +21,6 @@ public class GhostScript : MonoBehaviour {
         playerIsDead = true;
         transform.localScale = new Vector3(player.position.x > transform.position.x ? 1.0f : -1.0f, transform.localScale.y, transform.localScale.z);
         ghostAudio.Play();
-        // get the angle
-        //Vector3 norTar = (player.position - transform.position).normalized;
-        //float angle = Mathf.Atan2(norTar.y, norTar.x) * Mathf.Rad2Deg;
-        //// rotate to angle
-        //Quaternion rotation = new Quaternion();
-        //rotation.eulerAngles = new Vector3(0, 0, angle - 90);
-        //transform.rotation = rotation;
     }
 
 	// Update is called once per frame

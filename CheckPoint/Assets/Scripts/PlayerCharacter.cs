@@ -32,7 +32,6 @@ public class PlayerCharacter : MonoBehaviour
     private float throwDelay = -1.0f;
     private float bodyRespawnDelay = -1.0f;
     bool canMovePlayer = true;
-    bool headInAir = false;
     public bool headRespawing = false;
     public static bool hasCollectable = false;
     private bool bodyIsDead = false;
@@ -62,7 +61,6 @@ public class PlayerCharacter : MonoBehaviour
 
     public void HeadLanded()
     {
-        headInAir = false;
         if (bodyIsDead)
         {
             GameObject ghost = GameObject.Find("Ghost");
@@ -122,9 +120,6 @@ public class PlayerCharacter : MonoBehaviour
                 m_Anim.SetBool("HasHead", false);
                 m_PlayerHead.GetComponent<Animator>().SetFloat("WalkSpeed", 0.0f);
                 m_PlayerHead.GetComponent<Animator>().SetBool("IsJumping", false);
-                headInAir = true;
-                //BoxCollider2D collider = GetComponent<BoxCollider2D>();
-                //collider.size = new Vector2(0.4f, 0.8f);
             }
         }
         if (bodyRespawnDelay >= 0.0f)
@@ -345,8 +340,6 @@ public class PlayerCharacter : MonoBehaviour
             {
                 if (!Physics2D.Raycast(new Vector3(transform.position.x, transform.position.y + 1.0f, transform.position.z), transform.localScale.x > 1.0f ? Vector2.right : Vector2.left, 2.0f, LayerMask.GetMask("Ground")))
                 {
-                    //
-                    headInAir = true;                //Place the head down in from of what ever way the player is facing
                     m_PlayerHead.Translate(dropDistance, 0.0f, 0.0f);
                     m_PlayerHead.SetParent(null);
                     m_PlayerHead.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;

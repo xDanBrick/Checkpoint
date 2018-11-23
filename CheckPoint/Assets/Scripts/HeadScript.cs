@@ -11,7 +11,6 @@ public class HeadScript : MonoBehaviour {
     private AudioSource headRespawningSource;
     private Rigidbody2D headBody;
     private float headRespawn = -1.0f;
-    private bool inRangeOfPlayer = false;
 
     private Transform playerTransform;
 
