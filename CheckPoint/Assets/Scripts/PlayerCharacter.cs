@@ -127,6 +127,7 @@ public class PlayerCharacter : MonoBehaviour
             bodyRespawnDelay -= Time.deltaTime;
             if (bodyRespawnDelay < 0.0f)
             {
+                m_Rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
                 m_PlayerHead.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
                 m_PlayerHead.GetComponent<Rigidbody2D>().simulated = false;
                 m_PlayerHead.transform.SetParent(transform);
@@ -284,6 +285,9 @@ public class PlayerCharacter : MonoBehaviour
 
     public void RespawnBody()
     {
+        transform.position = currentSpawnPosition;
+        bodyIsDead = false;
+        bodySpawningSource.Play();
         if (Physics2D.Raycast(currentSpawnPosition, Vector2.down, 4.0f, LayerMask.GetMask("Spikes")))
         {
             m_Anim.SetFloat("WalkSpeed", 0.0f);
@@ -300,15 +304,14 @@ public class PlayerCharacter : MonoBehaviour
         {
             m_Anim.SetTrigger("Respawn");
             bodyRespawnDelay = 1.0f;
-            m_Rigidbody2D.velocity = new Vector2(0.0f, 0.0f);
+            m_Rigidbody2D.bodyType = RigidbodyType2D.Static;
+            transform.Translate(new Vector3(0.0f, -0.7f, 0.0f));
             m_PlayerHead.Translate(new Vector3(0.0f, 1.0f, 0.0f));
             m_PlayerHead.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
             m_PlayerHead.GetComponent<Rigidbody2D>().AddForce(new Vector2(0.0f, 250.0f));
             m_PlayerHead.GetComponent<HeadScript>().PlayerAndHeadCombined();
         }
-        transform.position = currentSpawnPosition;
-        bodyIsDead = false;
-        bodySpawningSource.Play();
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
