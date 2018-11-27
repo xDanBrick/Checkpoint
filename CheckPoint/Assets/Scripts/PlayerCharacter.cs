@@ -150,7 +150,7 @@ public class PlayerCharacter : MonoBehaviour
                 // The Speed animator parameter is set to the absolute value of the horizontal input.
                 m_Anim.SetFloat("WalkSpeed", Math.Abs(move));
 
-                if(move != 0.0f)
+                if(move != 0.0f && !isJumping)
                 {
                     if (!footstepsSource.isPlaying)
                     {

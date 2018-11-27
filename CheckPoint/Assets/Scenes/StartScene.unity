@@ -293,14 +293,14 @@ RectTransform:
   m_GameObject: {fileID: 301241244}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 8.472745, y: 4.997787, z: 3.1234615}
+  m_LocalScale: {x: 44.378643, y: 4.997787, z: 3.1234615}
   m_Children: []
   m_Father: {fileID: 375411152}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -3, y: -5}
+  m_AnchoredPosition: {x: 249, y: -5}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &301241246
@@ -322,7 +322,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: e88339ced25996f42bdcacdbe50e0642, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6f7bbde96386bd348959aaef7e6ca4ca, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -787,7 +787,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 544e711e301eedb4f83e623ffd0ccd33,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 2fcd0ee998b14ee42a4fe60530becb20, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 508fadcd58b50ea4c9f0c463b15c379d, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.25
   m_Pitch: 1

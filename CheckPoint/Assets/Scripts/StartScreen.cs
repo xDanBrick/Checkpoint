@@ -42,6 +42,7 @@ public class StartScreen : MonoBehaviour {
             menuBeepSource.Play();
         }
 
+        
         if (Input.GetKeyDown(KeyCode.Return))
         {
             menuConfirmSource.Play();
