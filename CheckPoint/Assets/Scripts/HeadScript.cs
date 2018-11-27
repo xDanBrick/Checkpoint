@@ -11,8 +11,9 @@ public class HeadScript : MonoBehaviour {
     private AudioSource headRespawningSource;
     private Rigidbody2D headBody;
     private float headRespawn = -1.0f;
-
     private Transform playerTransform;
+
+    public bool disableCheckpoint = false;
 
     private void ChangeHeadState()
     {
@@ -81,11 +82,18 @@ public class HeadScript : MonoBehaviour {
 
     private void setHeadSpawnPosition()
     {
-        PlayerCharacter.currentSpawnPosition = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
-        landingSource.Play();
-        GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
-        GetComponent<Animator>().SetBool("ThrowHead", false);
-        playerTransform.GetComponent<PlayerCharacter>().HeadLanded();
+        if (!disableCheckpoint)
+        {
+            PlayerCharacter.currentSpawnPosition = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
+            landingSource.Play();
+            GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+            GetComponent<Animator>().SetBool("ThrowHead", false);
+            playerTransform.GetComponent<PlayerCharacter>().HeadLanded();
+        }
+        else
+        {
+            disableCheckpoint = false;
+        }
     }
 
     private void OnCollisionStay2D(Collision2D collision)

@@ -13,11 +13,14 @@ public class WeightedPlatformScript : MonoBehaviour {
     private SpriteRenderer spriteRenderer;
     private const float fadeIncrement = 3.0f;
 
+    private GameObject head;
+
     void Start()
     {
         creakSource = GameObject.Find("BridgeCreakAudio").GetComponent<AudioSource>();
         breakSource = GameObject.Find("BridgeBreakAudio").GetComponent<AudioSource>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        head = GameObject.Find("TestHead");
     }
 
     private void BreakPlatform()
@@ -25,7 +28,8 @@ public class WeightedPlatformScript : MonoBehaviour {
         breakSource.Play();
         //GetComponent<SpriteRenderer>().enabled = false;
         GetComponent<Rigidbody2D>().simulated = false;
-        GameObject.Find("TestHead").GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+        head.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+        head.GetComponent<HeadScript>().disableCheckpoint = true;
         respawnTimer = respawnDelay;
         fadeDirection = -fadeIncrement;
     }
