@@ -45,15 +45,8 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         // Read the inputs.
-        float h = 0.0f;
-        if(Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
-        {
-            h = 1.0f;
-        }
-        else if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
-        {
-            h = -1.0f;
-        }
+        float h = Input.GetAxis("Horizontal");
+        
         // Pass all parameters to the character control script.
         m_Character.Move(h, m_Jump);
         m_Jump = false;

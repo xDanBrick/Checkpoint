@@ -15,7 +15,7 @@ public class StartScreen : MonoBehaviour {
         menuConfirmSource = GameObject.Find("MenuConfirmAudio").GetComponent<AudioSource>();
         menuBeepSource = GameObject.Find("MenuBeepAudio").GetComponent<AudioSource>();
         DontDestroyOnLoad(GameObject.Find("MenuMusic"));
-        //Cursor.visible = false;
+        Cursor.visible = false;
     }
 	
 	// Update is called once per frame
