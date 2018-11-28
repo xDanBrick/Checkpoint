@@ -19,7 +19,7 @@ public class GhostScript : MonoBehaviour {
     public void PlayerIsDead()
     {
         playerIsDead = true;
-        transform.localScale = new Vector3(player.position.x > transform.position.x ? 1.0f : -1.0f, transform.localScale.y, transform.localScale.z);
+        transform.localScale = new Vector3(player.position.x > transform.position.x ? 1.5f : -1.5f, transform.localScale.y, transform.localScale.z);
         ghostAudio.Play();
     }
 
@@ -27,8 +27,9 @@ public class GhostScript : MonoBehaviour {
 	void Update () {
 		if(playerIsDead)
         {
-            transform.position = Vector3.MoveTowards(transform.position, player.position, Time.deltaTime * moveSpeed);
-            if (transform.position == player.position)
+            Vector3 targetPosition = new Vector3(player.position.x, player.position.y - 0.5f, player.position.z);
+            transform.position = Vector3.MoveTowards(transform.position, targetPosition, Time.deltaTime * moveSpeed);
+            if (transform.position == targetPosition)
             {
                 playerIsDead = false;
                 GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCharacter>().RespawnBody();
