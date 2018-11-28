@@ -1713,47 +1713,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 82416669653700504, guid: 395683ac775640047b29fbc92a6e7a48,
-        type: 2}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: 24300002, guid: 544e711e301eedb4f83e623ffd0ccd33,
-        type: 2}
-    - target: {fileID: 82416669653700504, guid: 395683ac775640047b29fbc92a6e7a48,
-        type: 2}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 82416669653700504, guid: 395683ac775640047b29fbc92a6e7a48,
-        type: 2}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 92a89ab64ace9b940b999b91eaf94309, type: 3}
-    - target: {fileID: 82952632568136128, guid: 395683ac775640047b29fbc92a6e7a48,
-        type: 2}
-      propertyPath: m_Volume
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 82142389184810780, guid: 395683ac775640047b29fbc92a6e7a48,
-        type: 2}
-      propertyPath: Loop
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 82142389184810780, guid: 395683ac775640047b29fbc92a6e7a48,
-        type: 2}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 82952632568136128, guid: 395683ac775640047b29fbc92a6e7a48,
-        type: 2}
-      propertyPath: m_Pitch
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 82142389184810780, guid: 395683ac775640047b29fbc92a6e7a48,
-        type: 2}
-      propertyPath: m_Volume
-      value: 0.5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 395683ac775640047b29fbc92a6e7a48, type: 2}
   m_IsPrefabParent: 0
