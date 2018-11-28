@@ -59,6 +59,7 @@ public class HeadScript : MonoBehaviour {
                 transform.localPosition = new Vector3(0.0f, PlayerCharacter.headOffset, 0.0f);
                 transform.localScale = new Vector3(1.0f, transform.localScale.y, transform.localScale.z);
                 headRespawningSource.Play();
+                GetComponent<Animator>().SetTrigger("Cancel");
             }
         }
 
