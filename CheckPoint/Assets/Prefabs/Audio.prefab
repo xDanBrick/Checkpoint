@@ -619,7 +619,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 544e711e301eedb4f83e623ffd0ccd33,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 64deb8ed86fafea4898a613d0a3dd48a, type: 3}
+  m_audioClip: {fileID: 8300000, guid: dfaa61937e26b194ba0cbcf0cf89f4c3, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1003,7 +1003,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 544e711e301eedb4f83e623ffd0ccd33,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 3a4003e043ec908409d2a2b7d736b60f, type: 3}
+  m_audioClip: {fileID: 8300000, guid: b01a2f3da92153f4dbb711292037edae, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1194,7 +1194,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 544e711e301eedb4f83e623ffd0ccd33,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 541f30fbf1528d14ca3b6a99663d8c99, type: 3}
+  m_audioClip: {fileID: 8300000, guid: fa764af02d5cfbe4b8a6c3d27cf79316, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1208,7 +1208,7 @@ AudioSource:
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
-  BypassEffects: 0
+  BypassEffects: 1
   BypassListenerEffects: 0
   BypassReverbZones: 0
   rolloffCustomCurve:
@@ -1386,7 +1386,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 544e711e301eedb4f83e623ffd0ccd33,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 239f9a93705f49741b065b6e83731525, type: 3}
+  m_audioClip: {fileID: 8300000, guid: ad55a44c53719a445ab59f32d1c57b03, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1
@@ -2346,10 +2346,10 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 544e711e301eedb4f83e623ffd0ccd33,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 5bd2b9ea8566daa468d3c988f215b259, type: 3}
+  m_audioClip: {fileID: 8300000, guid: f3c59cdfed3b4bb4caa32d4da71d4b2b, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.5
-  m_Pitch: 2
+  m_Pitch: 3
   Loop: 1
   Mute: 0
   Spatialize: 0
