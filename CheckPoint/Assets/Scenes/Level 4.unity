@@ -597,7 +597,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4433531177081272, guid: 7f10b8a295e712f42b75b5b895d0c382, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2.615
+      value: -2.6
       objectReference: {fileID: 0}
     - target: {fileID: 4433531177081272, guid: 7f10b8a295e712f42b75b5b895d0c382, type: 2}
       propertyPath: m_LocalPosition.z
@@ -623,17 +623,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 13
       objectReference: {fileID: 0}
-    - target: {fileID: 114242558101843454, guid: 7f10b8a295e712f42b75b5b895d0c382,
-        type: 2}
-      propertyPath: hintText
-      value: '"Always be cautious when pressing large switches!"'
-      objectReference: {fileID: 0}
-    - target: {fileID: 212972208746054868, guid: 7f10b8a295e712f42b75b5b895d0c382,
-        type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 50df7e90270187f48b51ce65ed1e9228,
-        type: 3}
     - target: {fileID: 212972208746054868, guid: 7f10b8a295e712f42b75b5b895d0c382,
         type: 2}
       propertyPath: m_FlipX

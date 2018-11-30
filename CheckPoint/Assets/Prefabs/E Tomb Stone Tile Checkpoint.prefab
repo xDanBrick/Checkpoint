@@ -37,8 +37,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1704473343184210}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.5, y: 1.44, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -27.5, y: -3.5035, z: 0}
+  m_LocalScale: {x: 1, y: 1.1874802, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -79,7 +79,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1, y: 1.0294986}
     newSize: {x: 7.2, y: 7.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8aed908e4ed04004baf46d40e3ba403c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hintText: Hint
+  hintText: '"Press Space to Jump"'
 --- !u!212 &212972208746054868
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -135,9 +135,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 50df7e90270187f48b51ce65ed1e9228, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.49019608}
-  m_FlipX: 0
+  m_Sprite: {fileID: 21300000, guid: 0ab2dca71e34597459d8045e99d5a78f, type: 3}
+  m_Color: {r: 0.8301887, g: 0.602052, b: 0.54432184, a: 1}
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 7.2, y: 7.2}
