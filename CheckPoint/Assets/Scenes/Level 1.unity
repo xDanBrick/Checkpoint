@@ -2031,6 +2031,11 @@ Prefab:
       propertyPath: m_Name
       value: Spikes (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 212812889173236660, guid: 78390787ccd92a44387e2d4f1b8dd33d,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 78390787ccd92a44387e2d4f1b8dd33d, type: 2}
   m_IsPrefabParent: 0
@@ -3496,6 +3501,12 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 6ff50970e42a9dd409b5a150ec8b3f84, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 0598103557872164e91fa69e48c3c69c, type: 2}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileSpriteArray:
   - m_RefCount: 7
     m_Data: {fileID: 21300000, guid: bf0329817680b694180e4244b2cfd4ab, type: 3}
@@ -3511,6 +3522,10 @@ Tilemap:
     m_Data: {fileID: 21300000, guid: f883f1e51c1ef334db47d30f1b6ef9ab, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: 21300000, guid: ab714893726ea584897992e2275a76e8, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileMatrixArray:
   - m_RefCount: 152
     m_Data:
@@ -3615,6 +3630,17 @@ Prefab:
       propertyPath: m_AutoTiling
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 212812889173236660, guid: 78390787ccd92a44387e2d4f1b8dd33d,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212812889173236660, guid: 78390787ccd92a44387e2d4f1b8dd33d,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d813314f976d6914ab9d3e780d7d7da8,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 78390787ccd92a44387e2d4f1b8dd33d, type: 2}
   m_IsPrefabParent: 0
