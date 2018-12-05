@@ -36,6 +36,7 @@ public class PlayerCharacter : MonoBehaviour
     public static bool hasCollectable = false;
     private bool bodyIsDead = false;
     private bool isJumping = false;
+    private bool m_IsThrowing = false;
 
     private void Awake()
     {
@@ -58,6 +59,11 @@ public class PlayerCharacter : MonoBehaviour
         hasCollectable = false;
     }
 
+
+    public void DisableActions()
+    {
+        canMovePlayer = false;
+    }
 
     public void HeadLanded()
     {
@@ -102,8 +108,7 @@ public class PlayerCharacter : MonoBehaviour
 
     private void Update()
     {
-        //Debug.DrawLine(new Vector3(transform.position.x, transform.position.y + 1.0f, transform.position.z), new Vector3(transform.position.x + (transform.localScale.x > 1.0f ? 2.0f : -2.0f), transform.position.y + 1.0f, transform.position.z));
-        if (throwDelay >= 0.0f)
+       if (throwDelay >= 0.0f)
         {
             throwDelay -= Time.deltaTime;
             if (throwDelay < 0.0f)
@@ -120,6 +125,7 @@ public class PlayerCharacter : MonoBehaviour
                 m_Anim.SetBool("HasHead", false);
                 m_PlayerHead.GetComponent<Animator>().SetFloat("WalkSpeed", 0.0f);
                 m_PlayerHead.GetComponent<Animator>().SetBool("IsJumping", false);
+                m_IsThrowing = false;
             }
         }
         if (bodyRespawnDelay >= 0.0f)
@@ -337,39 +343,46 @@ public class PlayerCharacter : MonoBehaviour
     }
     public void DropHead()
     {
-        if (m_PlayerHead.parent == transform)
+        if(canMovePlayer)
         {
-            if(canPutdownHead && !headRespawing)
+            if (m_PlayerHead.parent == transform)
             {
-                if (!Physics2D.Raycast(new Vector3(transform.position.x, transform.position.y + 1.0f, transform.position.z), transform.localScale.x > 1.0f ? Vector2.right : Vector2.left, 2.0f, LayerMask.GetMask("Ground")))
+                if (canPutdownHead && !headRespawing)
                 {
-                    m_PlayerHead.Translate(dropDistance, 0.0f, 0.0f);
-                    m_PlayerHead.SetParent(null);
-                    m_PlayerHead.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
-                    m_PlayerHead.GetComponent<Rigidbody2D>().simulated = true;
-                    m_Anim.SetBool("HasHead", false);
-                    m_PlayerHead.GetComponent<Animator>().SetFloat("WalkSpeed", 0.0f);
-                    m_PlayerHead.GetComponent<Animator>().SetBool("IsJumping", false);
+                    if (!Physics2D.Raycast(new Vector3(transform.position.x, transform.position.y + 1.0f, transform.position.z), transform.localScale.x > 1.0f ? Vector2.right : Vector2.left, 2.0f, LayerMask.GetMask("Ground")))
+                    {
+                        m_PlayerHead.Translate(dropDistance, 0.0f, 0.0f);
+                        m_PlayerHead.SetParent(null);
+                        m_PlayerHead.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+                        m_PlayerHead.GetComponent<Rigidbody2D>().simulated = true;
+                        m_Anim.SetBool("HasHead", false);
+                        m_PlayerHead.GetComponent<Animator>().SetFloat("WalkSpeed", 0.0f);
+                        m_PlayerHead.GetComponent<Animator>().SetBool("IsJumping", false);
+                    }
                 }
             }
-        }
-        else if(Mathf.Abs(transform.position.x - m_PlayerHead.position.x) < 1.3f && Mathf.Abs(transform.position.y - m_PlayerHead.position.y) < 1.3f)
-        {
-            PickupHead();
+            else if (Mathf.Abs(transform.position.x - m_PlayerHead.position.x) < 1.3f && Mathf.Abs(transform.position.y - m_PlayerHead.position.y) < 1.3f)
+            {
+                PickupHead();
+            }
         }
     }
 
     public void ThrowHead()
     {
-        if (m_PlayerHead.parent == transform)
+        if(canMovePlayer && !m_IsThrowing)
         {
-            if (canPutdownHead && !headRespawing)
+            if (m_PlayerHead.parent == transform)
             {
-                if (!Physics2D.Raycast(new Vector3(transform.position.x, transform.position.y + 1.0f, transform.position.z), transform.localScale.x > 1.0f ? Vector2.right : Vector2.left, 2.0f, LayerMask.GetMask("Ground")))
+                if (canPutdownHead && !headRespawing)
                 {
-                    throwDelay = 0.25f;
-                    m_Anim.SetTrigger("ThrowHead");
-                    m_PlayerHead.GetComponent<Animator>().SetBool("ThrowHead", true);
+                    if (!Physics2D.Raycast(new Vector3(transform.position.x, transform.position.y + 1.0f, transform.position.z), transform.localScale.x > 1.0f ? Vector2.right : Vector2.left, 2.0f, LayerMask.GetMask("Ground")))
+                    {
+                        throwDelay = 0.25f;
+                        m_Anim.SetTrigger("ThrowHead");
+                        m_PlayerHead.GetComponent<Animator>().SetBool("ThrowHead", true);
+                        m_IsThrowing = true;
+                    }
                 }
             }
         }

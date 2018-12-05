@@ -15,6 +15,9 @@ public class HeadScript : MonoBehaviour {
 
     public bool disableCheckpoint = false;
 
+    private Rigidbody2D m_RigidBody;
+    private Animator m_Animator;
+
     private void ChangeHeadState()
     {
         if (transform.parent != playerTransform && headBody.bodyType == RigidbodyType2D.Static)
@@ -33,11 +36,13 @@ public class HeadScript : MonoBehaviour {
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         headBody = GetComponent<Rigidbody2D>();
         ChangeHeadState();
+        m_RigidBody = GetComponent<Rigidbody2D>();
+        m_Animator = GetComponent<Animator>();
     }
 	
     public void PlayerAndHeadCombined()
     {
-        GetComponent<Animator>().SetBool("HeadSleeping", false);
+        m_Animator.SetBool("HeadSleeping", false);
     }
 
     public bool HeadIsRespawning()
@@ -59,7 +64,7 @@ public class HeadScript : MonoBehaviour {
                 transform.localPosition = new Vector3(0.0f, PlayerCharacter.headOffset, 0.0f);
                 transform.localScale = new Vector3(1.0f, transform.localScale.y, transform.localScale.z);
                 headRespawningSource.Play();
-                GetComponent<Animator>().SetBool("HasHead", false);
+                m_Animator.SetBool("HeadSleeping", false);
             }
         }
 
@@ -71,12 +76,16 @@ public class HeadScript : MonoBehaviour {
     {
         headRespawn = 1.0f;
         playerTransform.GetComponent<PlayerCharacter>().headRespawing = true;
+
+        m_RigidBody.simulated = false;
+        if(m_RigidBody.bodyType != RigidbodyType2D.Static)
+        {
+            m_RigidBody.velocity = Vector2.zero;
+        }
         
-        GetComponent<Rigidbody2D>().simulated = false;
-        GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         squishSource.Play();
-        GetComponent<Animator>().SetBool("ThrowHead", false);
-        GetComponent<Animator>().SetTrigger("Death");
+        m_Animator.SetBool("ThrowHead", false);
+        m_Animator.SetTrigger("Death");
         playerTransform.GetComponent<PlayerCharacter>().HeadDestroyed();
         playerTransform.GetComponent<Animator>().SetBool("HasHead", true);
     }
@@ -87,8 +96,8 @@ public class HeadScript : MonoBehaviour {
         {
             PlayerCharacter.currentSpawnPosition = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
             landingSource.Play();
-            GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
-            GetComponent<Animator>().SetBool("ThrowHead", false);
+            m_RigidBody.bodyType = RigidbodyType2D.Static;
+            m_Animator.SetBool("ThrowHead", false);
             playerTransform.GetComponent<PlayerCharacter>().HeadLanded();
         }
         else
@@ -105,7 +114,6 @@ public class HeadScript : MonoBehaviour {
             {
                 for (int i = 0; i < collision.contacts.Length; ++i)
                 {
-                    Debug.Log(collision.contacts[i].normal.y);
                     //If the head collides with the top of the platform
                     if (collision.contacts[i].normal.y > 0.9f && collision.contacts[i].normal.y < 1.1f)
                     {
