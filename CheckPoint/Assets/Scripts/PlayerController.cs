@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //Throw head
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.Return))
         {
             m_Character.ThrowHead();
         }
