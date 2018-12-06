@@ -31,6 +31,7 @@ public class GoalScript : MonoBehaviour {
                     }
                     PlayerPrefs.SetInt("Level " + (LevelStats.currentLevel + 1).ToString() + " Complete", 1);
                     collision.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+                    collision.GetComponent<PlayerCharacter>().DisableActions();
                     levelCompleteSource.Play();
                     GameObject.Find("FadeImage").GetComponent<FadeScript>().StartFade("LevelOutro", 1.0f);
                     levelComplete = true;

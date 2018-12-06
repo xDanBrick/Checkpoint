@@ -750,7 +750,7 @@ AnimatorState:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Throw
-  m_Speed: 2
+  m_Speed: 3
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101555959442272928}
@@ -764,7 +764,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 4358d1596a1c3bd45bf70e7902f68a0b, type: 2}
+  m_Motion: {fileID: 7400000, guid: 4b119f4f46e829645854a941c4a247d0, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
