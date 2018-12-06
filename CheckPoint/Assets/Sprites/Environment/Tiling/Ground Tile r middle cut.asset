@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: Ground Tile r middle cut
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 21300000, guid: f883f1e51c1ef334db47d30f1b6ef9ab, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f32be1cf87b6bde49a567dd6f7c6dd71, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1

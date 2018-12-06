@@ -18,8 +18,10 @@ public class PlayerController : MonoBehaviour
         if (!m_Jump)
         {
             // Read the jump input in Update so button presses aren't missed.
-            m_Jump = Input.GetKey(KeyCode.Space);
-            
+            if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.UpArrow))
+            {
+                m_Jump = true;
+            }
         }
 
         //Place the head down
@@ -29,7 +31,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //Throw head
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             m_Character.ThrowHead();
         }
