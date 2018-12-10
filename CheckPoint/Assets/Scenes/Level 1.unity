@@ -1633,11 +1633,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4433531177081272, guid: 7f10b8a295e712f42b75b5b895d0c382, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -27.5
+      value: -27.4032
       objectReference: {fileID: 0}
     - target: {fileID: 4433531177081272, guid: 7f10b8a295e712f42b75b5b895d0c382, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -3.5
+      value: -3.397
       objectReference: {fileID: 0}
     - target: {fileID: 4433531177081272, guid: 7f10b8a295e712f42b75b5b895d0c382, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1666,10 +1666,6 @@ Prefab:
     - target: {fileID: 1704473343184210, guid: 7f10b8a295e712f42b75b5b895d0c382, type: 2}
       propertyPath: m_Name
       value: E Tomb Stone Tile Checkpoint (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4433531177081272, guid: 7f10b8a295e712f42b75b5b895d0c382, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1.18748
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7f10b8a295e712f42b75b5b895d0c382, type: 2}
@@ -3840,6 +3836,11 @@ Prefab:
     - target: {fileID: 224000668429472784, guid: cbe49d00bf681564ab198b613a30b4b7,
         type: 2}
       propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224134480160690858, guid: cbe49d00bf681564ab198b613a30b4b7,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
