@@ -145,7 +145,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f543256dff5cbe549bd7f229389febd0
+      spriteID: d12b5d2e7bbfbc347ac6651336c7afb1
       vertices: []
       indices: 
       edges: []
@@ -165,7 +165,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0076c9aed36b12242a565a0032352d34
+      spriteID: 28728320060b1754b9a188e295ff3383
       vertices: []
       indices: 
       edges: []
@@ -185,7 +185,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 656371bc4ce09c94780d0c76e5a3c35a
+      spriteID: 1fc56828b02dfa349b8ccec118fee24d
       vertices: []
       indices: 
       edges: []
@@ -205,7 +205,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3e53be6f24d69824b94f4590d0cefee6
+      spriteID: 1d591d3db4b28d64ab3f007269f93636
       vertices: []
       indices: 
       edges: []
@@ -225,7 +225,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 064373edf7d680f43868687c33c38eb7
+      spriteID: 7a5de65d88f9345469e22212bf4683b9
       vertices: []
       indices: 
       edges: []
@@ -245,7 +245,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2f3e2bb557736814085cd109aec10cfc
+      spriteID: b343ecc9e3f9dd54e9dd7d9f4c5d768e
       vertices: []
       indices: 
       edges: []
@@ -265,27 +265,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 71ceb1b7df5d32a48b12164b79497e26
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Body JUMP POLISH 2_7
-      rect:
-        serializedVersion: 2
-        x: 2357
-        y: 3107
-        width: 137
-        height: 349
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7d2283057012f594b8e5993a77d0c4b8
+      spriteID: 266f0957fd3fa484d9b18773c433a7e8
       vertices: []
       indices: 
       edges: []
@@ -305,7 +285,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4ec17093120f2c04da4c49b28c22deed
+      spriteID: b4e0472268bb5664fa9c07f692e21542
       vertices: []
       indices: 
       edges: []
@@ -325,27 +305,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ae458cfc05318147994f323e6eaba65
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Body JUMP POLISH 2_10
-      rect:
-        serializedVersion: 2
-        x: 2330
-        y: 2093
-        width: 176
-        height: 434
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e06cb64585201014d9fd050ccecd4d68
+      spriteID: 3e6ddb4f325023e4db1e24155cc1b410
       vertices: []
       indices: 
       edges: []
@@ -365,7 +325,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 201c2b159148ca94c8ea513664b20d64
+      spriteID: 6b9d40eed8fd5304e87e66cc45739e21
       vertices: []
       indices: 
       edges: []
@@ -385,7 +345,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8c9a485515e458b4d9ace367bce1ad54
+      spriteID: 1a94413e0581f0d40a606fff9e300c85
       vertices: []
       indices: 
       edges: []
@@ -405,7 +365,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 53aff2c0308f6a34b97054def3ce35af
+      spriteID: 4432d4c8ddbd131499102f0cafa7e5a8
       vertices: []
       indices: 
       edges: []
@@ -425,7 +385,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce5ec08ee4a3d674da538da9483534ba
+      spriteID: 4abecb403e6292146a442bd68b9f6c3b
       vertices: []
       indices: 
       edges: []
@@ -445,7 +405,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 61d5b157540495046b56f4010ffede7f
+      spriteID: 4cb2bad43559ad1418548148cadb0da5
       vertices: []
       indices: 
       edges: []
