@@ -9,7 +9,7 @@ public class PlayerCharacter : MonoBehaviour
     [SerializeField] private float m_MaxSpeed = 10f;                    // The fastest the player can travel in the x axis.
     [SerializeField] private float m_JumpForce = 400f;                  // Amount of force added when the player jumps.
     [SerializeField] private LayerMask m_WhatIsGround;                  // A mask determining what is ground to the character
-    [SerializeField] private float dropDistance = 0.5f;
+    [SerializeField] private float dropDistance = 0.6f;
     [SerializeField] private float throwDistance = 400.0f;
 
     private Transform m_GroundCheck;    // A position marking where to check if the player is grounded.
@@ -281,6 +281,7 @@ public class PlayerCharacter : MonoBehaviour
     {
         m_PlayerHead.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
         m_PlayerHead.GetComponent<Rigidbody2D>().simulated = false;
+        m_PlayerHead.GetComponent<Animator>().SetBool("ThrowHead", false);
         m_PlayerHead.transform.SetParent(transform);
         m_PlayerHead.transform.position = Vector3.zero;
         m_PlayerHead.transform.localPosition = new Vector3(0.0f, headOffset, 0.0f);

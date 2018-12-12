@@ -1,30 +1,23 @@
 fileFormatVersion: 2
-guid: 778730361ddff8040a569c55967a4a63
+guid: 3aef5799fbc82d8478670fee321f0357
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Sprite 9 head sleep_0
-    21300002: Sprite 9 head sleep_1
-    21300004: Sprite 9 head sleep_2
-    21300006: Sprite 9 head sleep_3
-    21300008: Sprite 9 head sleep_4
-    21300010: Sprite 9 head sleep_5
-    21300012: Sprite 9 head sleep_6
-    21300014: Sprite 9 head sleep_7
-    21300016: Sprite 9 head sleep_8
-    21300018: Sprite 9 head sleep_9
-    21300020: Sprite 9 head sleep_10
-    21300022: Sprite 9 head sleep_11
-    21300024: Sprite 9 head sleep_12
-    21300026: Sprite 9 head sleep_13
-    21300028: Sprite 9 head sleep_14
-    21300030: Sprite 9 head sleep_15
-    21300032: Sprite 9 head sleep_16
-    21300034: Sprite 9 head sleep_17
-    21300036: Sprite 9 head sleep_18
-    21300038: Sprite 9 head sleep_19
-    21300040: Sprite 9 head sleep_20
-    21300042: Sprite 9 head sleep_21
-    21300044: Sprite 9 head sleep_22
+    21300000: Sprite jump head polish without cutouts_0
+    21300002: Sprite jump head polish without cutouts_1
+    21300004: Sprite jump head polish without cutouts_2
+    21300006: Sprite jump head polish without cutouts_3
+    21300008: Sprite jump head polish without cutouts_4
+    21300010: Sprite jump head polish without cutouts_5
+    21300012: Sprite jump head polish without cutouts_6
+    21300014: Sprite jump head polish without cutouts_7
+    21300016: Sprite jump head polish without cutouts_8
+    21300018: Sprite jump head polish without cutouts_9
+    21300020: Sprite jump head polish without cutouts_10
+    21300022: Sprite jump head polish without cutouts_11
+    21300024: Sprite jump head polish without cutouts_12
+    21300026: Sprite jump head polish without cutouts_13
+    21300028: Sprite jump head polish without cutouts_14
+    21300030: Sprite jump head polish without cutouts_15
   externalObjects: {}
   serializedVersion: 5
   mipmaps:
@@ -138,13 +131,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sprite 9 head sleep_0
+      name: Sprite jump head polish without cutouts_0
       rect:
         serializedVersion: 2
-        x: 170
-        y: 22034
-        width: 1114
-        height: 665
+        x: 675
+        y: 5386
+        width: 494
+        height: 428
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,19 +145,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 829211d87e81be64ab8d0efe437e6c77
+      spriteID: 48161791b3c3cf94e9b2df2495d73196
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite 9 head sleep_1
+      name: Sprite jump head polish without cutouts_1
       rect:
         serializedVersion: 2
-        x: 152
-        y: 21090
-        width: 971
-        height: 647
+        x: 2128
+        y: 5386
+        width: 495
+        height: 428
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -172,19 +165,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5efb43c9274d1f849ab6791fa16f56b7
+      spriteID: b101f838368919243b5e48d369c42b99
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite 9 head sleep_2
+      name: Sprite jump head polish without cutouts_2
       rect:
         serializedVersion: 2
-        x: 197
-        y: 20057
-        width: 944
-        height: 647
+        x: 3584
+        y: 5398
+        width: 492
+        height: 410
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,19 +185,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca1032a37b16f8d42affce5468ce1684
+      spriteID: ac83a4d6bc2b38a48ab37b7d540a462c
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite 9 head sleep_3
+      name: Sprite jump head polish without cutouts_3
       rect:
         serializedVersion: 2
-        x: 206
-        y: 19077
-        width: 917
-        height: 647
+        x: 673
+        y: 4417
+        width: 497
+        height: 383
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -212,19 +205,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2894caeac16ac154996b2a22c2729a37
+      spriteID: d71ccd9ad24154345aa171c772510666
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite 9 head sleep_4
+      name: Sprite jump head polish without cutouts_4
       rect:
         serializedVersion: 2
-        x: 203
-        y: 18065
-        width: 888
-        height: 580
+        x: 2128
+        y: 4440
+        width: 495
+        height: 346
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -232,19 +225,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 33ce7cac6f0444f4da065b85af7e94ad
+      spriteID: 7b1a3d3f4df27224cb58a3f3e1d2abf6
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite 9 head sleep_5
+      name: Sprite jump head polish without cutouts_5
       rect:
         serializedVersion: 2
-        x: 230
-        y: 17095
-        width: 861
-        height: 580
+        x: 3584
+        y: 4475
+        width: 492
+        height: 293
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -252,19 +245,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f258b0c462effb14aaa78207396f4283
+      spriteID: adb40331f7f79be43a8117c4cb61322f
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite 9 head sleep_6
+      name: Sprite jump head polish without cutouts_6
       rect:
         serializedVersion: 2
-        x: 212
-        y: 16080
-        width: 852
-        height: 562
+        x: 687
+        y: 3505
+        width: 477
+        height: 252
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -272,19 +265,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5d35aaf019251d249850f6c348d1ec7b
+      spriteID: a86e6493bf8181d49bec9865eb3302ae
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite 9 head sleep_7
+      name: Sprite jump head polish without cutouts_7
       rect:
         serializedVersion: 2
-        x: 257
-        y: 15093
-        width: 852
-        height: 571
+        x: 2193
+        y: 3450
+        width: 401
+        height: 331
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -292,19 +285,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fc8cde84386ae15439e8c66144809d3c
+      spriteID: abb2ab8b4bce7524699f7a91bd662e2b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite 9 head sleep_8
+      name: Sprite jump head polish without cutouts_8
       rect:
         serializedVersion: 2
-        x: 230
-        y: 14096
-        width: 852
-        height: 562
+        x: 3590
+        y: 3386
+        width: 483
+        height: 427
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -312,19 +305,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 502d956a142775f4693b01ff3a7aab63
+      spriteID: 71c14890fa961a9479f3bf7fc158f4bf
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite 9 head sleep_9
+      name: Sprite jump head polish without cutouts_9
       rect:
         serializedVersion: 2
-        x: 230
-        y: 13108
-        width: 870
-        height: 562
+        x: 669
+        y: 2376
+        width: 501
+        height: 443
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -332,19 +325,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1fb54b6983a532a4099cf3dc1e7fad42
+      spriteID: a91919422c3b78140b117cbafbed98ed
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite 9 head sleep_10
+      name: Sprite jump head polish without cutouts_10
       rect:
         serializedVersion: 2
-        x: 262
-        y: 12076
-        width: 807
-        height: 599
+        x: 2196
+        y: 2401
+        width: 398
+        height: 404
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -352,19 +345,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 43aa1e717875bc341959878405e00364
+      spriteID: 9c88f6c286fbca5429aed365d44960d9
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite 9 head sleep_11
+      name: Sprite jump head polish without cutouts_11
       rect:
         serializedVersion: 2
-        x: 204
-        y: 11103
-        width: 906
-        height: 491
+        x: 3596
+        y: 2395
+        width: 477
+        height: 413
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -372,19 +365,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c482156fcc4d43946ae2b5998898baa3
+      spriteID: 385ae80423aa663429a0083d576f143e
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite 9 head sleep_12
+      name: Sprite jump head polish without cutouts_12
       rect:
         serializedVersion: 2
-        x: 246
-        y: 10114
-        width: 831
-        height: 540
+        x: 690
+        y: 1440
+        width: 474
+        height: 346
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -392,19 +385,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 20c4ce8da61b289419aa7c339fb6d6ee
+      spriteID: 970591254109ab54ea42e292a593610f
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite 9 head sleep_13
+      name: Sprite jump head polish without cutouts_13
       rect:
         serializedVersion: 2
-        x: 271
-        y: 9108
-        width: 798
-        height: 516
+        x: 2140
+        y: 1452
+        width: 477
+        height: 331
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -412,19 +405,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c7425673c6e5edc4e8a08a285d2ffbab
+      spriteID: 3216d5ca368d9d1488ca31fff39a7934
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite 9 head sleep_14
+      name: Sprite jump head polish without cutouts_14
       rect:
         serializedVersion: 2
-        x: 229
-        y: 8102
-        width: 856
-        height: 532
+        x: 3582
+        y: 1414
+        width: 494
+        height: 386
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -432,19 +425,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dfc055f0e6418874881dcb907a80fd72
+      spriteID: 6d47c01f86446ad48a1fc04b0dd88242
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite 9 head sleep_15
+      name: Sprite jump head polish without cutouts_15
       rect:
         serializedVersion: 2
-        x: 238
-        y: 7113
-        width: 832
-        height: 524
+        x: 675
+        y: 385
+        width: 495
+        height: 428
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -452,147 +445,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a0d3b2071ec62d747ace9975770f900e
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sprite 9 head sleep_16
-      rect:
-        serializedVersion: 2
-        x: 197
-        y: 6107
-        width: 881
-        height: 524
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5546f73e5d54bbf48ac14378492d91bd
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sprite 9 head sleep_17
-      rect:
-        serializedVersion: 2
-        x: 230
-        y: 5126
-        width: 840
-        height: 482
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5262431e88abfbd40982eb1b31f092b5
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sprite 9 head sleep_18
-      rect:
-        serializedVersion: 2
-        x: 280
-        y: 4112
-        width: 806
-        height: 499
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0ba974a966ac0044d9cd7773f0c8ef19
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sprite 9 head sleep_19
-      rect:
-        serializedVersion: 2
-        x: 238
-        y: 3098
-        width: 832
-        height: 532
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: df984dcd02f42a143bafe317c548e144
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sprite 9 head sleep_20
-      rect:
-        serializedVersion: 2
-        x: 272
-        y: 2100
-        width: 773
-        height: 540
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1019c49148c83354d9bc008f231e8196
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sprite 9 head sleep_21
-      rect:
-        serializedVersion: 2
-        x: 263
-        y: 1102
-        width: 798
-        height: 582
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 085f892f51261464d902ac97ab6a1cd0
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sprite 9 head sleep_22
-      rect:
-        serializedVersion: 2
-        x: 255
-        y: 105
-        width: 806
-        height: 557
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6d8e9ab472dbb5e40b7086e69e5e8905
+      spriteID: 20bf6404c2acaee47a3a98e19a85a111
       vertices: []
       indices: 
       edges: []
@@ -600,7 +453,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 7fba720fe1c92494fabc780736377756
+    spriteID: e1456d070f2f90b4eb840890042f2c6c
     vertices: []
     indices: 
     edges: []
