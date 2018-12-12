@@ -4,7 +4,7 @@ using UnityEngine;
 public class PlayerCharacter : MonoBehaviour
 {
     const string headName = "TestHead";
-    public static float headOffset = 0.725f;
+    public static float headOffset = 0.7f;
 
     [SerializeField] private float m_MaxSpeed = 10f;                    // The fastest the player can travel in the x axis.
     [SerializeField] private float m_JumpForce = 400f;                  // Amount of force added when the player jumps.
