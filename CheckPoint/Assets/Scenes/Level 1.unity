@@ -1081,7 +1081,7 @@ Prefab:
     - target: {fileID: 114242558101843454, guid: 7f10b8a295e712f42b75b5b895d0c382,
         type: 2}
       propertyPath: hintText
-      value: '"Press W to Throw your Head"'
+      value: '"Press Q or Enter to Throw your Head"'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7f10b8a295e712f42b75b5b895d0c382, type: 2}
@@ -1666,6 +1666,11 @@ Prefab:
     - target: {fileID: 1704473343184210, guid: 7f10b8a295e712f42b75b5b895d0c382, type: 2}
       propertyPath: m_Name
       value: E Tomb Stone Tile Checkpoint (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114242558101843454, guid: 7f10b8a295e712f42b75b5b895d0c382,
+        type: 2}
+      propertyPath: hintText
+      value: '"Press Space, W or Up to Jump"'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7f10b8a295e712f42b75b5b895d0c382, type: 2}
