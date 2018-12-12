@@ -39,11 +39,6 @@ public class HeadScript : MonoBehaviour {
         m_RigidBody = GetComponent<Rigidbody2D>();
         m_Animator = GetComponent<Animator>();
     }
-	
-    public void PlayerAndHeadCombined()
-    {
-        m_Animator.SetBool("HeadSleeping", false);
-    }
 
     public bool HeadIsRespawning()
     {
@@ -64,7 +59,6 @@ public class HeadScript : MonoBehaviour {
                 transform.localPosition = new Vector3(0.0f, PlayerCharacter.headOffset, 0.0f);
                 transform.localScale = new Vector3(1.0f, transform.localScale.y, transform.localScale.z);
                 headRespawningSource.Play();
-                m_Animator.SetBool("HeadSleeping", false);
             }
         }
 
@@ -84,7 +78,6 @@ public class HeadScript : MonoBehaviour {
         }
         
         squishSource.Play();
-        m_Animator.SetBool("ThrowHead", false);
         m_Animator.SetTrigger("Death");
         playerTransform.GetComponent<PlayerCharacter>().HeadDestroyed();
         playerTransform.GetComponent<Animator>().SetBool("HasHead", true);
@@ -97,7 +90,6 @@ public class HeadScript : MonoBehaviour {
             PlayerCharacter.currentSpawnPosition = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
             landingSource.Play();
             m_RigidBody.bodyType = RigidbodyType2D.Static;
-            m_Animator.SetBool("ThrowHead", false);
             playerTransform.GetComponent<PlayerCharacter>().HeadLanded();
         }
         else

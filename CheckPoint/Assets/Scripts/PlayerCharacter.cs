@@ -138,7 +138,7 @@ public class PlayerCharacter : MonoBehaviour
                 m_PlayerHead.GetComponent<Rigidbody2D>().simulated = false;
                 m_PlayerHead.transform.SetParent(transform);
                 m_PlayerHead.transform.position = Vector3.zero;
-
+                m_Anim.SetFloat("WalkSpeed", 0.0f);
                 m_PlayerHead.transform.localPosition = new Vector3(0.0f, headOffset, 0.0f);
                 m_PlayerHead.transform.localScale = new Vector3(1.0f, m_PlayerHead.transform.localScale.y, m_PlayerHead.transform.localScale.z);
                 canMovePlayer = true;
@@ -281,7 +281,6 @@ public class PlayerCharacter : MonoBehaviour
     {
         m_PlayerHead.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
         m_PlayerHead.GetComponent<Rigidbody2D>().simulated = false;
-        m_PlayerHead.GetComponent<Animator>().SetBool("ThrowHead", false);
         m_PlayerHead.transform.SetParent(transform);
         m_PlayerHead.transform.position = Vector3.zero;
         m_PlayerHead.transform.localPosition = new Vector3(0.0f, headOffset, 0.0f);
@@ -316,9 +315,7 @@ public class PlayerCharacter : MonoBehaviour
             m_PlayerHead.Translate(new Vector3(0.0f, 1.0f, 0.0f));
             m_PlayerHead.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
             m_PlayerHead.GetComponent<Rigidbody2D>().AddForce(new Vector2(0.0f, 250.0f));
-            m_PlayerHead.GetComponent<HeadScript>().PlayerAndHeadCombined();
         }
-        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -381,7 +378,6 @@ public class PlayerCharacter : MonoBehaviour
                     {
                         throwDelay = 0.25f;
                         m_Anim.SetTrigger("ThrowHead");
-                        m_PlayerHead.GetComponent<Animator>().SetBool("ThrowHead", true);
                         m_IsThrowing = true;
                     }
                 }

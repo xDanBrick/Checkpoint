@@ -457,12 +457,17 @@ Prefab:
     - target: {fileID: 61065487873898938, guid: 78390787ccd92a44387e2d4f1b8dd33d,
         type: 2}
       propertyPath: m_AutoTiling
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 212812889173236660, guid: 78390787ccd92a44387e2d4f1b8dd33d,
         type: 2}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 61065487873898938, guid: 78390787ccd92a44387e2d4f1b8dd33d,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 78390787ccd92a44387e2d4f1b8dd33d, type: 2}
@@ -712,7 +717,7 @@ Prefab:
     - target: {fileID: 61065487873898938, guid: 78390787ccd92a44387e2d4f1b8dd33d,
         type: 2}
       propertyPath: m_AutoTiling
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1623407544602938, guid: 78390787ccd92a44387e2d4f1b8dd33d, type: 2}
       propertyPath: m_Name
@@ -722,6 +727,11 @@ Prefab:
         type: 2}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 61065487873898938, guid: 78390787ccd92a44387e2d4f1b8dd33d,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 78390787ccd92a44387e2d4f1b8dd33d, type: 2}
@@ -1959,11 +1969,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4940060402000026, guid: a3f0648f753865b40a24573df897b7fe, type: 2}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4940060402000026, guid: a3f0648f753865b40a24573df897b7fe, type: 2}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a3f0648f753865b40a24573df897b7fe, type: 2}
